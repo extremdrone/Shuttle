@@ -68,3 +68,24 @@ app.on('ready', () => {
   if (process.env.NODE_ENV === 'production') autoUpdater.checkForUpdates()
 })
  */
+
+/**
+* I was unable to make require(file) work on the component electron main file, so for now, components electron main methods will go here in electron index.js
+*/
+
+/**
+ * LandingView Electron Main.js
+ */
+const {ipcMain, dialog} = require('electron')
+
+ipcMain.on('save-dialog', (event) => {
+  const options = {
+    title: 'Create Shuttle Project',
+    filters: [
+      { name: 'CreateShuttle', extensions: ['shuttle'] }
+    ]
+  }
+  dialog.showSaveDialog(options, (filename) => {
+    event.sender.send('saved-file', filename)
+  })
+})

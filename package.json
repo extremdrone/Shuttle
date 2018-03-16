@@ -1,9 +1,9 @@
 {
   "name": "shuttle",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Juan David Cruz Serrano <juandavidcruzs@gmail.com>",
-  "description": "Create native mobile applications.",
-  "license": null,
+  "description": "Easily create native mobile applications.",
+  "license": "MIT",
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
