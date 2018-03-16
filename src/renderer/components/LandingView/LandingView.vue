@@ -39,6 +39,7 @@
 <script>
   
   const {ipcRenderer} = require('electron')
+  const fs = require('fs')
 
   export default {
     name: 'LandingView',
@@ -57,14 +58,18 @@
     },
     methods: {
       createProject: function () {
-        ipcRenderer.send('save-dialog')
+        ipcRenderer.send('save-dialog-new-project')
       }
     }
   }
 
-  ipcRenderer.on('saved-file', (event, path) => {
-    if (!path) path = 'No path'
-    console.log(`Path selected: ${path}`)
+  ipcRenderer.on('saved-file-new-project', (event, path) => {
+    if (!path) return
+    fs.writeFile(path, 'Test', (err) => {
+      if (err) {
+        ipcRenderer.send('open-error-dialog-creating-project-file', err.message)
+      }
+    })
   })
 </script>
 
