@@ -33,6 +33,19 @@
       </div>
   </div>
 
+
+  <!-- Footer View with legal and contact information  -->
+  <header id="landingFooter" class="navbar">
+    <section class="navbar-section">
+    </section>
+    <section class="navbar-center">
+      <!-- centered logo or brand -->
+      <p id="textFooter"><small>Shuttle V{{footer.appVersionNumber}} <br> Copyright © 2018 AppShuttle.io. <br> By using this app or any of its services you accept our <a class="c-hand" v-on:click="goToLegalDocument('TERMS')">Terms &amp; Conditions</a>, <a class="c-hand" v-on:click="goToLegalDocument('EULA')">EULA</a> and <a class="c-hand" v-on:click="goToLegalDocument('PRIVACY')">Privacy Policy.</a></small></p>
+    </section>
+    <section class="navbar-section">
+    </section>
+  </header>
+
 </div>
 </template>
 
@@ -40,6 +53,8 @@
   
   const {ipcRenderer} = require('electron')
   const fs = require('fs')
+  const {app} = require('electron').remote
+  const shell = require('electron').shell
 
   export default {
     name: 'LandingView',
@@ -53,12 +68,18 @@
           emptyProjectsText: 'No recent projects',
           createProjectButtonText: 'Create a Project',
           openProjectButtonText: 'Open existing project...'
+        },
+        footer: {
+          appVersionNumber: app.getVersion()
         }
       }
     },
     methods: {
       createProject: function () {
         ipcRenderer.send('save-dialog-new-project')
+      },
+      goToLegalDocument: function (legalDocumentType) {
+        handleOpenLegalDocument(legalDocumentType)
       }
     }
   }
@@ -71,6 +92,26 @@
       }
     })
   })
+
+  function handleOpenLegalDocument (legalDocumentType) {
+    switch (legalDocumentType) {
+      case 'TERMS': {
+        shell.openExternal('https://firebasestorage.googleapis.com/v0/b/appshuttle-69c81.appspot.com/o/documents%2FOnline%20Terms%20and%20Conditions.pdf?alt=media')
+        break
+      }
+      case 'EULA': {
+        shell.openExternal('https://firebasestorage.googleapis.com/v0/b/appshuttle-69c81.appspot.com/o/documents%2FEnd%20User%20License%20Agreement.pdf?alt=media')
+        break
+      }
+      case 'PRIVACY': {
+        shell.openExternal('https://firebasestorage.googleapis.com/v0/b/appshuttle-69c81.appspot.com/o/documents%2FOnline%20Privacy%20Policy.pdf?alt=media')
+        break
+      }
+      default: {
+        break
+      }
+    }
+  }
 </script>
 
 <style scoped>
@@ -84,12 +125,23 @@
   }
 
   #emptyContainer {
-    margin-top: 60px;
+    margin-top: 40px;
   }
 
   #logo {
     height: 150px;
     margin-bottom: 20px;
     width: auto;
+  }
+
+  #landingFooter {
+    position: absolute;
+    width: 80vw;
+    margin-left: 10vw;
+    bottom: 0px;
+  }
+
+  #textFooter {
+    text-align: center;
   }
 </style>
