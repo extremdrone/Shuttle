@@ -14,14 +14,14 @@
             <h4><small>{{recentProjects.emptyProjectsText}}</small></h4>
             <br><br>
             <div class="columns">
-              <div v-on:click="createProject" class="column">
+              <div v-on:click="createProject" class="column c-hand">
                 <div class="empty-icon">
                   <i class="icon icon-2x icon-plus"></i>
                 </div>
                 <button class="btn btn-link">{{recentProjects.createProjectButtonText}}</button>
               </div>
               <div class="divider-vert"></div>
-              <div class="column">
+              <div class="column c-hand">
                 <div class="empty-icon">
                   <i class="icon icon-2x icon-share"></i>
                 </div>
@@ -50,7 +50,9 @@
 </template>
 
 <script>
-  
+  import router from '../../router'
+  import store from '../../store'
+
   const {ipcRenderer} = require('electron')
   const fs = require('fs')
   const {app} = require('electron').remote
@@ -89,6 +91,11 @@
     fs.writeFile(path, 'Test', (err) => {
       if (err) {
         ipcRenderer.send('open-error-dialog-creating-project-file', err.message)
+      } else {
+        store.dispatch('setProjectPath', {
+          path
+        })
+        router.push('/createProject/newAppInformation')
       }
     })
   })

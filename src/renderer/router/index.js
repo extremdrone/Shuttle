@@ -11,6 +11,18 @@ export default new Router({
       component: require('@/components/LandingView/LandingView').default
     },
     {
+      path: '/createProject',
+      name: 'CreateProject',
+      component: require('@/components/ProjectCreationView/CreateProjectView').default,
+      children: [
+        {
+          path: 'newAppInformation',
+          name: 'NewAppInformation',
+          component: require('@/components/ProjectCreationView/NewAppInformationChild/NewAppInformation').default
+        }
+      ]
+    },
+    {
       path: '*',
       redirect: '/'
     }
