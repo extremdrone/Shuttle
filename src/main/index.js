@@ -78,7 +78,10 @@ app.on('ready', () => {
  */
 const {ipcMain, dialog} = require('electron')
 
-ipcMain.on('save-dialog', (event) => {
+/**
+ * Create new file Dialog
+ */
+ipcMain.on('save-dialog-new-project', (event) => {
   const options = {
     title: 'Create Shuttle Project',
     filters: [
@@ -86,6 +89,13 @@ ipcMain.on('save-dialog', (event) => {
     ]
   }
   dialog.showSaveDialog(options, (filename) => {
-    event.sender.send('saved-file', filename)
+    event.sender.send('saved-file-new-project', filename)
   })
+})
+
+/**
+ * Error creating new project dialog
+ */
+ipcMain.on('open-error-dialog-creating-project-file', function (event, args) {
+  dialog.showErrorBox('Error Creating Shuttle', 'There was an error creating the shuttle file. ' + args)
 })

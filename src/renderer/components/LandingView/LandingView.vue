@@ -52,6 +52,7 @@
 <script>
   
   const {ipcRenderer} = require('electron')
+  const fs = require('fs')
   const {app} = require('electron').remote
   const shell = require('electron').shell
 
@@ -75,7 +76,7 @@
     },
     methods: {
       createProject: function () {
-        ipcRenderer.send('save-dialog')
+        ipcRenderer.send('save-dialog-new-project')
       },
       goToLegalDocument: function (legalDocumentType) {
         handleOpenLegalDocument(legalDocumentType)
@@ -83,9 +84,13 @@
     }
   }
 
-  ipcRenderer.on('saved-file', (event, path) => {
-    if (!path) path = 'No path'
-    console.log(`Path selected: ${path}`)
+  ipcRenderer.on('saved-file-new-project', (event, path) => {
+    if (!path) return
+    fs.writeFile(path, 'Test', (err) => {
+      if (err) {
+        ipcRenderer.send('open-error-dialog-creating-project-file', err.message)
+      }
+    })
   })
 
   function handleOpenLegalDocument (legalDocumentType) {
