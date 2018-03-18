@@ -4,6 +4,11 @@ const state = {
       appName: undefined,
       appCategory: undefined,
       appPlatforms: 'BOTH'
+    },
+    creatorInformation: {
+      name: undefined,
+      email: undefined,
+      website: undefined
     }
   },
   stepper: {
@@ -146,13 +151,27 @@ const state = {
 
 const mutations = {
   INCREMENT_PAGE (state) {
-    if (state.pages.lenght > state.currentPage) {
-      state.currentPage++
+    if (state.stepper.steps.length > state.stepper.currentStep) {
+      state.stepper.currentStep = state.stepper.currentStep + 1
     }
   },
   DECREMENT_PAGE (state) {
-    if (state.currentPage > 1) {
-      state.currentPage--
+    if (state.stepper.currentStep > 1) {
+      state.stepper.currentStep = state.stepper.currentStep - 1
+    }
+  },
+  RESET_NEW_PROJECT (state) {
+    state.newProject = {
+      appInformation: {
+        appName: undefined,
+        appCategory: undefined,
+        appPlatforms: 'BOTH'
+      },
+      creatorInformation: {
+        name: undefined,
+        email: undefined,
+        website: undefined
+      }
     }
   },
   SET_APP_NAME (state, name) {
@@ -163,10 +182,28 @@ const mutations = {
   },
   SET_APP_PLATFORM (state, platform) {
     state.newProject.appInformation.appPlatforms = platform
+  },
+  SET_CREATOR_NAME (state, name) {
+    state.newProject.creatorInformation.name = name
+  },
+  SET_CREATOR_EMAIL (state, email) {
+    state.newProject.creatorInformation.email = email
+  },
+  SET_CREATOR_WEBSITE (state, website) {
+    state.newProject.creatorInformation.website = website
   }
 }
 
 const actions = {
+  goToNextPage ({ commit }) {
+    commit('INCREMENT_PAGE')
+  },
+  goToPreviousPage ({ commit }) {
+    commit('DECREMENT_PAGE')
+  },
+  resetNewProject ({ commit }) {
+    commit('RESET_NEW_PROJECT')
+  },
   setNewAppName ({ commit }, name) {
     commit('SET_APP_NAME', name)
   },
@@ -175,6 +212,15 @@ const actions = {
   },
   setNewAppPlatform ({ commit }, platform) {
     commit('SET_APP_PLATFORM', platform)
+  },
+  setNewCreatorName ({ commit }, name) {
+    commit('SET_CREATOR_NAME', name)
+  },
+  setNewCreatorEmail ({ commit }, email) {
+    commit('SET_CREATOR_EMAIL', email)
+  },
+  setNewCreatorWebsite ({ commit }, website) {
+    commit('SET_CREATOR_WEBSITE', website)
   }
 }
 
@@ -196,6 +242,15 @@ const getters = {
       return false
     }
     if (state.newProject.appInformation.appPlatforms === undefined || state.newProject.appInformation.appPlatforms === '') {
+      return false
+    }
+    return true
+  },
+  isNewCreatorInformationComplete: function (state) {
+    if (state.newProject.creatorInformation.name === undefined || state.newProject.creatorInformation.name === '') {
+      return false
+    }
+    if (state.newProject.creatorInformation.email === undefined || state.newProject.creatorInformation.email === '') {
       return false
     }
     return true

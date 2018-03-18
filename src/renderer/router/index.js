@@ -19,6 +19,16 @@ export default new Router({
           path: 'newAppInformation',
           name: 'NewAppInformation',
           component: require('@/components/ProjectCreationView/NewAppInformationChild/NewAppInformation').default
+        },
+        {
+          path: 'newCreatorInformation',
+          name: 'NewCreatorInformation',
+          component: require('@/components/ProjectCreationView/NewCreatorInformationChild/NewCreatorInformation').default
+        },
+        {
+          path: 'newAppDone',
+          name: 'NewAppDone',
+          component: require('@/components/ProjectCreationView/NewAppDoneChild/NewAppDone').default
         }
       ]
     },

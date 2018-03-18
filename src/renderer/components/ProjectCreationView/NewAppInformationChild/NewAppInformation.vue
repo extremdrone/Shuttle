@@ -1,6 +1,5 @@
 <template>
   <div v-show="getStepperInfo.currentStep === 1" id="appInformationContainer">
-            
             <div class="columns">
                 <div class="col-10 col-mx-auto">
                     <h3>App Information: </h3>
