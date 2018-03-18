@@ -95,7 +95,7 @@
         store.dispatch('setProjectPath', {
           path
         })
-        router.push('/createProject/newAppInformation')
+        router.replace('/createProject/newAppInformation')
       }
     })
   })

@@ -58,15 +58,15 @@
           }
           switch (this.$store.getters.getStepperInfo.currentStep) {
             case 1: {
-              this.$router.push('/createProject/newAppInformation')
+              this.$router.replace('/createProject/newAppInformation')
               break
             }
             case 2: {
-              this.$router.push('/createProject/newCreatorInformation')
+              this.$router.replace('/createProject/newCreatorInformation')
               break
             }
             case 3: {
-              this.$router.push('/createProject/newAppDone')
+              this.$router.replace('/createProject/newAppDone')
               break
             }
           }
