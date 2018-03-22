@@ -29,6 +29,7 @@
 
 <script>
     import { mapGetters } from 'vuex'
+    const fs = require('fs')
     export default {
       name: 'CreateProjectView',
       methods: {
@@ -47,6 +48,10 @@
         },
         goToPage: function (direction) {
           if (direction === 'NEXT') {
+            if (this.$store.getters.getStepperInfo.currentStep === 3) {
+              writeNewProjectInfo(this.$store.getters.getProjectPath.path, this.$store.getters.getNewProject)
+              return
+            }
             this.$store.dispatch('goToNextPage')
           } else {
             if (this.$store.getters.getStepperInfo.currentStep === 1) {
@@ -77,6 +82,16 @@
           'getStepperInfo'
         ])
       }
+    }
+
+    function writeNewProjectInfo (path, projectInfo) {
+      fs.writeFile(path + '/main.json', JSON.stringify(projectInfo), (err) => {
+        if (err) {
+          console.log(err.message)
+        } else {
+          console.log('Success')
+        }
+      })
     }
 </script>
 

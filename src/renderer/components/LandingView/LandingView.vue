@@ -88,7 +88,7 @@
 
   ipcRenderer.on('saved-file-new-project', (event, path) => {
     if (!path) return
-    fs.writeFile(path, 'Test', (err) => {
+    createShuttleFileFolder(path, function (err) {
       if (err) {
         ipcRenderer.send('open-error-dialog-creating-project-file', err.message)
       } else {
@@ -118,6 +118,19 @@
         break
       }
     }
+  }
+
+  function createShuttleFileFolder (path, mask, cb) {
+    if (typeof mask === 'function') { // allow the `mask` parameter to be optional
+      cb = mask
+      mask = '0777'
+    }
+    fs.mkdir(path, mask, function (err) {
+      if (err) {
+        if (err.code === 'EEXIST') cb(null) // ignore the error if the folder already exists
+        else cb(err) // something else went wrong
+      } else cb(null) // successfully created folder
+    })
   }
 </script>
 
