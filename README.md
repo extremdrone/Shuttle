@@ -1,5 +1,7 @@
 # Shuttle
 
+[![Build Status](https://travis-ci.org/AppShuttleInc/Shuttle.svg?branch=master)](https://travis-ci.org/AppShuttleInc/Shuttle)
+
 
 ## Author
 
