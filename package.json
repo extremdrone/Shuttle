@@ -1,7 +1,7 @@
 {
   "name": "shuttle",
   "version": "0.0.1",
-  "author": "Juan David Cruz Serrano <juandavidcruzs@gmail.com>",
+  "author": "AppShuttle.io <david@appshuttle.io>",
   "description": "Easily create native mobile applications.",
   "license": "MIT",
   "main": "./dist/electron/main.js",
@@ -19,8 +19,8 @@
     "postinstall": "npm run lint:fix"
   },
   "build": {
-    "productName": "shuttle",
-    "appId": "org.simulatedgreg.electron-vue",
+    "productName": "Shuttle",
+    "appId": "io.appshuttle.shuttle",
     "directories": {
       "output": "build"
     },
@@ -50,7 +50,17 @@
     },
     "linux": {
       "icon": "build/icons"
-    }
+    },
+    "fileAssociations": [
+      {
+        "ext": "shuttle",
+        "name": "Shuttle Project",
+        "description": "File containing a Shuttle Project.",
+        "icon": "build/icons/Project.icns",
+        "role": "Editor",
+        "isPackage": true
+      }
+    ]
   },
   "dependencies": {
     "axios": "^0.16.1",
