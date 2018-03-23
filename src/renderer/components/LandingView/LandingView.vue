@@ -2,7 +2,7 @@
 <div>
   <!-- Header with logo and app name -->
   <div id="headerContainer" class="container">
-    <img class="centered" id="logo" src="~@/assets/logo.png" alt="electron-vue"/>
+    <img class="centered" id="logo" src="~@/assets/logo.png" alt="AppShuttle.io"/>
     <h1 id="appName"><strong>{{header.appName}}</strong></h1>
   </div>
 

@@ -33,6 +33,11 @@ export default new Router({
       ]
     },
     {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: require('@/components/DashboardView/DashboardView').default
+    },
+    {
       path: '*',
       redirect: '/'
     }

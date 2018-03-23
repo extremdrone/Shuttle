@@ -50,6 +50,7 @@
           if (direction === 'NEXT') {
             if (this.$store.getters.getStepperInfo.currentStep === 3) {
               writeNewProjectInfo(this.$store.getters.getProjectPath.path, this.$store.getters.getNewProject)
+              this.$router.replace('/dashboard')
               return
             }
             this.$store.dispatch('goToNextPage')
