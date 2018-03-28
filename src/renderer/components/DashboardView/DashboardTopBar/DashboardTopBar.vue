@@ -2,8 +2,6 @@
     <div>
         <header id="navbar" class="navbar">
             <section class="navbar-section">
-                <a href="#" class="btn btn-link">Docs</a>
-                <a href="#" class="btn btn-link">Examples</a>
             </section>
             <section class="navbar-center">
                 <img class="centered" id="logo" src="~@/assets/logo.png" alt="electron-vue"/>
