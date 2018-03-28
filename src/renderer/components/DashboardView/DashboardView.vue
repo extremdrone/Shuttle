@@ -2,54 +2,27 @@
     <div>
         <DashboardTopBar></DashboardTopBar>
         <div>
-            <div id="leftBar">
-            </div>
-            <div id="centerCanvas">
-            </div>
-            <div id="rightBar">
-            </div>
+            <DashboardLeftBar></DashboardLeftBar>
+            <DashboardCanvas></DashboardCanvas>
+            <DashboardRightBar></DashboardRightBar>
         </div>
     </div>
 </template>
 <script>
     import DashboardTopBar from './DashboardTopBar/DashboardTopBar.vue'
+    import DashboardLeftBar from './DashboardLeftBar/DashboardLeftBar.vue'
+    import DashboardRightBar from './DashboardRightBar/DashboardRightBar.vue'
+    import DashboardCanvas from './DashboardCanvas/DashboardCanvas.vue'
 
     export default {
       name: 'DashboardView',
       components: {
-        DashboardTopBar
+        DashboardTopBar,
+        DashboardLeftBar,
+        DashboardRightBar,
+        DashboardCanvas
       }
     }
 </script>
 <style scoped>
-    
-    #leftBar {
-        background-color: #ffffff;
-        position: absolute;
-        top: 80px;
-        left: 0px;
-        width: 250px;
-        bottom: 0px;
-        border-right: 1px solid #eaeaea;
-    }
-
-    #rightBar {
-        background-color: #ffffff;
-        position: absolute;
-        top: 80px;
-        right: 0px;
-        width: 250px;
-        bottom: 0px;
-        border-left: 1px solid #eaeaea;
-    }
-
-    #centerCanvas {
-        background-color: #f4f4f4;
-        position: absolute;
-        top: 80px;
-        left: 250px;
-        right: 250px;
-        bottom: 0px;
-    }
-
 </style>
