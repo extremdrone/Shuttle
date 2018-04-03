@@ -5,6 +5,14 @@
               <small><font-awesome-icon icon="sliders-h"/> Inspector</small>
               <div class="divider"></div>
             </div>
+            <div id="inspectorEmptyContent" class="column col-12">
+                <div class="empty" id="inspectorEmptyDiv">
+                    <div class="empty-icon">
+                        <font-awesome-icon :icon="['far', 'hand-pointer']"/>
+                    </div>
+                    <p class="empty-subtitle">Select a view or element first</p>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -31,6 +39,10 @@
     #viewSettingsContainer {
       padding-left: 20px;
       padding-top: 20px;
-      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    #inspectorEmptyDiv {
+        background-color: #ffffff;
     }
 </style>
