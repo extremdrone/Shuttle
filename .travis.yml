@@ -22,7 +22,8 @@ before_install:
 - mkdir -p /tmp/git-lfs && curl -L https://github.com/github/git-lfs/releases/download/v1.2.1/git-lfs-$([
   "$TRAVIS_OS_NAME" == "linux" ] && echo "linux" || echo "darwin")-amd64-1.2.1.tar.gz
   | tar -xz -C /tmp/git-lfs --strip-components 1 && /tmp/git-lfs/git-lfs pull
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install --no-install-recommends -y icnsutils graphicsmagick xz-utils; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install --no-install-recommends
+  -y icnsutils graphicsmagick xz-utils; fi
 install:
 - nvm install 7
 - curl -o- -L https://yarnpkg.com/install.sh | bash
@@ -34,3 +35,6 @@ script:
 branches:
   only:
   - master
+notifications:
+  slack:
+    secure: LABe1cya+x9aHkHEVsxFHpB09TeqAkkZtcYdvEipasNJ7mni+SxuRhmpCBDTHsA4AGHjQ7/9QaPwRrxlV+8lpU+B2o9iQENT7UMKLCiDm1jcenp1NEYve5PvIK/S+bvsAAnBqpFtEoGNpobRgbFgx9/MOLzHYCm/5lrlM5+GaBsGA3rfOdkqLGyGo+LTBE3sZY7L+8G/gc8EXsWv8Q2cQluX2mqbwVfcHRWKCgqjIdRbTjp4KFkxd4W2Ul9LHT907EdwDaPB5gvxi8GijMS8ZX3oyiKN/VzDz6rNmAS/EVPXn1LS+jQ+JQjf0tXqcZ81qRsA5IX0DCP75J1s0jeMYEEsO4/Fh9z3z1QYF3+Oa7WDJsLWrI5A387CS6qks8SV7ZHfUfthFfK51U2Ubmej/0WBuMzqU65TYsMkAZleWMgF/wzSl+7T1211wT0Q31r2DvBZXjCtpyZFaXm+b2X0ercdrIa+KFtPdnDgGBahJDvFKp1RJG5RkjCnpm9Zi2NWfjist3tf57b4j6bLuvmYUchHb1xJeyFbP3fnJzComliKScRZAlKwYeFsHc+ASFBXy9MUS7zM34VqM7E3VipxyQyQ450szgSuommV97+BNIrNJXVdfTstpKAIaBkEwFRTns7gaN0aDmrYyBEAvV5T9Gy+kustSXvkKy5o7TxqsSQ=
