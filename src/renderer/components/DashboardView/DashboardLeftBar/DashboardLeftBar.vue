@@ -2,7 +2,7 @@
     <div id="leftBar">
         <div class="columns">
             <div id="viewHierarchyContainer" class="column col-12">
-              <small>View Hierarchy</small>
+              <small><font-awesome-icon icon="sitemap"/> View Hierarchy</small>
               <div class="divider"></div>
               <div class="accordion">
                 <input type="checkbox" id="accordion-4" name="accordion-checkbox" hidden="" checked="">
@@ -57,8 +57,13 @@
     </div>
 </template>
 <script>
+    import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+
     export default {
-      name: 'DashboardLeftBar'
+      name: 'DashboardLeftBar',
+      components: {
+        FontAwesomeIcon
+      }
     }
 </script>
 <style scoped>
