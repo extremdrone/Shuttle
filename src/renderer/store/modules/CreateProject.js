@@ -146,6 +146,23 @@ const state = {
         }
       ]
     }
+  },
+  sampleProjectScreens: {
+    screenHome: {
+      id: 'homeScreen',
+      name: 'Home',
+      isInitialScreen: true,
+      style: {
+        backgroundColor: '#029FDD'
+      }
+    },
+    screenElements: {
+      id: 'elementsScreen',
+      name: 'Elements',
+      style: {
+        backgroundColor: '#ffffff'
+      }
+    }
   }
 }
 
@@ -233,6 +250,9 @@ const getters = {
   },
   getNewProject: function (state) {
     return state.newProject
+  },
+  getSampleProjectScreens: function (state) {
+    return state.sampleProjectScreens
   },
   isNewAppInformationComplete: function (state) {
     if ((state.newProject.appInformation.appName === undefined) || (state.newProject.appInformation.appName === '')) {
