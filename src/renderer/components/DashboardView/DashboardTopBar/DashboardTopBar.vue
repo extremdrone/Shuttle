@@ -10,8 +10,27 @@
                 <img class="centered" id="logo" src="~@/assets/logo.png" alt="electron-vue"/>
             </section>
             <section class="navbar-section">
+                <div class="dropdown">
+                    <a class="btn btn-link dropdown-toggle" tabindex="0"><font-awesome-icon icon="play"/><small> Run</small></a>
+                    <ul class="menu">
+                        <li class="menu-item">
+                        <a href="#dropdowns">
+                            Run iOS
+                        </a>
+                        </li>
+                        <li class="menu-item">
+                        <a href="#dropdowns">
+                            Run Android
+                        </a>
+                        </li>
+                        <li class="menu-item">
+                        <a href="#dropdowns">
+                            Run Both
+                        </a>
+                        </li>
+                    </ul>
+                </div>
                 <a href="#" class="btn btn-link tooltip tooltip-bottom" data-tooltip="Project Settings"><font-awesome-icon icon="wrench"/><small> Settings</small></a>
-                <a href="#" class="btn btn-link tooltip tooltip-bottom" data-tooltip="Run your app"><font-awesome-icon icon="play"/><small> Run</small></a>
                 <a href="#" class="btn btn-link tooltip tooltip-bottom" data-tooltip="Share your app"><font-awesome-icon icon="share-square"/><small> Share</small></a>
 
             </section>

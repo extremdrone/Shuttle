@@ -2,20 +2,20 @@
     <div id="leftBar">
         <div class="columns">
             <div id="viewHierarchyContainer" class="column col-12">
-              <small><font-awesome-icon icon="sitemap"/> View Hierarchy</small>
+              <small><font-awesome-icon icon="sitemap"/> Screens Hierarchy</small>
               <div class="divider"></div>
               <div class="accordion">
                 <input type="checkbox" id="accordion-4" name="accordion-checkbox" hidden="" checked="">
                 <label class="accordion-header c-hand" for="accordion-4">
-                  Elements
+                 <font-awesome-icon :icon="['far', 'square']"/> Home Screen
                 </label>
                 <div class="accordion-body">
                   <ul class="menu menu-nav">
                     <li class="menu-item">
-                      <a href="#accordions">Element 1</a>
+                      <a href="#accordions"><font-awesome-icon :icon="['far', 'image']"/> Logo Image</a>
                     </li>
                     <li class="menu-item">
-                      <a href="#accordions">Element 2</a>
+                      <a href="#accordions"><font-awesome-icon :icon="['fas', 'font']"/> Header Text</a>
                     </li>
                   </ul>
                 </div>
@@ -23,7 +23,7 @@
               <div class="accordion">
                 <input type="checkbox" id="accordion-5" name="accordion-checkbox" hidden="">
                 <label class="accordion-header c-hand" for="accordion-5">
-                  Layout
+                  <font-awesome-icon :icon="['far', 'square']"/> Account Screen
                 </label>
                 <div class="accordion-body">
                   <ul class="menu menu-nav">
@@ -39,7 +39,7 @@
               <div class="accordion">
                 <input type="checkbox" id="accordion-6" name="accordion-checkbox" hidden="">
                 <label class="accordion-header c-hand" for="accordion-6">
-                  Components
+                  <font-awesome-icon :icon="['far', 'square']"/> Settings Screen
                 </label>
                 <div class="accordion-body">
                   <ul class="menu menu-nav">
@@ -54,15 +54,21 @@
               </div>
             </div>
         </div>
+        <div id="viewElementsContainer">
+          <DashboardElementsView id="dashboardElementsView"></DashboardElementsView>
+        </div>
     </div>
 </template>
 <script>
     import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 
+    import DashboardElementsView from './DashboardElementsView/DashboardElementsView.vue'
+
     export default {
       name: 'DashboardLeftBar',
       components: {
-        FontAwesomeIcon
+        FontAwesomeIcon,
+        DashboardElementsView
       }
     }
 </script>
@@ -80,6 +86,14 @@
     #viewHierarchyContainer {
       padding-left: 20px;
       padding-top: 20px;
-      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    #dashboardElementsView {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      height: 350px;
     }
 </style>

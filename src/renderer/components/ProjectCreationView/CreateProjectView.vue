@@ -49,9 +49,21 @@
         goToPage: function (direction) {
           if (direction === 'NEXT') {
             if (this.$store.getters.getStepperInfo.currentStep === 3) {
-              writeNewProjectInfo(this.$store.getters.getProjectPath.path, this.$store.getters.getNewProject)
-              this.$router.replace('/dashboard')
-              return
+              const projectPath = this.$store.getters.getProjectPath.path
+              const newProjectJSON = this.$store.getters.getNewProject
+              const sampleProjectScreens = this.$store.getters.getSampleProjectScreens
+              const router = this.$router
+              writeNewProjectInfo(projectPath, newProjectJSON, function () {
+                generateHelloWorld(projectPath, sampleProjectScreens, function () {
+                  router.replace('/dashboard')
+                }, function (errorMessage) {
+                  // TODO: Present error modal and handle rollback
+                  console.log(errorMessage)
+                })
+              }, function (errorMessage) {
+                // TODO: Present error modal and handle rollback
+                console.log(errorMessage)
+              })
             }
             this.$store.dispatch('goToNextPage')
           } else {
@@ -85,13 +97,46 @@
       }
     }
 
-    function writeNewProjectInfo (path, projectInfo) {
-      fs.writeFile(path + '/main.json', JSON.stringify(projectInfo), (err) => {
-        if (err) {
-          console.log(err.message)
-        } else {
-          console.log('Success')
+    function writeNewProjectInfo (path, projectInfo, success, error) {
+      writeFileAsync(path + '/main.json', JSON.stringify(projectInfo)).then(function () {
+        success()
+      }).catch(function (errorMessage) {
+        error(errorMessage)
+      })
+    }
+
+    function generateHelloWorld (path, screens, success, error) {
+      var screensPathDir = path + '/screens'
+      if (!fs.existsSync(screensPathDir)) {
+        fs.mkdirSync(screensPathDir)
+      }
+
+      var screensPromises = []
+      for (let screenId in screens) {
+        let currentScreen = screens[screenId]
+        var currentScreenDir = screensPathDir + '/' + currentScreen.id
+        if (!fs.existsSync(currentScreenDir)) {
+          fs.mkdirSync(currentScreenDir)
         }
+        screensPromises.push(writeFileAsync(currentScreenDir + '/' + currentScreen.id + '.json', JSON.stringify(currentScreen)))
+      }
+
+      Promise.all(screensPromises).then(function (values) {
+        success()
+      }).catch(function (rejectMessage) {
+        error(rejectMessage)
+      })
+    }
+
+    function writeFileAsync (filePath, content) {
+      return new Promise((resolve, reject) => {
+        fs.writeFile(filePath, content, (err) => {
+          if (err) {
+            reject(err.message)
+          } else {
+            resolve()
+          }
+        })
       })
     }
 </script>
