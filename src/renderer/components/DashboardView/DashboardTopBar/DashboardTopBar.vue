@@ -7,7 +7,7 @@
                 <a href="#" class="btn btn-link tooltip tooltip-bottom" data-tooltip="Save your current project"><font-awesome-icon icon="save"/><small> Save</small></a>
             </section>
             <section class="navbar-center">
-                <img class="centered" id="logo" src="~@/assets/logo.png" alt="electron-vue"/>
+                <img class="centered unselectable" id="logo" src="~@/assets/logo.png" alt="Shuttle"/>
             </section>
             <section class="navbar-section">
                 <div class="dropdown">
