@@ -4,7 +4,7 @@ export default {
   methods: {
     loadProjectFromDisk: function (path, successBlock, errorBlock) {
       var screenPointersDir = path + '/screens/screens.js'
-      var promiseInformation = FileManagement.methods.readFileSync(path)
+      var promiseInformation = FileManagement.methods.readFileSync(path + '/main.json')
       var promiseScreenPointers = FileManagement.methods.readFileSync(screenPointersDir)
       Promise.all([promiseInformation, promiseScreenPointers]).then(function (values) {
         var projectInformation = JSON.parse(values[0])
