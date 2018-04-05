@@ -31,6 +31,7 @@
     import { mapGetters } from 'vuex'
     import FileManagement from '../../mixins/FileManagment/FileManagement'
     import ScreenManagement from '../../mixins/ScreenManagement/ScreenManagement'
+    import ProjectManagement from '../../mixins/ProjectManagement/ProjectManagement'
 
     export default {
       name: 'CreateProjectView',
@@ -55,9 +56,18 @@
               const newProjectJSON = this.$store.getters.getNewProject
               const sampleProjectScreens = this.$store.getters.getSampleProjectScreens
               const router = this.$router
+              const store = this.$store
               writeNewProjectInfo(projectPath, newProjectJSON, function () {
                 generateHelloWorld(projectPath, sampleProjectScreens, function () {
-                  router.replace('/dashboard')
+                  ProjectManagement.methods.loadProjectFromDisk(projectPath, function (projectInformation, screenPointers) {
+                    store.dispatch('resetCurrentProject')
+                    store.dispatch('setCurrentProjectInformation', projectInformation)
+                    store.dispatch('setCurrentProjectScreenPointers', screenPointers)
+                    router.replace('/dashboard')
+                  }, function (errorMessage) {
+                    // TODO: Present error modal and handle rollback
+                    console.log(errorMessage)
+                  })
                 }, function (errorMessage) {
                   // TODO: Present error modal and handle rollback
                   console.log(errorMessage)
@@ -111,7 +121,7 @@
     }
 
     function generateHelloWorld (path, screens, success, error) {
-      ScreenManagement.methods.createScreens(path, screens, function (promises) {
+      ScreenManagement.methods.saveScreens(path, screens, function (promises) {
         Promise.all(promises).then(function (values) {
           success()
         }).catch(function (rejectMessage) {

@@ -3,7 +3,7 @@ const fs = require('fs')
 
 export default {
   methods: {
-    createScreens: function (screensPath, screens, successBlock, errorBlock) {
+    saveScreens: function (screensPath, screens, successBlock, errorBlock) {
       var screensPathDir = screensPath + '/screens'
       if (!fs.existsSync(screensPathDir)) {
         fs.mkdirSync(screensPathDir)
