@@ -2,12 +2,12 @@
     <div id="leftBar">
         <div class="columns">
             <div id="viewHierarchyContainer" class="column col-12">
-              <small><font-awesome-icon icon="sitemap"/> Screens Hierarchy</small>
+              <small class="unselectable c-default"><font-awesome-icon icon="sitemap"/> Screens Hierarchy</small>
               <div class="divider"></div>
-              <div class="accordion">
-                <input type="checkbox" id="accordion-4" name="accordion-checkbox" hidden="" checked="">
-                <label class="accordion-header c-hand" for="accordion-4">
-                 <font-awesome-icon :icon="['far', 'square']"/> Home Screen
+              <div v-for="screen in getCurrentProjectScreenPointers" v-bind:key="screen" class="accordion">
+                <input type="checkbox" :id="screen.id + 'accordeon'" name="accordion-checkbox" hidden="" checked="">
+                <label class="accordion-header c-hand unselectable" :for="screen.id + 'accordeon'">
+                 <font-awesome-icon :icon="['far', 'square']"/> {{screen.name}}
                 </label>
                 <div class="accordion-body">
                   <ul class="menu menu-nav">
@@ -16,38 +16,6 @@
                     </li>
                     <li class="menu-item">
                       <a href="#accordions"><font-awesome-icon :icon="['fas', 'font']"/> Header Text</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="accordion">
-                <input type="checkbox" id="accordion-5" name="accordion-checkbox" hidden="">
-                <label class="accordion-header c-hand" for="accordion-5">
-                  <font-awesome-icon :icon="['far', 'square']"/> Account Screen
-                </label>
-                <div class="accordion-body">
-                  <ul class="menu menu-nav">
-                    <li class="menu-item">
-                      <a href="#accordions">Layout 1</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="#accordions">Layout 2</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="accordion">
-                <input type="checkbox" id="accordion-6" name="accordion-checkbox" hidden="">
-                <label class="accordion-header c-hand" for="accordion-6">
-                  <font-awesome-icon :icon="['far', 'square']"/> Settings Screen
-                </label>
-                <div class="accordion-body">
-                  <ul class="menu menu-nav">
-                    <li class="menu-item">
-                      <a href="#accordions">Component 1</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="#accordions">Component 2</a>
                     </li>
                   </ul>
                 </div>
@@ -61,6 +29,7 @@
 </template>
 <script>
     import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+    import { mapGetters } from 'vuex'
 
     import DashboardElementsView from './DashboardElementsView/DashboardElementsView.vue'
 
@@ -69,6 +38,11 @@
       components: {
         FontAwesomeIcon,
         DashboardElementsView
+      },
+      computed: {
+        ...mapGetters([
+          'getCurrentProjectScreenPointers'
+        ])
       }
     }
 </script>

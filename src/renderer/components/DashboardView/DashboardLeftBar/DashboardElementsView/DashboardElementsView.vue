@@ -2,7 +2,7 @@
   <div>
     <div id="elementsContainer" class="columns">
             <div class="column col-12">
-              <small><font-awesome-icon icon="toggle-on"/> Elements (Drag to add)</small>
+              <small class="unselectable c-default"><font-awesome-icon icon="toggle-on"/> Elements (Drag to add)</small>
               <div class="divider"></div>
             </div>
             <div id="elementsScroll">
@@ -10,8 +10,8 @@
               <div class="panel">
                 <div class="panel-header text-center">
                   <font-awesome-icon icon="image" size="m"/>
-                  <div class="panel-title"><a>{{ element.name }}</a></div>
-                  <div class="panel-subtitle"><small>{{ element.description }}</small></div>
+                  <div class="panel-title unselectable"><a>{{ element.name }}</a></div>
+                  <div class="panel-subtitle unselectable"><small>{{ element.description }}</small></div>
                 </div>
               </div>
             </div>

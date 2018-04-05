@@ -40,9 +40,6 @@ export default {
           reject(error)
         })
       })
-    },
-    setCurrentProject: function (information, screens, screenPointers, state) {
-      state.dispatch('setCurrentProject', information, screens, screenPointers)
     }
   }
 }

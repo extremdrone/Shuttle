@@ -2,7 +2,7 @@
     <div id="rightBar">
         <div class="columns">
             <div id="viewSettingsContainer" class="column col-12">
-              <small><font-awesome-icon icon="sliders-h"/> Inspector</small>
+              <small class="unselectable c-default"><font-awesome-icon icon="sliders-h"/> Inspector</small>
               <div class="divider"></div>
             </div>
             <div id="inspectorEmptyContent" class="column col-12">
@@ -10,7 +10,7 @@
                     <div class="empty-icon">
                         <font-awesome-icon :icon="['far', 'hand-pointer']"/>
                     </div>
-                    <p class="empty-subtitle">Select a view or element first</p>
+                    <p class="empty-subtitle unselectable c-default">Select a view or element first</p>
                 </div>
             </div>
         </div>

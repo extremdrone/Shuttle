@@ -26,4 +26,18 @@
         rgba(229, 229, 229, .9) 100%
       );
   }
+
+  .unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .c-default {
+    cursor: default;
+  }
+
 </style>
