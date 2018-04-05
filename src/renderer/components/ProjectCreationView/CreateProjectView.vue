@@ -29,7 +29,9 @@
 
 <script>
     import { mapGetters } from 'vuex'
-    const fs = require('fs')
+    import FileManagement from '../../mixins/FileManagment/FileManagement'
+    import ScreenManagement from '../../mixins/ScreenManagement/ScreenManagement'
+
     export default {
       name: 'CreateProjectView',
       methods: {
@@ -90,6 +92,9 @@
           }
         }
       },
+      mixins: [
+        FileManagement
+      ],
       computed: {
         ...mapGetters([
           'getStepperInfo'
@@ -98,7 +103,7 @@
     }
 
     function writeNewProjectInfo (path, projectInfo, success, error) {
-      writeFileAsync(path + '/main.json', JSON.stringify(projectInfo)).then(function () {
+      FileManagement.methods.writeFileSync(path + '/main.json', JSON.stringify(projectInfo)).then(function () {
         success()
       }).catch(function (errorMessage) {
         error(errorMessage)
@@ -106,37 +111,14 @@
     }
 
     function generateHelloWorld (path, screens, success, error) {
-      var screensPathDir = path + '/screens'
-      if (!fs.existsSync(screensPathDir)) {
-        fs.mkdirSync(screensPathDir)
-      }
-
-      var screensPromises = []
-      for (let screenId in screens) {
-        let currentScreen = screens[screenId]
-        var currentScreenDir = screensPathDir + '/' + currentScreen.id
-        if (!fs.existsSync(currentScreenDir)) {
-          fs.mkdirSync(currentScreenDir)
-        }
-        screensPromises.push(writeFileAsync(currentScreenDir + '/' + currentScreen.id + '.json', JSON.stringify(currentScreen)))
-      }
-
-      Promise.all(screensPromises).then(function (values) {
-        success()
-      }).catch(function (rejectMessage) {
-        error(rejectMessage)
-      })
-    }
-
-    function writeFileAsync (filePath, content) {
-      return new Promise((resolve, reject) => {
-        fs.writeFile(filePath, content, (err) => {
-          if (err) {
-            reject(err.message)
-          } else {
-            resolve()
-          }
+      ScreenManagement.methods.createScreens(path, screens, function (promises) {
+        Promise.all(promises).then(function (values) {
+          success()
+        }).catch(function (rejectMessage) {
+          error(rejectMessage)
         })
+      }, function (errorMessage) {
+        error(errorMessage)
       })
     }
 </script>
