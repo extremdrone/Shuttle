@@ -2,6 +2,10 @@
 
 import { app, BrowserWindow } from 'electron'
 
+const Datastore = require('nedb')
+var db = {}
+db.projects = new Datastore({ filename: app.getPath('userData') + '/projects.db', autoload: true, timestampData: true })
+
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -98,4 +102,33 @@ ipcMain.on('save-dialog-new-project', (event) => {
  */
 ipcMain.on('open-error-dialog-creating-project-file', function (event, args) {
   dialog.showErrorBox('Error Creating Shuttle', 'There was an error creating the shuttle file. ' + args)
+})
+
+/**
+ * Handle Database Methods
+ */
+ipcMain.on('getCurrentProjectPathFromDB', function (event, args) {
+  db.projects.find({ currentProject: { $exists: true } }, function (err, docs) {
+    if (!err) {
+      event.sender.send('sendCurrentProjectFromDB', docs)
+    } else {
+      event.sender.send('sendCurrentProjectErrorFromDB', err)
+    }
+  })
+})
+
+ipcMain.on('setCurrentProjectPathOnDB', function (event, project) {
+  const currentProjectJSON = {
+    currentProject: {
+      projectPath: project.path,
+      name: project.name
+    }
+  }
+  db.projects.insert(currentProjectJSON, function (err, newDoc) {
+    if (!err) {
+      event.sender.send('sendDidSetCurrentProjectFromDB', newDoc)
+    } else {
+      event.sender.send('sendSettingCurrentProjectErrorFromDB', err)
+    }
+  })
 })

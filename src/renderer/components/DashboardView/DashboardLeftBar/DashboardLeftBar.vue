@@ -4,7 +4,7 @@
             <div id="viewHierarchyContainer" class="column col-12">
               <small class="unselectable c-default"><font-awesome-icon icon="sitemap"/> Screens Hierarchy</small>
               <div class="divider"></div>
-              <div v-for="screen in getCurrentProjectScreenPointers" v-bind:key="screen" class="accordion">
+              <div v-for="screen in getCurrentProjectScreenPointers" v-bind:key="screen.id" class="accordion">
                 <input type="checkbox" :id="screen.id + 'accordeon'" name="accordion-checkbox" hidden="" checked="">
                 <label class="accordion-header c-hand unselectable" :for="screen.id + 'accordeon'">
                  <font-awesome-icon :icon="['far', 'square']"/> {{screen.name}}
@@ -41,7 +41,8 @@
       },
       computed: {
         ...mapGetters([
-          'getCurrentProjectScreenPointers'
+          'getCurrentProjectScreenPointers',
+          'getCurrentProjectScreen'
         ])
       }
     }

@@ -148,7 +148,7 @@ const state = {
     }
   },
   sampleProjectScreens: {
-    screenHome: {
+    homeScreen: {
       id: 'homeScreen',
       name: 'Home',
       isInitialScreen: true,
@@ -156,7 +156,7 @@ const state = {
         backgroundColor: '#029FDD'
       }
     },
-    screenElements: {
+    elementsScreen: {
       id: 'elementsScreen',
       name: 'Elements',
       style: {

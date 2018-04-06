@@ -31,7 +31,8 @@
     import { mapGetters } from 'vuex'
     import FileManagement from '../../mixins/FileManagment/FileManagement'
     import ScreenManagement from '../../mixins/ScreenManagement/ScreenManagement'
-    import ProjectManagement from '../../mixins/ProjectManagement/ProjectManagement'
+
+    const {ipcRenderer} = require('electron')
 
     export default {
       name: 'CreateProjectView',
@@ -56,17 +57,14 @@
               const newProjectJSON = this.$store.getters.getNewProject
               const sampleProjectScreens = this.$store.getters.getSampleProjectScreens
               const router = this.$router
-              const store = this.$store
               writeNewProjectInfo(projectPath, newProjectJSON, function () {
                 generateHelloWorld(projectPath, sampleProjectScreens, function () {
-                  ProjectManagement.methods.loadProjectFromDisk(projectPath, function (projectInformation, screenPointers) {
-                    store.dispatch('resetCurrentProject')
-                    store.dispatch('setCurrentProjectInformation', projectInformation)
-                    store.dispatch('setCurrentProjectScreenPointers', screenPointers)
+                  ipcRenderer.send('setCurrentProjectPathOnDB', {path: projectPath, name: newProjectJSON.appInformation.appName})
+                  ipcRenderer.on('sendDidSetCurrentProjectFromDB', (event, currentProject) => {
                     router.replace('/dashboard')
-                  }, function (errorMessage) {
-                    // TODO: Present error modal and handle rollback
-                    console.log(errorMessage)
+                  })
+                  ipcRenderer.on('sendSettingCurrentProjectErrorFromDB', (event, error) => {
+                    console.log(error)
                   })
                 }, function (errorMessage) {
                   // TODO: Present error modal and handle rollback

@@ -1,13 +1,13 @@
 const state = {
   currentProject: {},
-  currentScreen: undefined,
+  currentScreen: {},
   currentScreenPointers: []
 }
 
 const mutations = {
   RESET_CURRENT_PROJECT (state) {
     state.currentProject = {}
-    state.currentScreen = undefined
+    state.currentScreen = {}
     state.currentScreenPointers = []
   },
   SET_CURRENT_PROJECT (state, project, screen, screenPointers) {
