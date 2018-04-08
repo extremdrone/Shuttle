@@ -98,6 +98,17 @@ ipcMain.on('save-dialog-new-project', (event) => {
 })
 
 /**
+ * Open Shuttle File Dialog
+ */
+ipcMain.on('open-dialog-project', (event) => {
+  dialog.showOpenDialog({
+    properties: ['openFile', 'openDirectory']
+  }, function (files) {
+    if (files) event.sender.send('selected-directory', files)
+  })
+})
+
+/**
  * Error creating new project dialog
  */
 ipcMain.on('open-error-dialog-creating-project-file', function (event, args) {

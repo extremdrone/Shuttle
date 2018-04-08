@@ -21,7 +21,7 @@
                 <button class="btn btn-link">{{recentProjects.createProjectButtonText}}</button>
               </div>
               <div class="divider-vert"></div>
-              <div class="column c-hand">
+              <div v-on:click="openProject" class="column c-hand">
                 <div class="empty-icon">
                   <i class="icon icon-2x icon-share"></i>
                 </div>
@@ -53,6 +53,8 @@
   import router from '../../router'
   import store from '../../store'
 
+  import ProjectManagement from '../../mixins/ProjectManagement/ProjectManagement'
+
   const {ipcRenderer} = require('electron')
   const fs = require('fs')
   const {app} = require('electron').remote
@@ -80,6 +82,9 @@
       createProject: function () {
         ipcRenderer.send('save-dialog-new-project')
       },
+      openProject: function () {
+        ipcRenderer.send('open-dialog-project')
+      },
       goToLegalDocument: function (legalDocumentType) {
         handleOpenLegalDocument(legalDocumentType)
       }
@@ -97,6 +102,18 @@
         })
         router.replace('/createProject/newAppInformation')
       }
+    })
+  })
+
+  ipcRenderer.on('selected-directory', function (event, path) {
+    ProjectManagement.methods.loadProjectFromDisk(path, function (projectInformation, screenPointers, firstScreen) {
+      ipcRenderer.send('setCurrentProjectPathOnDB', {path: path, name: projectInformation.appInformation.appName})
+      ipcRenderer.on('sendDidSetCurrentProjectFromDB', (event, currentProject) => {
+        router.replace('/dashboard')
+      })
+      ipcRenderer.on('sendSettingCurrentProjectErrorFromDB', (event, error) => {
+        console.log(error)
+      })
     })
   })
 
