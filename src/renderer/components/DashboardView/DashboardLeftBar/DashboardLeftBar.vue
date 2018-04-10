@@ -5,17 +5,14 @@
               <small class="unselectable c-default"><font-awesome-icon icon="sitemap"/> Screens Hierarchy</small>
               <div class="divider"></div>
               <div v-for="screen in getCurrentProjectScreenPointers" v-bind:key="screen.id" class="accordion">
-                <input type="checkbox" :id="screen.id + 'accordeon'" name="accordion-checkbox" hidden="" checked="">
+                <input type="checkbox" :id="screen.id + 'accordeon'" name="accordion-checkbox" hidden="" :checked="screen.id == getCurrentProjectScreen.id">
                 <label class="accordion-header c-hand unselectable" :for="screen.id + 'accordeon'">
                  <font-awesome-icon :icon="['far', 'square']"/> {{screen.name}}
                 </label>
                 <div class="accordion-body">
                   <ul class="menu menu-nav">
-                    <li class="menu-item">
-                      <a href="#accordions"><font-awesome-icon :icon="['far', 'image']"/> Logo Image</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="#accordions"><font-awesome-icon :icon="['fas', 'font']"/> Header Text</a>
+                    <li class="menu-item" v-for="element in getCurrentProjectScreen.elements" v-bind:key="element.id">
+                      <a v-on:click="setSelectedElement(element.id)" href="#accordions">- <font-awesome-icon :icon="['far', 'image']"/> {{ element.id }}</a>
                     </li>
                   </ul>
                 </div>
@@ -44,6 +41,13 @@
           'getCurrentProjectScreenPointers',
           'getCurrentProjectScreen'
         ])
+      },
+      methods: {
+        setSelectedElement: function (elementID) {
+          this.$store.dispatch('setSelectedElementID', {
+            elementID
+          })
+        }
       }
     }
 </script>

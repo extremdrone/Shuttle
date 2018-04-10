@@ -160,15 +160,15 @@ const state = {
           id: 'idButton1',
           frame: {
             x: {
-              value: 0.25,
+              value: 0.05,
               scale: 'PERCENTAGE'
             },
             y: {
-              value: 0.75,
+              value: 0.90,
               scale: 'PERCENTAGE'
             },
             width: {
-              value: 0.5,
+              value: 0.9,
               scale: 'PERCENTAGE'
             },
             height: {
