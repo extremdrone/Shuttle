@@ -154,6 +154,37 @@ const state = {
       isInitialScreen: true,
       style: {
         backgroundColor: '#029FDD'
+      },
+      elements: {
+        idButton1: {
+          id: 'idButton1',
+          frame: {
+            x: {
+              value: 0.25,
+              scale: 'PERCENTAGE'
+            },
+            y: {
+              value: 0.75,
+              scale: 'PERCENTAGE'
+            },
+            width: {
+              value: 0.5,
+              scale: 'PERCENTAGE'
+            },
+            height: {
+              value: 44,
+              scale: 'EXACT'
+            }
+          },
+          view: {
+            backgroundColor: '#029FDD'
+          },
+          title: {
+            text: 'View Examples',
+            textColor: '#FFFFFF',
+            textSize: 15
+          }
+        }
       }
     },
     elementsScreen: {

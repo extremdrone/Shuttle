@@ -5,6 +5,10 @@
   "description": "Easily create native mobile applications.",
   "license": "MIT",
   "main": "./dist/electron/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AppShuttleInc/Shuttle.git"
+  },
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
@@ -63,7 +67,8 @@
     ]
   },
   "dependencies": {
-    "@appshuttle.io/pollock": "0.0.2",
+    "@appshuttle.io/pollock": "0.0.8",
+    "@appshuttle.io/turing": "0.0.1",
     "@fortawesome/fontawesome": "^1.1.5",
     "@fortawesome/fontawesome-free-brands": "^5.0.9",
     "@fortawesome/fontawesome-free-regular": "^5.0.9",

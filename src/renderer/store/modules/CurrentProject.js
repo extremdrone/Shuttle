@@ -37,7 +37,7 @@ const actions = {
     commit('SET_CURRENT_PROJECT_INFORMATION', project)
   },
   setCurrentProjectScreen ({ commit }, screen) {
-    commit('SET_CURRENT_PROJECT_SCREEN')
+    commit('SET_CURRENT_PROJECT_SCREEN', screen)
   },
   setCurrentProjectScreenPointers ({ commit }, screenPointers) {
     commit('SET_CURRENT_PROJECT_SCREEN_POINTERS', screenPointers)

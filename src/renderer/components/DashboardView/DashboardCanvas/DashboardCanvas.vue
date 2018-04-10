@@ -20,17 +20,16 @@
         ])
       },
       mounted () {
-        setUpCanvas('processingArea')
+        const store = this.$store
+        const pollockConfig = {
+          width: 375,
+          height: 667,
+          canvasBackgroundColor: 255
+        }
+        return new Pollock('processingArea', pollockConfig, function () {
+          return store.getters.getCurrentProjectScreen
+        })
       }
-    }
-
-    function setUpCanvas (canvasViewId) {
-      const pollockConfig = {
-        width: 375,
-        height: 667,
-        canvasBackgroundColor: 255
-      }
-      return new Pollock(canvasViewId, pollockConfig)
     }
 </script>
 <style scoped>
