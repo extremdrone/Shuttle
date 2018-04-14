@@ -167,6 +167,7 @@ const state = {
         idButton1: {
           id: 'idButton1',
           type: 'BUTTON',
+          index: 0,
           frame: {
             x: {
               value: 0.05,
@@ -213,6 +214,7 @@ const state = {
         idLabel1: {
           id: 'idLabel1',
           type: 'LABEL',
+          index: 1,
           frame: {
             x: {
               value: 0.05,
