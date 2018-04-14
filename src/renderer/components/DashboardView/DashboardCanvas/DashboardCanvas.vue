@@ -23,11 +23,14 @@
         const store = this.$store
         const pollockConfig = {
           width: 375,
-          height: 667,
-          canvasBackgroundColor: 255
+          height: 667
         }
         return new Pollock('processingArea', pollockConfig, function () {
           return store.getters.getCurrentProjectScreen
+        }, function (selectedElement) {
+          console.log(selectedElement)
+        }, function (modifiedContent) {
+          store.dispatch('setCurrentProjectScreen', modifiedContent)
         })
       }
     }

@@ -26,6 +26,15 @@ const state = {
 const getters = {
   getAvailableElements: function (state) {
     return state.elements
+  },
+  getAvailableElementsAsArray: function (state) {
+    var elementsAsArray = []
+    for (const elementKey in state.elements) {
+      if (state.elements.hasOwnProperty(elementKey)) {
+        elementsAsArray.push(state.elements[elementKey])
+      }
+    }
+    return elementsAsArray
   }
 }
 

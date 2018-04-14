@@ -153,11 +153,20 @@ const state = {
       name: 'Home',
       isInitialScreen: true,
       style: {
-        backgroundColor: '#029FDD'
+        backgroundColor: {
+          hsl: { h: 0, s: 0, l: 1, a: 1 },
+          hex: '#FFFFFF',
+          rgba: { r: 255, g: 255, b: 255, a: 1 },
+          hsv: { h: 0, s: 0, v: 1, a: 1 },
+          oldHue: 0,
+          source: 'hex',
+          a: 1
+        }
       },
       elements: {
         idButton1: {
           id: 'idButton1',
+          type: 'BUTTON',
           frame: {
             x: {
               value: 0.05,
@@ -177,12 +186,74 @@ const state = {
             }
           },
           view: {
-            backgroundColor: '#029FDD'
+            backgroundColor: {
+              hsl: { h: 196.98630136986304, s: 0.9820627802690584, l: 0.4372549019607843, a: 1 },
+              hex: '#029FDD',
+              rgba: { r: 2, g: 159, b: 221, a: 1 },
+              hsv: { h: 196.98630136986304, s: 0.9909502262443439, v: 0.8666666666666667, a: 1 },
+              oldHue: 196.98630136986304,
+              source: 'hex',
+              a: 1
+            }
           },
           title: {
             text: 'View Examples',
-            textColor: '#FFFFFF',
+            textColor: {
+              hsl: { h: 0, s: 0, l: 1, a: 1 },
+              hex: '#FFFFFF',
+              rgba: { r: 255, g: 255, b: 255, a: 1 },
+              hsv: { h: 0, s: 0, v: 1, a: 1 },
+              oldHue: 0,
+              source: 'hex',
+              a: 1
+            },
             textSize: 15
+          }
+        },
+        idLabel1: {
+          id: 'idLabel1',
+          type: 'LABEL',
+          frame: {
+            x: {
+              value: 0.05,
+              scale: 'PERCENTAGE'
+            },
+            y: {
+              value: 84,
+              scale: 'EXACT'
+            },
+            width: {
+              value: 0.9,
+              scale: 'PERCENTAGE'
+            },
+            height: {
+              value: 44,
+              scale: 'EXACT'
+            }
+          },
+          view: {
+            backgroundColor: {
+              hsl: { h: 0, s: 0, l: 1, a: 1 },
+              hex: '#FFFFFF',
+              rgba: { r: 255, g: 255, b: 255, a: 1 },
+              hsv: { h: 0, s: 0, v: 1, a: 1 },
+              oldHue: 0,
+              source: 'hex',
+              a: 1
+            }
+          },
+          title: {
+            text: 'View Examples',
+            textColor: {
+              hsl: { h: 196.98630136986304, s: 0.9820627802690584, l: 0.4372549019607843, a: 1 },
+              hex: '#029FDD',
+              rgba: { r: 2, g: 159, b: 221, a: 1 },
+              hsv: { h: 196.98630136986304, s: 0.9909502262443439, v: 0.8666666666666667, a: 1 },
+              oldHue: 196.98630136986304,
+              source: 'hex',
+              a: 1
+            },
+            textSize: 18
           }
         }
       }
@@ -191,7 +262,15 @@ const state = {
       id: 'elementsScreen',
       name: 'Elements',
       style: {
-        backgroundColor: '#ffffff'
+        backgroundColor: {
+          hsl: { h: 0, s: 0, l: 1, a: 1 },
+          hex: '#FFFFFF',
+          rgba: { r: 255, g: 255, b: 255, a: 1 },
+          hsv: { h: 0, s: 0, v: 1, a: 1 },
+          oldHue: 0,
+          source: 'hex',
+          a: 1
+        }
       }
     }
   }

@@ -6,15 +6,17 @@
               <div class="divider"></div>
             </div>
             <div id="elementsScroll">
-            <div v-for="element in getAvailableElements" v-bind:key="element.type" class="column col-12 c-move element-row">
-              <div class="panel">
-                <div class="panel-header text-center">
-                  <font-awesome-icon icon="image" size="m"/>
-                  <div class="panel-title unselectable"><a>{{ element.name }}</a></div>
-                  <div class="panel-subtitle unselectable"><small>{{ element.description }}</small></div>
+            <draggable v-model="getAvailableElementsAsArray" :options="{group:'Elements'}">
+              <div v-for="element in getAvailableElements" v-bind:key="element.type" class="column col-12 c-move element-row">
+                <div class="panel">
+                  <div class="panel-header text-center">
+                    <font-awesome-icon icon="image" size="m"/>
+                    <div class="panel-title unselectable"><a>{{ element.name }}</a></div>
+                    <div class="panel-subtitle unselectable"><small>{{ element.description }}</small></div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </draggable>
            </div>
     </div>
   </div>
@@ -22,15 +24,18 @@
 <script>
     import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
     import { mapGetters } from 'vuex'
+    import draggable from 'vuedraggable'
 
     export default {
       name: 'DashboardElementsView',
       components: {
-        FontAwesomeIcon
+        FontAwesomeIcon,
+        draggable
       },
       computed: {
         ...mapGetters([
-          'getAvailableElements'
+          'getAvailableElements',
+          'getAvailableElementsAsArray'
         ])
       }
     }

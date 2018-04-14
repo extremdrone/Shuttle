@@ -11,9 +11,11 @@
                 </label>
                 <div class="accordion-body">
                   <ul class="menu menu-nav">
-                    <li class="menu-item" v-for="element in getCurrentProjectScreen.elements" v-bind:key="element.id">
-                      <a v-on:click="setSelectedElement(element.id)" href="#accordions">- <font-awesome-icon :icon="['far', 'image']"/> {{ element.id }}</a>
-                    </li>
+                    <draggable v-model="getCurrentProjectElementsAsArray" :options="{group:'Elements'}">
+                      <li class="menu-item" v-for="element in getCurrentProjectScreen.elements" v-bind:key="element.id">
+                        <a v-on:click="setSelectedElement(element.id)" href="#accordions">- <font-awesome-icon :icon="['far', 'image']"/> {{ element.id }}</a>
+                      </li>
+                    </draggable>
                   </ul>
                 </div>
               </div>
@@ -27,6 +29,7 @@
 <script>
     import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
     import { mapGetters } from 'vuex'
+    import draggable from 'vuedraggable'
 
     import DashboardElementsView from './DashboardElementsView/DashboardElementsView.vue'
 
@@ -34,12 +37,14 @@
       name: 'DashboardLeftBar',
       components: {
         FontAwesomeIcon,
-        DashboardElementsView
+        DashboardElementsView,
+        draggable
       },
       computed: {
         ...mapGetters([
           'getCurrentProjectScreenPointers',
-          'getCurrentProjectScreen'
+          'getCurrentProjectScreen',
+          'getCurrentProjectElementsAsArray'
         ])
       },
       methods: {

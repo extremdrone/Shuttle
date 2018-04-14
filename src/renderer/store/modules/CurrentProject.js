@@ -28,6 +28,9 @@ const mutations = {
   },
   SET_CURRENT_ELEMENT_ID (state, elementID) {
     state.currentElementID = elementID
+  },
+  SET_CURRENT_ELEMENT_CONTENT (state, elementJSON) {
+    state.currentScreen.elements[elementJSON.id] = elementJSON
   }
 }
 
@@ -58,6 +61,15 @@ const getters = {
   },
   getCurrentProjectScreen: function (state) {
     return state.currentScreen
+  },
+  getCurrentProjectElementsAsArray: function (state) {
+    var elementsAsArray = []
+    for (const elementKey in state.currentScreen.elements) {
+      if (state.currentScreen.elements.hasOwnProperty(elementKey)) {
+        elementsAsArray.push(state.currentScreen.elements[elementKey])
+      }
+    }
+    return elementsAsArray
   },
   getCurrentProjectScreenPointers: function (state) {
     return state.currentScreenPointers
