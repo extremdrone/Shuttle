@@ -245,7 +245,7 @@ const state = {
             }
           },
           title: {
-            text: 'View Examples',
+            text: 'Welcome to Shuttle! 🚀',
             textColor: {
               hsl: { h: 196.98630136986304, s: 0.9820627802690584, l: 0.4372549019607843, a: 1 },
               hex: '#029FDD',
