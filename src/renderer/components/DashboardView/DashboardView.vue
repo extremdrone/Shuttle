@@ -38,6 +38,7 @@
             const projectPath = currentProjects[0].currentProject.projectPath
             ProjectManagement.methods.loadProjectFromDisk(projectPath, function (projectInformation, screenPointers, firstScreen) {
               store.dispatch('resetCurrentProject')
+              store.dispatch('setCurrentProjectPath', projectPath)
               store.dispatch('setCurrentProjectInformation', projectInformation)
               store.dispatch('setCurrentProjectScreenPointers', screenPointers)
               store.dispatch('setCurrentProjectScreen', firstScreen)

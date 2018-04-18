@@ -1,5 +1,6 @@
 const state = {
   currentProject: {},
+  currentProjectPath: '',
   currentScreen: {},
   currentElementID: '',
   currentScreenPointers: []
@@ -11,11 +12,15 @@ const mutations = {
     state.currentScreen = {}
     state.currentScreenPointers = []
     state.currentElementID = ''
+    state.currentProjectPath = ''
   },
   SET_CURRENT_PROJECT (state, project, screen, screenPointers) {
     state.currentProject = project
     state.currentScreen = screen
     state.currentScreenPointers = screenPointers
+  },
+  SET_CURRENT_PROJECT_PATH (state, path) {
+    state.currentProjectPath = path
   },
   SET_CURRENT_PROJECT_INFORMATION (state, project) {
     state.currentProject = project
@@ -41,6 +46,9 @@ const actions = {
   setCurrentProject ({ commit }, project, screen, screenPointers) {
     commit('SET_CURRENT_PROJECT', project, screen, screenPointers)
   },
+  setCurrentProjectPath ({ commit }, path) {
+    commit('SET_CURRENT_PROJECT_PATH', path)
+  },
   setCurrentProjectInformation ({ commit }, project) {
     commit('SET_CURRENT_PROJECT_INFORMATION', project)
   },
@@ -56,6 +64,9 @@ const actions = {
 }
 
 const getters = {
+  getCurrentProjectPath: function (state) {
+    return state.currentProjectPath
+  },
   getCurrentProjectInformation: function (state) {
     return state.currentProject
   },

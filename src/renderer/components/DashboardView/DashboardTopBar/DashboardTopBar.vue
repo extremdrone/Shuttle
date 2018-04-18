@@ -14,17 +14,17 @@
                     <a class="btn btn-link dropdown-toggle" tabindex="0"><font-awesome-icon icon="play"/><small> Run</small></a>
                     <ul class="menu">
                         <li class="menu-item">
-                        <a href="#dropdowns">
+                        <a @click="run(['IOS'])" href="#dropdowns">
                             Run iOS
                         </a>
                         </li>
                         <li class="menu-item">
-                        <a href="#dropdowns">
+                        <a @click="run(['ANDROID'])" href="#dropdowns">
                             Run Android
                         </a>
                         </li>
                         <li class="menu-item">
-                        <a href="#dropdowns">
+                        <a @click="run(['IOS', 'ANDROID'])" href="#dropdowns">
                             Run Both
                         </a>
                         </li>
@@ -39,12 +39,28 @@
     </div>
 </template>
 <script>
+    import { mapGetters } from 'vuex'
     import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+    import Turing from '@appshuttle.io/turing'
 
     export default {
       name: 'DashboardTopBar',
       components: {
         FontAwesomeIcon
+      },
+      computed: {
+        ...mapGetters([
+          'getCurrentProjectPath'
+        ])
+      },
+      methods: {
+        run: function (platforms) {
+          const params = {
+            platforms: platforms
+          }
+          const turing = new Turing(this.$store.getters.getCurrentProjectPath, params)
+          turing.buildPlatforms()
+        }
       }
     }
 </script>

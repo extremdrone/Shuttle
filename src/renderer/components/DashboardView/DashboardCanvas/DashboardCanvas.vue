@@ -28,6 +28,9 @@
         return new Pollock('processingArea', pollockConfig, function () {
           return store.getters.getCurrentProjectScreen
         }, function (selectedElement) {
+          store.dispatch('setSelectedElementID', {
+            elementID: selectedElement.id
+          })
           console.log(selectedElement)
         }, function (modifiedContent) {
           store.dispatch('setCurrentProjectScreen', modifiedContent)
