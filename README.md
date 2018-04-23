@@ -1,6 +1,7 @@
 # Shuttle
 
-[![Build Status](https://travis-ci.org/AppShuttleInc/Shuttle.svg?branch=master)](https://travis-ci.org/AppShuttleInc/Shuttle) [![npm](https://img.shields.io/npm/l/@appshuttle.io/bell.svg?style=flat-square)](LICENSE)
+[![Build Status](https://travis-ci.org/AppShuttleInc/Shuttle.svg?branch=master)](https://travis-ci.org/AppShuttleInc/Shuttle) 
+![GitHub package version](https://img.shields.io/github/package-json/v/badges/shields.svg?style=for-the-badge)
 
 
 ## Author
