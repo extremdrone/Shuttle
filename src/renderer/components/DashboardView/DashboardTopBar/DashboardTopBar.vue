@@ -55,11 +55,17 @@
       },
       methods: {
         run: function (platforms) {
-          const params = {
-            platforms: platforms
-          }
-          const turing = new Turing(this.$store.getters.getCurrentProjectPath, params)
-          turing.buildPlatforms()
+          const turing = new Turing(
+            this.$store.getters.getCurrentProjectPath,
+            this.$store.getters.getCurrentProjectInformation,
+            this.$store.getters.getCurrentProjectScreenPointers,
+            []
+          )
+          turing.generatePlatforms(function () {
+            console.log('Success')
+          }, function (error) {
+            console.log(error)
+          })
         }
       }
     }
