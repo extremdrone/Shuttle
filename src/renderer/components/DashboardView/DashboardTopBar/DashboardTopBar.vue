@@ -42,6 +42,7 @@
     import { mapGetters } from 'vuex'
     import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
     import Turing from '@appshuttle.io/turing'
+    import Bell from '@appshuttle.io/bell'
 
     export default {
       name: 'DashboardTopBar',
@@ -62,7 +63,19 @@
             []
           )
           turing.generatePlatforms(function () {
-            console.log('Success')
+            const bell = new Bell({
+              android: {
+                buildPath: 'C:/Users/danie/Dropbox/Trabajo/MSA/MSAAndroid/MatchReportTool/app/build/outputs/apk/debug/app-debug.apk',
+                appBundleId: 'com.mysportarena.matchreporttool',
+                deviceStringID: 'Imagen_Moviles'
+              },
+              ios: {
+                buildPath: '/Users/david/Library/Developer/Xcode/DerivedData/-APPNAME--gqvuzazsddvpdefwjofzywdgwhvv/Build/Products/Debug-iphonesimulator/-APPNAME-.app',
+                appBundleId: '-EXTENSION-.-DOMAIN-.-APPNAME-',
+                deviceStringID: 'iPhone X (11.3) [A5CFCCD7-C71B-4B7C-A514-FA89F5A27475] (Simulator)'
+              }
+            })
+            bell.run()
           }, function (error) {
             console.log(error)
           })
