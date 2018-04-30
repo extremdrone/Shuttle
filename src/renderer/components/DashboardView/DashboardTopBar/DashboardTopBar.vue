@@ -4,7 +4,7 @@
             <section class="navbar-section">
                 <a href="#" class="btn btn-link tooltip tooltip-bottom" data-tooltip="Go back one step"><font-awesome-icon icon="undo"/><small> Undo</small></a>
                 <a href="#" class="btn btn-link tooltip tooltip-bottom" data-tooltip="Go one step further"><font-awesome-icon icon="redo"/><small> Redo</small></a>
-                <a href="#" class="btn btn-link tooltip tooltip-bottom" data-tooltip="Save your current project"><font-awesome-icon icon="save"/><small> Save</small></a>
+                <a @click="save()" class="btn btn-link tooltip tooltip-bottom" data-tooltip="Save your current project"><font-awesome-icon icon="save"/><small> Save</small></a>
             </section>
             <section class="navbar-center">
                 <img class="centered unselectable" id="logo" src="~@/assets/logo.png" alt="Shuttle"/>
@@ -39,6 +39,7 @@
     </div>
 </template>
 <script>
+    import ProjectManagement from '../../../mixins/ProjectManagement/ProjectManagement'
     import { mapGetters } from 'vuex'
     import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
     import Turing from '@appshuttle.io/turing'
@@ -54,6 +55,9 @@
           'getCurrentProjectPath'
         ])
       },
+      mixins: [
+        ProjectManagement
+      ],
       methods: {
         run: function (platforms) {
           const turing = new Turing(
@@ -77,6 +81,19 @@
             })
             bell.run()
           }, function (error) {
+            console.log(error)
+          })
+        },
+        save: function () {
+          const currentScreen = this.$store.getters.getCurrentProjectScreen
+          const currentScreenId = this.$store.getters.getCurrentProjectScreen.id
+          console.log(currentScreenId)
+          var screensToSave = {
+            currentScreenId: currentScreen
+          }
+          ProjectManagement.methods.saveProjectToFile(this.$store.getters.getCurrentProjectPath, screensToSave).then(function () {
+            console.log('Saved')
+          }).catch(function (error) {
             console.log(error)
           })
         }

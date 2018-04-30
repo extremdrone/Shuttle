@@ -21,8 +21,8 @@ export default {
         for (let screenId in screens) {
           let currentScreen = screens[screenId]
           var currentScreenDir = screensPathDir + '/' + currentScreen.id
-          if (!checkIfScreenIsAdded(screenId, screensObject)) {
-            screensObject.push({id: screenId, name: currentScreen.name})
+          if (!checkIfScreenIsAdded(currentScreen.id, screensObject)) {
+            screensObject.push({id: currentScreen.id, name: currentScreen.name})
           }
           if (!fs.existsSync(currentScreenDir)) {
             fs.mkdirSync(currentScreenDir)

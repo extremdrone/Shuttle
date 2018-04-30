@@ -2,6 +2,7 @@ const state = {
   currentProject: {},
   currentProjectPath: '',
   currentScreen: {},
+  currentScreenID: {},
   currentElementID: '',
   currentScreenPointers: []
 }
@@ -16,7 +17,8 @@ const mutations = {
   },
   SET_CURRENT_PROJECT (state, project, screen, screenPointers) {
     state.currentProject = project
-    state.currentScreen = screen
+    state.currentScreenID = screen.id
+    state.currentScreen[state.currentScreenID] = screen
     state.currentScreenPointers = screenPointers
   },
   SET_CURRENT_PROJECT_PATH (state, path) {
@@ -26,7 +28,8 @@ const mutations = {
     state.currentProject = project
   },
   SET_CURRENT_PROJECT_SCREEN (state, screen) {
-    state.currentScreen = screen
+    state.currentScreenID = screen.id
+    state.currentScreen[screen.id] = screen
   },
   SET_CURRENT_PROJECT_SCREEN_POINTERS (state, screenPointers) {
     state.currentScreenPointers = screenPointers
@@ -35,7 +38,7 @@ const mutations = {
     state.currentElementID = elementID
   },
   SET_CURRENT_ELEMENT_CONTENT (state, elementJSON) {
-    state.currentScreen.elements[elementJSON.id] = elementJSON
+    state.currentScreen[state.currentScreenID].elements[elementJSON.id] = elementJSON
   }
 }
 
@@ -70,14 +73,17 @@ const getters = {
   getCurrentProjectInformation: function (state) {
     return state.currentProject
   },
+  getCurrentScreenID: function (state) {
+    return state.currentScreenID
+  },
   getCurrentProjectScreen: function (state) {
-    return state.currentScreen
+    return state.currentScreen[state.currentScreenID]
   },
   getCurrentProjectElementsAsArray: function (state) {
     var elementsAsArray = []
-    for (const elementKey in state.currentScreen.elements) {
-      if (state.currentScreen.elements.hasOwnProperty(elementKey)) {
-        elementsAsArray.push(state.currentScreen.elements[elementKey])
+    for (const elementKey in state.currentScreen[state.currentScreenID].elements) {
+      if (state.currentScreen[state.currentScreenID].elements.hasOwnProperty(elementKey)) {
+        elementsAsArray.push(state.currentScreen[state.currentScreenID].elements[elementKey])
       }
     }
     return elementsAsArray
