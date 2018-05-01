@@ -87,10 +87,8 @@
         save: function () {
           const currentScreen = this.$store.getters.getCurrentProjectScreen
           const currentScreenId = this.$store.getters.getCurrentProjectScreen.id
-          console.log(currentScreenId)
-          var screensToSave = {
-            currentScreenId: currentScreen
-          }
+          var screensToSave = {}
+          screensToSave[currentScreenId] = currentScreen
           ProjectManagement.methods.saveProjectToFile(this.$store.getters.getCurrentProjectPath, screensToSave).then(function () {
             console.log('Saved')
           }).catch(function (error) {

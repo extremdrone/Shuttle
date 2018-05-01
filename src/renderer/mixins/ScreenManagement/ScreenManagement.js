@@ -46,6 +46,15 @@ export default {
         }
         return false
       }
+    },
+    screenWithNewElement: function (element, projectPath, screen) {
+      return new Promise((resolve, reject) => {
+        var newScreen = screen
+        console.log(element)
+        console.log(projectPath)
+        console.log(screen)
+        resolve(newScreen)
+      })
     }
   }
 }
