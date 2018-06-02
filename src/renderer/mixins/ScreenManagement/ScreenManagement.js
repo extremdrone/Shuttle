@@ -50,9 +50,7 @@ export default {
     screenWithNewElement: function (element, projectPath, screen) {
       return new Promise((resolve, reject) => {
         var newScreen = screen
-        console.log(element)
-        console.log(projectPath)
-        console.log(screen)
+        screen.elements[element.id] = element
         resolve(newScreen)
       })
     }

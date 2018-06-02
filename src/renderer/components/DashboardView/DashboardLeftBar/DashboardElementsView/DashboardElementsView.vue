@@ -18,7 +18,7 @@
                   </div>
                   </div>
                   </div>
-                  <div @click="showElementIdModal(true)" class="column col-2 c-add">
+                  <div @click="showElementIdModal(true, element)" class="column col-2 c-add">
                     <font-awesome-icon icon="plus-square" class="addButton"/>
                   </div>
                 </div>
@@ -40,13 +40,13 @@
                         <label class="form-label" for="input-example-7">Element Name</label>
                         <input :value="this.getNewElement.newElementName" @input="updatedNewElementName" class="form-input" type="text" id="input-example-7" placeholder="Button Close 1">
                         <div class="divider"></div>
-                        <p class="elementIDLabel">Element ID: {{this.getNewElement.filteredID}}</p>
+                        <!-- <p class="elementIDLabel">Element ID: {{this.getNewElement.filteredID}}</p> -->
                       </div>
                     </form>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button class="btn btn-primary">Create</button>
+                  <button @click="addElementClick()" class="btn btn-primary">Create</button>
                   <a @click="showElementIdModal(false)" class="btn btn-link" aria-label="Close">Cancel</a>
                 </div>
               </div>
@@ -75,6 +75,7 @@
           'getAvailableElements',
           'getAvailableElementsAsArray',
           'getShowElementModalID',
+          'getPlaceholderElement',
           'getNewElement'
         ])
       },
@@ -82,7 +83,11 @@
         checkMove: function (evt) {
           console.log(evt)
         },
-        showElementIdModal: function (bool) {
+        showElementIdModal: function (bool, elementPlaceholder) {
+          if (typeof elementPlaceholder !== 'undefined') {
+            this.$store.dispatch('setPlaceholderElement', elementPlaceholder)
+          }
+
           this.$store.dispatch('setShowElementModalID', bool)
         },
         updatedNewElementName: function (event) {
@@ -90,15 +95,24 @@
             name: event.target.value,
             filteredID: ElementManagement.methods.filterElementID(event.target.value)
           })
-          console.log(this.$store.getters.getNewElement)
         },
-        addElementClick: function (element) {
+        addElementClick: function () {
+          const store = this.$store
+          const placeholderElement = this.$store.getters.getPlaceholderElement
+          const newElement = this.$store.getters.getNewElement
+          const projectPath = this.$store.getters.getCurrentProjectPath
+
           const currentScreen = this.$store.getters.getCurrentProjectScreen
-          const currentScreenId = this.$store.getters.getCurrentProjectScreen.id
-          var screensToAddElement = {}
-          screensToAddElement[currentScreenId] = currentScreen
-          ScreenManagement.methods.screenWithNewElement(element, this.$store.getters.getCurrentProjectPath, screensToAddElement).then(function (newScreen) {
+
+          const element = JSON.parse(JSON.stringify(placeholderElement))
+          element.id = newElement.filteredID
+          element.name = newElement.name
+          element.index = currentScreen.elements.count + 1
+
+          ScreenManagement.methods.screenWithNewElement(element, projectPath, currentScreen).then(function (newScreen) {
             console.log(newScreen)
+            store.dispatch('setCurrentProjectScreen', newScreen)
+            store.dispatch('setShowElementModalID', false)
           }).catch(function (error) {
             console.log(error)
           })

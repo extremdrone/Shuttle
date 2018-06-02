@@ -1,9 +1,53 @@
 const state = {
   elements: {
     label: {
-      type: 'label',
       name: 'Text Label',
-      description: 'Shows short text'
+      description: 'Shows short text',
+      id: 'idLabel1',
+      type: 'LABEL',
+      index: 1,
+      frame: {
+        x: {
+          value: 0.5,
+          scale: 'PERCENTAGE'
+        },
+        y: {
+          value: 0.5,
+          scale: 'PERCENTAGE'
+        },
+        width: {
+          value: 100,
+          scale: 'EXACT'
+        },
+        height: {
+          value: 44,
+          scale: 'EXACT'
+        }
+      },
+      view: {
+        backgroundColor: {
+          hsl: { h: 0, s: 0, l: 1, a: 1 },
+          hex: '#FFFFFF',
+          rgba: { r: 255, g: 255, b: 255, a: 1 },
+          hsv: { h: 0, s: 0, v: 1, a: 1 },
+          oldHue: 0,
+          source: 'hex',
+          a: 1
+        }
+      },
+      title: {
+        text: 'Label',
+        textColor: {
+          hsl: { h: 196.98630136986304, s: 0.9820627802690584, l: 0.4372549019607843, a: 1 },
+          hex: '#029FDD',
+          rgba: { r: 2, g: 159, b: 221, a: 1 },
+          hsv: { h: 196.98630136986304, s: 0.9909502262443439, v: 0.8666666666666667, a: 1 },
+          oldHue: 196.98630136986304,
+          source: 'hex',
+          a: 1
+        },
+        textSize: 18
+      }
     },
     button: {
       type: 'button',
@@ -25,12 +69,16 @@ const state = {
     showElementIDModal: false,
     name: '',
     filteredID: ''
-  }
+  },
+  placeholderElement: undefined
 }
 
 const mutations = {
   SET_SHOW_ELEMENT_MODAL_ID (state, show) {
     state.newElement.showElementIDModal = show
+  },
+  SET_SELECTED_ELEMENT_PLACEHOLDER (state, element) {
+    state.placeholderElement = element
   },
   SET_NEW_ELEMENT_NAME (state, payload) {
     state.newElement.name = payload.name
@@ -41,6 +89,9 @@ const mutations = {
 const actions = {
   setShowElementModalID ({ commit }, show) {
     commit('SET_SHOW_ELEMENT_MODAL_ID', show)
+  },
+  setPlaceholderElement ({ commit }, element) {
+    commit('SET_SELECTED_ELEMENT_PLACEHOLDER', element)
   },
   setNewElementName ({ commit }, payload) {
     commit('SET_NEW_ELEMENT_NAME', payload)
@@ -62,6 +113,9 @@ const getters = {
   },
   getShowElementModalID: function (state) {
     return state.newElement.showElementIDModal
+  },
+  getPlaceholderElement: function (state) {
+    return state.placeholderElement
   },
   getNewElement: function (state) {
     return state.newElement
