@@ -6,11 +6,13 @@
         <DashboardCanvas></DashboardCanvas>
         <DashboardRightBar></DashboardRightBar>
       </div>
+      <DashboardBottomBar></DashboardBottomBar>
     </div>
 </template>
 <script>
     import DashboardTopBar from './DashboardTopBar/DashboardTopBar.vue'
     import DashboardLeftBar from './DashboardLeftBar/DashboardLeftBar.vue'
+    import DashboardBottomBar from './DashboardBottomBar/DashboardBottomBar.vue'
     import DashboardRightBar from './DashboardRightBar/DashboardRightBar.vue'
     import DashboardCanvas from './DashboardCanvas/DashboardCanvas.vue'
 
@@ -23,6 +25,7 @@
       components: {
         DashboardTopBar,
         DashboardLeftBar,
+        DashboardBottomBar,
         DashboardRightBar,
         DashboardCanvas
       },

@@ -45,7 +45,7 @@
         top: 80px;
         left: 250px;
         right: 250px;
-        bottom: 0px;
+        bottom: 32px;
     }
 
     #processingArea {

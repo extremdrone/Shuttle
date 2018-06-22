@@ -137,6 +137,7 @@ ipcMain.on('setCurrentProjectPathOnDB', function (event, project) {
   }
   db.projects.insert(currentProjectJSON, function (err, newDoc) {
     if (!err) {
+      console.log(newDoc)
       event.sender.send('sendDidSetCurrentProjectFromDB', newDoc)
     } else {
       event.sender.send('sendSettingCurrentProjectErrorFromDB', err)

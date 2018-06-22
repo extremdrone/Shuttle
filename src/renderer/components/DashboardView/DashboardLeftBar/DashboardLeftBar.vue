@@ -63,7 +63,7 @@
         top: 80px;
         left: 0px;
         width: 250px;
-        bottom: 0px;
+        bottom: 32px;
         border-right: 1px solid #eaeaea;
     }
 

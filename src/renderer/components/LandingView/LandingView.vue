@@ -109,6 +109,7 @@
     ProjectManagement.methods.loadProjectFromDisk(path, function (projectInformation, screenPointers, firstScreen) {
       ipcRenderer.send('setCurrentProjectPathOnDB', {path: path, name: projectInformation.appInformation.appName})
       ipcRenderer.on('sendDidSetCurrentProjectFromDB', (event, currentProject) => {
+        console.log(currentProject)
         router.replace('/dashboard')
       })
       ipcRenderer.on('sendSettingCurrentProjectErrorFromDB', (event, error) => {

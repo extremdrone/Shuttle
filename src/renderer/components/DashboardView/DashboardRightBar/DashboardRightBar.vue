@@ -113,7 +113,7 @@
         top: 80px;
         right: 0px;
         width: 250px;
-        bottom: 0px;
+        bottom: 32px;
         border-left: 1px solid #eaeaea;
     }
     #viewSettingsContainer {
