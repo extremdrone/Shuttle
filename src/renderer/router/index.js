@@ -38,6 +38,11 @@ export default new Router({
       component: require('@/components/DashboardView/DashboardView').default
     },
     {
+      path: '/settings',
+      name: 'Settings',
+      component: require('@/components/SettingsView/SettingsView').default
+    },
+    {
       path: '*',
       redirect: '/'
     }

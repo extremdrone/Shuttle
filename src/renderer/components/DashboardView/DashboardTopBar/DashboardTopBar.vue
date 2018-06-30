@@ -30,7 +30,7 @@
                         </li>
                     </ul>
                 </div>
-                <a href="#" class="btn btn-link tooltip tooltip-bottom" data-tooltip="Project Settings"><font-awesome-icon icon="wrench"/><small> Settings</small></a>
+                <a @click="openProjectSettings()" class="btn btn-link tooltip tooltip-bottom" data-tooltip="Project Settings"><font-awesome-icon icon="wrench"/><small> Settings</small></a>
                 <a href="#" class="btn btn-link tooltip tooltip-bottom" data-tooltip="Share your app"><font-awesome-icon icon="share-square"/><small> Share</small></a>
 
             </section>
@@ -44,6 +44,8 @@
     import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
     import Turing from '@appshuttle.io/turing'
     // import Bell from '@appshuttle.io/bell'
+
+    const {ipcRenderer} = require('electron')
 
     export default {
       name: 'DashboardTopBar',
@@ -100,6 +102,9 @@
             console.log(error)
             store.dispatch('stopBottomLoadingModeWithError', 'Error Saving Project')
           })
+        },
+        openProjectSettings: function () {
+          ipcRenderer.send('openProjectSettings')
         }
       }
     }

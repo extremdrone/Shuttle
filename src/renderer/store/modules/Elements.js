@@ -50,17 +50,17 @@ const state = {
       }
     },
     button: {
-      type: 'button',
+      type: 'BUTTON',
       name: 'Button',
       description: 'Handle user action'
     },
     image: {
-      type: 'image',
+      type: 'IMAGE',
       name: 'Image',
       description: 'Present an image'
     },
     view: {
-      type: 'view',
+      type: 'VIEW',
       name: 'Empty View',
       description: 'Commonly used as a container for other elements'
     }

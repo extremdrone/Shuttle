@@ -27,7 +27,8 @@ function createWindow () {
     minHeight: 800,
     minWidth: 1000,
     show: false,
-    titleBarStyle: 'hidden-inset'
+    titleBarStyle: 'hidden-inset',
+    title: 'Shuttle'
   })
 
   mainWindow.loadURL(winURL)
@@ -143,4 +144,32 @@ ipcMain.on('setCurrentProjectPathOnDB', function (event, project) {
       event.sender.send('sendSettingCurrentProjectErrorFromDB', err)
     }
   })
+})
+
+/**
+ * Settings Methods
+ */
+var settingsWindow
+
+ipcMain.on('openProjectSettings', function (event, project) {
+  const modalPath = require('path').join(winURL + '/#/settings')
+  settingsWindow = new BrowserWindow({
+    width: 600,
+    height: 600,
+    minHeight: 600,
+    minWidth: 600,
+    titleBarStyle: 'hidden-inset',
+    center: true,
+    alwaysOnTop: true,
+    title: 'Project Settings',
+    parent: mainWindow,
+    modal: true
+  })
+  settingsWindow.on('close', function () { settingsWindow = null })
+  settingsWindow.loadURL(modalPath)
+  settingsWindow.show()
+})
+
+ipcMain.on('closeProjectSettings', function (event) {
+  settingsWindow.close()
 })
