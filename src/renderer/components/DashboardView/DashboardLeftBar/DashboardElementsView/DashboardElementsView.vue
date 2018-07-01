@@ -107,7 +107,7 @@
           const element = JSON.parse(JSON.stringify(placeholderElement))
           element.id = newElement.filteredID
           element.name = newElement.name
-          element.index = currentScreen.elements.count + 1
+          element.index = (typeof currentScreen.elements === 'undefined' ? 1 : currentScreen.elements.count + 1)
 
           ScreenManagement.methods.screenWithNewElement(element, projectPath, currentScreen).then(function (newScreen) {
             console.log(newScreen)

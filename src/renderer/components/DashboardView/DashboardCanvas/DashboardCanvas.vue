@@ -31,7 +31,6 @@
           store.dispatch('setSelectedElementID', {
             elementID: selectedElement.id
           })
-          console.log(selectedElement)
         }, function (modifiedContent) {
           store.dispatch('setCurrentProjectScreen', modifiedContent)
         })

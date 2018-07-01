@@ -50,8 +50,25 @@ export default {
     screenWithNewElement: function (element, projectPath, screen) {
       return new Promise((resolve, reject) => {
         var newScreen = screen
+        if (!screen.elements) {
+          screen.elements = {}
+        }
         screen.elements[element.id] = element
         resolve(newScreen)
+      })
+    },
+    getScreenWithID: function (screensPath, screenId) {
+      return new Promise((resolve, reject) => {
+        var screenPathDir = screensPath + '/screens/' + screenId + '/' + screenId + '.json'
+        if (!fs.existsSync(screenPathDir)) {
+          reject(Error('Screen .JSON file doesn\'t exists'))
+        }
+        FileManagement.methods.readFileSync(screenPathDir).then(function (object) {
+          var screenObject = JSON.parse(object)
+          resolve(screenObject)
+        }).catch(function (error) {
+          reject(error)
+        })
       })
     }
   }

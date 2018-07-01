@@ -91,7 +91,7 @@
             return this.$store.getters.getCurrentProjectScreen.elements[this.$store.getters.getCurrentSelectedElementID.elementID]
           },
           set (value) {
-            this.$store.dispatch('setCurrentProjectScreen', value)
+            this.$store.dispatch('setSelectedElementID', value.elementID)
           }
         }
       },
