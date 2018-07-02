@@ -12,7 +12,7 @@
                   <div class="column col-10 c-move element-row">
                   <div class="panel">
                   <div class="panel-header text-center">
-                    <font-awesome-icon icon="image" size="m"/>
+                    <font-awesome-icon class="icon-element" :icon="element.icon" size="m"/>
                     <div class="panel-title unselectable"><a>{{ element.name }}</a></div>
                     <div class="panel-subtitle unselectable"><small>{{ element.description }}</small></div>
                   </div>
@@ -152,6 +152,10 @@
       position: relative;
       top: 50%;
       transform: translateY(-50%);
+    }
+
+    .icon-element {
+      color: #029FDD;
     }
 
     .elementIDLabel {

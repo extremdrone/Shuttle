@@ -7,7 +7,7 @@
               <div v-for="screen in getCurrentProjectScreenPointers" v-bind:key="screen.id" class="accordion">
                 <input @click="setSelectedScreen(screen)" type="checkbox" :id="screen.id + 'accordeon'" name="accordion-checkbox" hidden="" :checked="screen.id == getCurrentProjectScreen.id">
                 <label class="accordion-header c-hand unselectable" :for="screen.id + 'accordeon'">
-                 <font-awesome-icon :icon="['far', 'square']" v-bind:class="{ 'leftSelectedView': (getCurrentProjectScreen.id == screen.id) }" /> <span v-bind:class="{ 'leftSelectedView': (getCurrentProjectScreen.id == screen.id) }">{{screen.name}}</span>
+                 <font-awesome-icon icon="th-large" v-bind:class="{ 'leftSelectedView': (getCurrentProjectScreen.id == screen.id) }" /> <span v-bind:class="{ 'leftSelectedView': (getCurrentProjectScreen.id == screen.id) }">{{screen.name}}</span>
                 </label>
                 <div class="accordion-body">
                   <ul class="menu menu-nav">

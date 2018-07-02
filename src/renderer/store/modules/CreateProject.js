@@ -208,7 +208,7 @@ const state = {
               source: 'hex',
               a: 1
             },
-            textSize: 15
+            textSize: 17
           }
         },
         idLabel1: {

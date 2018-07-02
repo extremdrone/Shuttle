@@ -2,7 +2,7 @@
     <div class="text-center" id="centerCanvas">
       <div id="screenName" class="unselectable c-default">
         <br/>
-        <h5>{{getCurrentProjectScreen !== undefined ? getCurrentProjectScreen.name:'No screen selected'}}</h5>
+        <h5>{{getCurrentProjectScreen !== undefined ? getCurrentProjectScreen.name + ' Screen':'No screen selected'}}</h5>
       </div>
       <div id="processingArea"></div>
     </div>
