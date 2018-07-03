@@ -67,9 +67,9 @@
     ]
   },
   "dependencies": {
-    "@appshuttle.io/bell": "0.0.5",
+    "@appshuttle.io/bell": "0.0.8",
     "@appshuttle.io/pollock": "0.0.15",
-    "@appshuttle.io/turing": "0.0.7",
+    "@appshuttle.io/turing": "0.0.11",
     "@fortawesome/fontawesome": "^1.1.5",
     "@fortawesome/fontawesome-free-brands": "^5.0.9",
     "@fortawesome/fontawesome-free-regular": "^5.0.9",

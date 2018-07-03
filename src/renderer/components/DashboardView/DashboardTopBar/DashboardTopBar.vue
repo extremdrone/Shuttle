@@ -14,17 +14,17 @@
                     <a class="btn btn-link dropdown-toggle" tabindex="0"><font-awesome-icon icon="play"/><small> Run</small></a>
                     <ul class="menu">
                         <li class="menu-item">
-                        <a @click="run(['IOS'])" href="#dropdowns">
+                        <a @click="run('IOS')" href="#dropdowns">
                             Run iOS
                         </a>
                         </li>
                         <li class="menu-item">
-                        <a @click="run(['ANDROID'])" href="#dropdowns">
+                        <a @click="run('ANDROID')" href="#dropdowns">
                             Run Android
                         </a>
                         </li>
                         <li class="menu-item">
-                        <a @click="run(['IOS', 'ANDROID'])" href="#dropdowns">
+                        <a @click="run('BOTH')" href="#dropdowns">
                             Run Both
                         </a>
                         </li>
@@ -42,8 +42,8 @@
     import ProjectManagement from '../../../mixins/ProjectManagement/ProjectManagement'
     import { mapGetters } from 'vuex'
     import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-    import Turing from '@appshuttle.io/turing'
-    // import Bell from '@appshuttle.io/bell'
+    import SHTuring from '@appshuttle.io/turing'
+    import Bell from '@appshuttle.io/bell'
 
     const {ipcRenderer} = require('electron')
 
@@ -62,28 +62,40 @@
       ],
       methods: {
         run: function (platforms) {
-          const turing = new Turing(
-            this.$store.getters.getCurrentProjectPath,
-            this.$store.getters.getCurrentProjectInformation,
-            this.$store.getters.getCurrentProjectScreenPointers,
-            []
-          )
+          const turing = new SHTuring(this.$store.getters.getCurrentProjectPath, {appPlatforms: platforms})
           turing.generatePlatforms(function () {
-            // const bell = new Bell({
-            //   android: {
-            //     buildPath: 'C:/Users/danie/Dropbox/Trabajo/MSA/MSAAndroid/MatchReportTool/app/build/outputs/apk/debug/app-debug.apk',
-            //     appBundleId: 'com.mysportarena.matchreporttool',
-            //     deviceStringID: 'Imagen_Moviles'
-            //   },
-            //   ios: {
-            //     buildPath: '/Users/david/Library/Developer/Xcode/DerivedData/-APPNAME--gqvuzazsddvpdefwjofzywdgwhvv/Build/Products/Debug-iphonesimulator/-APPNAME-.app',
-            //     appBundleId: '-EXTENSION-.-DOMAIN-.-APPNAME-',
-            //     deviceStringID: 'iPhone X (11.3) [A5CFCCD7-C71B-4B7C-A514-FA89F5A27475] (Simulator)'
-            //   }
-            // })
-            // bell.run()
-          }, function (error) {
-            console.log(error)
+            console.log('Success Creating Projects')
+            const buildResult = turing.buildPlatforms()
+
+            const bellDict = {}
+
+            if (buildResult.IOS) {
+              buildResult.IOS.then(function (value) {
+                bellDict.ios = {
+                  buildPath: value,
+                  appBundleId: 'ORG-IDENTIFIER.APP-NAME',
+                  deviceStringID: 'D7A3FEDE-B858-4A2B-9AE2-495C193A1D7E'
+                }
+                const bell = new Bell(bellDict)
+                bell.run().then(function (values) {
+                  console.log('Apps runnning')
+                }).catch(function (error) {
+                  console.log(error)
+                })
+              }).catch(function (error) {
+                console.log(error)
+              })
+            }
+
+            if (buildResult.ANDROID) {
+              buildResult.ANDROID.then(function (value) {
+                console.log(value)
+              }).catch(function (error) {
+                console.log(error)
+              })
+            }
+          }, function (err) {
+            console.log(err)
           })
         },
         save: function () {
