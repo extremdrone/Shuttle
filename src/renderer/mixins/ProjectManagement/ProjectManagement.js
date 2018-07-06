@@ -1,4 +1,5 @@
 import FileManagement from '../FileManagment/FileManagement'
+import ScreenManagement from '../ScreenManagement/ScreenManagement'
 
 export default {
   methods: {
@@ -65,6 +66,25 @@ export default {
           }
         }).catch(function (error) {
           reject(error)
+        })
+      })
+    },
+    saveProjectToFile: function (path, screensDict) {
+      return new Promise((resolve, reject) => {
+        var screenPointersDir = path + '/screens/screens.js'
+        FileManagement.methods.readFileSync(screenPointersDir).then(function (object) {
+          var screenPointers = JSON.parse(object)
+          if (screenPointers.length > 0) {
+            ScreenManagement.methods.saveScreens(path, screensDict, function (promises) {
+              Promise.all(promises).then(function (values) {
+                resolve()
+              }).catch(function (rejectMessage) {
+                reject(rejectMessage)
+              })
+            }, function (errorMessage) {
+              reject(errorMessage)
+            })
+          }
         })
       })
     }

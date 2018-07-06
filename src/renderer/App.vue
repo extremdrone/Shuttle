@@ -40,4 +40,8 @@
     cursor: default;
   }
 
+  .c-add {
+    cursor: copy;
+  }
+
 </style>

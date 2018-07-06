@@ -153,46 +153,17 @@ const state = {
       name: 'Home',
       isInitialScreen: true,
       style: {
-        backgroundColor: '#029FDD'
-      },
-      elements: {
-        idButton1: {
-          id: 'idButton1',
-          frame: {
-            x: {
-              value: 0.25,
-              scale: 'PERCENTAGE'
-            },
-            y: {
-              value: 0.75,
-              scale: 'PERCENTAGE'
-            },
-            width: {
-              value: 0.5,
-              scale: 'PERCENTAGE'
-            },
-            height: {
-              value: 44,
-              scale: 'EXACT'
-            }
-          },
-          view: {
-            backgroundColor: '#029FDD'
-          },
-          title: {
-            text: 'View Examples',
-            textColor: '#FFFFFF',
-            textSize: 15
-          }
+        backgroundColor: {
+          hsl: { h: 0, s: 0, l: 1, a: 1 },
+          hex: '#FFFFFF',
+          rgba: { r: 255, g: 255, b: 255, a: 1 },
+          hsv: { h: 0, s: 0, v: 1, a: 1 },
+          oldHue: 0,
+          source: 'hex',
+          a: 1
         }
-      }
-    },
-    elementsScreen: {
-      id: 'elementsScreen',
-      name: 'Elements',
-      style: {
-        backgroundColor: '#ffffff'
-      }
+      },
+      elements: {}
     }
   }
 }

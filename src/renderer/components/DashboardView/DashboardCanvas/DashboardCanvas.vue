@@ -2,7 +2,7 @@
     <div class="text-center" id="centerCanvas">
       <div id="screenName" class="unselectable c-default">
         <br/>
-        <h5>{{getCurrentProjectScreen !== undefined ? getCurrentProjectScreen.name:'No screen selected'}}</h5>
+        <h5>{{getCurrentProjectScreen !== undefined ? getCurrentProjectScreen.name + ' Screen':'No screen selected'}}</h5>
       </div>
       <div id="processingArea"></div>
     </div>
@@ -23,11 +23,16 @@
         const store = this.$store
         const pollockConfig = {
           width: 375,
-          height: 667,
-          canvasBackgroundColor: 255
+          height: 667
         }
         return new Pollock('processingArea', pollockConfig, function () {
           return store.getters.getCurrentProjectScreen
+        }, function (selectedElement) {
+          store.dispatch('setSelectedElementID', {
+            elementID: selectedElement.id
+          })
+        }, function (modifiedContent) {
+          store.dispatch('setCurrentProjectScreen', modifiedContent)
         })
       }
     }
@@ -39,7 +44,7 @@
         top: 80px;
         left: 250px;
         right: 250px;
-        bottom: 0px;
+        bottom: 32px;
     }
 
     #processingArea {

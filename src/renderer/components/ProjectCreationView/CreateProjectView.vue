@@ -111,6 +111,10 @@
     }
 
     function writeNewProjectInfo (path, projectInfo, success, error) {
+      // FileManagement.methods.deleteDirIfExistsSync(path).then(function () {
+      // }).catch(function (errorMessage) {
+      //   error(errorMessage)
+      // })
       FileManagement.methods.writeFileSync(path + '/main.json', JSON.stringify(projectInfo)).then(function () {
         success()
       }).catch(function (errorMessage) {
