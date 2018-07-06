@@ -1,13 +1,14 @@
 <template>
   <div class="container" id="bottomBar">
       <div class="columns" id="bottomBarColumns">
-        <div class="column col-6"></div>
+        <div class="column col-2"><a class="bottomBarLink"><small>Feedback and Support</small></a></div>
+        <div class="column col-4"></div>
         <div class="column col-2"></div>
-        <div class="column col-2">{{ getBottomLoadingText }}</div>
-        <div class="column col-2" v-show="getBottomLoadingMode == 'INDEFINITE'">
+        <div class="column col-2"><small>{{ getBottomLoadingText }}</small></div>
+        <div class="column col-2" v-show="getBottomLoadingMode === 'INDEFINITE'">
           <progress class="progress" max="100"></progress>
         </div>
-        <div class="column col-2" v-show="getBottomLoadingMode == 'EXACT'">
+        <div class="column col-2" v-show="getBottomLoadingMode === 'EXACT'">
           <progress class="progress" :value="getBottomLoadingPercentage" max="100"></progress>
         </div>
       </div>
@@ -38,6 +39,10 @@ export default {
     height: 32px;
     max-height: 32px;
     border-top: 1px solid #eaeaea;
+}
+
+.bottomBarLink {
+    color: gray;
 }
 
 #bottomBarColumns {

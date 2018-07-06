@@ -11,8 +11,8 @@
       <div class="columns">
         <div class="column col-7 col-mx-auto">
           <div class="empty"> 
-            <h4><small>{{recentProjects.emptyProjectsText}}</small></h4>
-            <br><br>
+            <!-- <h4><small>{{recentProjects.emptyProjectsText}}</small></h4><br> -->
+            <br>
             <div class="columns">
               <div v-on:click="createProject" class="column c-hand">
                 <div class="empty-icon">
@@ -40,7 +40,7 @@
     </section>
     <section class="navbar-center">
       <!-- centered logo or brand -->
-      <p id="textFooter"><small>Shuttle V{{footer.appVersionNumber}} <br> Copyright © 2018 AppShuttle.io. <br> By using this app or any of its services you accept our <a class="c-hand" v-on:click="goToLegalDocument('TERMS')">Terms &amp; Conditions</a>, <a class="c-hand" v-on:click="goToLegalDocument('EULA')">EULA</a> and <a class="c-hand" v-on:click="goToLegalDocument('PRIVACY')">Privacy Policy.</a></small></p>
+      <p id="textFooter"><small>Shuttle V0.0.1 Beta <br> Made with ❤️ in Colombia 🇨🇴 <br> Copyright © 2018 AppShuttle.io. <br> By using this app or any of its services you accept our <a class="c-hand" v-on:click="goToLegalDocument('TERMS')">Terms &amp; Conditions</a>, <a class="c-hand" v-on:click="goToLegalDocument('EULA')">EULA</a> and <a class="c-hand" v-on:click="goToLegalDocument('PRIVACY')">Privacy Policy.</a></small></p>
     </section>
     <section class="navbar-section">
     </section>
@@ -109,7 +109,6 @@
     ProjectManagement.methods.loadProjectFromDisk(path, function (projectInformation, screenPointers, firstScreen) {
       ipcRenderer.send('setCurrentProjectPathOnDB', {path: path, name: projectInformation.appInformation.appName})
       ipcRenderer.on('sendDidSetCurrentProjectFromDB', (event, currentProject) => {
-        console.log(currentProject)
         router.replace('/dashboard')
       })
       ipcRenderer.on('sendSettingCurrentProjectErrorFromDB', (event, error) => {

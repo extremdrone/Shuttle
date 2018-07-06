@@ -63,6 +63,9 @@ const actions = {
   },
   setSelectedElementID ({ commit }, elementID) {
     commit('SET_CURRENT_ELEMENT_ID', elementID)
+  },
+  setCurrentElement ({ commit }, element) {
+    commit('SET_CURRENT_ELEMENT_CONTENT', element)
   }
 }
 

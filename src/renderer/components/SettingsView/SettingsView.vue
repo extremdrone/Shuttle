@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="panel">
+        <div class="panel panel-settings">
             <div class="panel-header text-center">
                 <img id="appLogoImageView" src="~@/assets/logo.png" alt=""/>
                 <div class="panel-title h5 mt-10">{{ getCurrentProjectInformation.appInformation.appName }}</div>
@@ -8,45 +8,17 @@
             </div>
             <nav class="panel-nav">
                 <ul class="tab tab-block">
-                    <li class="tab-item active"><a href="#panels">App Info</a></li>
-                    <li class="tab-item"><a href="#panels">Creator Info</a></li>
-                    <li class="tab-item"><a href="#panels">Tasks</a></li>
+                    <li v-for="(tab, index) in getProjectSettingsTabHost.tabs" v-bind:item="tab" v-bind:index="index" v-bind:key="tab.position" v-bind:class="{ active: getCurrentProjectSettingsSelectedTab === tab.position, 'tab-item': true }">
+                        <a class="c-hand unselectable" @click="changedSettingsTab(tab.position)">{{tab.title}}</a>
+                    </li>
                 </ul>
             </nav>
-            <br>
-            <div class="panel-body">
-                <div class="tile tile-centered">
-                    <div class="tile-content">
-                        <div class="tile-title text-bold">E-mail</div>
-                        <div class="tile-subtitle">bruce.banner@hulk.com</div>
-                    </div>
-                    <div class="tile-action">
-                        <button class="btn btn-link btn-action btn-lg tooltip tooltip-left" data-tooltip="Edit E-mail"><i class="icon icon-edit"></i></button>
-                    </div>
-                </div>
-                <div class="tile tile-centered">
-                    <div class="tile-content">
-                        <div class="tile-title text-bold">Skype</div>
-                        <div class="tile-subtitle">bruce.banner</div>
-                    </div>
-                    <div class="tile-action">
-                        <button class="btn btn-link btn-action btn-lg"><i class="icon icon-edit"></i></button>
-                    </div>
-                </div>
-                <div class="tile tile-centered">
-                    <div class="tile-content">
-                        <div class="tile-title text-bold">Location</div>
-                        <div class="tile-subtitle">Dayton, Ohio</div>
-                    </div>
-                    <div class="tile-action">
-                        <button class="btn btn-link btn-action btn-lg"><i class="icon icon-edit"></i></button>
-                    </div>
-                </div>
-            </div>
+            <ProjectAppSettings v-show="getCurrentProjectSettingsSelectedTab == 0"></ProjectAppSettings>
+            <ProjectCreatorSettings v-show="getCurrentProjectSettingsSelectedTab == 1"></ProjectCreatorSettings>
+            <OtherProjectSettings v-show="getCurrentProjectSettingsSelectedTab == 2"></OtherProjectSettings>
             <br/>
             <div class="panel-footer">
-                <button class="btn btn-primary btn-block">Save</button>
-                <button @click="closeSettingsWindow()" class="btn btn-link btn-block">Close</button>
+                <button @click="closeSettingsWindow()" class="btn btn-primary btn-block">Close</button>
             </div>
         </div>
     </div>
@@ -56,13 +28,24 @@
 
     import ProjectManagement from '../../mixins/ProjectManagement/ProjectManagement'
 
+    import ProjectAppSettings from './ProjectAppSettings/ProjectAppSettings.vue'
+    import ProjectCreatorSettings from './ProjectCreatorSettings/ProjectCreatorSettings.vue'
+    import OtherProjectSettings from './OtherProjectSettings/OtherProjectSettings.vue'
+
     const {ipcRenderer} = require('electron')
 
     export default {
       name: 'SettingsView',
+      components: {
+        ProjectAppSettings,
+        ProjectCreatorSettings,
+        OtherProjectSettings
+      },
       computed: {
         ...mapGetters([
-          'getCurrentProjectInformation'
+          'getCurrentProjectInformation',
+          'getProjectSettingsTabHost',
+          'getCurrentProjectSettingsSelectedTab'
         ])
       },
       mounted () {
@@ -89,6 +72,9 @@
         })
       },
       methods: {
+        changedSettingsTab: function (tab) {
+          this.$store.dispatch('setProjectSettingsSelectedTab', tab)
+        },
         closeSettingsWindow: function () {
           ipcRenderer.send('closeProjectSettings')
         }
@@ -100,5 +86,9 @@
         background-color: white;
         width: 40px;
         height: 40px;
+    }
+
+    .panel-settings {
+        border: none;
     }
 </style>

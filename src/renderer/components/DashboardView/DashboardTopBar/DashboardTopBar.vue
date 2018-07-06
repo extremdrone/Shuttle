@@ -62,43 +62,52 @@
       ],
       methods: {
         run: function (platforms) {
-          const turing = new SHTuring(this.$store.getters.getCurrentProjectPath, {appPlatforms: platforms})
-          turing.generatePlatforms(function () {
-            console.log('Success Creating Projects')
-            const buildResult = turing.buildPlatforms()
+          const thisRef = this
+          this.save(function (success) {
+            thisRef.$store.dispatch('setBottomLoadingTextMode', 'Building Project...', 'INDEFINITE')
+            const turing = new SHTuring(thisRef.$store.getters.getCurrentProjectPath, {appPlatforms: platforms})
+            turing.generatePlatforms(function () {
+              console.log('Success Creating Projects')
+              const buildResult = turing.buildPlatforms()
 
-            const bellDict = {}
+              const bellDict = {}
 
-            if (buildResult.IOS) {
-              buildResult.IOS.then(function (value) {
-                bellDict.ios = {
-                  buildPath: value,
-                  appBundleId: 'ORG-IDENTIFIER.APP-NAME',
-                  deviceStringID: 'D7A3FEDE-B858-4A2B-9AE2-495C193A1D7E'
-                }
-                const bell = new Bell(bellDict)
-                bell.run().then(function (values) {
-                  console.log('Apps runnning')
+              if (buildResult.IOS) {
+                buildResult.IOS.then(function (value) {
+                  bellDict.ios = {
+                    buildPath: value,
+                    appBundleId: 'ORG-IDENTIFIER.APP-NAME',
+                    deviceStringID: 'D7A3FEDE-B858-4A2B-9AE2-495C193A1D7E'
+                  }
+
+                  thisRef.$store.dispatch('setBottomLoadingTextMode', 'Running Project...', 'INDEFINITE')
+                  const bell = new Bell(bellDict)
+                  bell.run().then(function (values) {
+                    thisRef.$store.dispatch('stopBottomLoadingMode')
+                    console.log('Apps runnning')
+                  }).catch(function (error) {
+                    console.log(error)
+                  })
                 }).catch(function (error) {
                   console.log(error)
                 })
-              }).catch(function (error) {
-                console.log(error)
-              })
-            }
+              }
 
-            if (buildResult.ANDROID) {
-              buildResult.ANDROID.then(function (value) {
-                console.log(value)
-              }).catch(function (error) {
-                console.log(error)
-              })
-            }
-          }, function (err) {
-            console.log(err)
+              if (buildResult.ANDROID) {
+                buildResult.ANDROID.then(function (value) {
+                  console.log(value)
+                }).catch(function (error) {
+                  console.log(error)
+                })
+              }
+            }, function (err) {
+              console.log(err)
+            })
+          }, function (error) {
+            console.log(error)
           })
         },
-        save: function () {
+        save: function (successBlock, errorBlock) {
           this.$store.dispatch('setBottomLoadingTextMode', 'Saving Project...', 'INDEFINITE')
 
           const store = this.$store
@@ -109,10 +118,17 @@
           screensToSave[currentScreenId] = currentScreen
           ProjectManagement.methods.saveProjectToFile(this.$store.getters.getCurrentProjectPath, screensToSave).then(function () {
             console.log('Saved')
-            store.dispatch('stopBottomLoadingMode')
+            if (typeof successBlock !== 'undefined') {
+              successBlock('Saved Project')
+            } else {
+              store.dispatch('stopBottomLoadingMode')
+            }
           }).catch(function (error) {
             console.log(error)
             store.dispatch('stopBottomLoadingModeWithError', 'Error Saving Project')
+            if (typeof errorBlock !== 'undefined') {
+              errorBlock(error)
+            }
           })
         },
         openProjectSettings: function () {

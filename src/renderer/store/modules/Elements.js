@@ -50,8 +50,8 @@ const state = {
           a: 1
         },
         textSize: 17,
-        textAlignment: 'CENTER',
-        textStyle: 'BOLD'
+        textAlignment: 'LEFT',
+        textStyle: 'DEFAULT'
       }
     },
     button: {
@@ -104,7 +104,7 @@ const state = {
         },
         textSize: 17,
         textAlignment: 'CENTER',
-        textStyle: 'BOLD'
+        textStyle: 'DEFAULT'
       }
     },
     textfield: {

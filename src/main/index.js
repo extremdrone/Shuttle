@@ -5,6 +5,7 @@ import { app, BrowserWindow } from 'electron'
 const Datastore = require('nedb')
 var db = {}
 db.projects = new Datastore({ filename: app.getPath('userData') + '/projects.db', autoload: true, timestampData: true })
+db.currentProject = new Datastore({ filename: app.getPath('userData') + '/currentProject.db', autoload: true, timestampData: true })
 
 /**
  * Set `__static` path to static files in production
@@ -120,7 +121,7 @@ ipcMain.on('open-error-dialog-creating-project-file', function (event, args) {
  * Handle Database Methods
  */
 ipcMain.on('getCurrentProjectPathFromDB', function (event, args) {
-  db.projects.find({ currentProject: { $exists: true } }, function (err, docs) {
+  db.currentProject.find({ currentProject: { $exists: true } }, function (err, docs) {
     if (!err) {
       event.sender.send('sendCurrentProjectFromDB', docs)
     } else {
@@ -136,12 +137,21 @@ ipcMain.on('setCurrentProjectPathOnDB', function (event, project) {
       name: project.name
     }
   }
-  db.projects.insert(currentProjectJSON, function (err, newDoc) {
-    if (!err) {
-      console.log(newDoc)
-      event.sender.send('sendDidSetCurrentProjectFromDB', newDoc)
+  db.currentProject.remove({}, { multi: true }, function (errRemoving, numRemoved) {
+    if (!errRemoving) {
+      console.log('DEBUG: Removed ' + numRemoved + ' Projects from memory')
+      db.currentProject.insert(currentProjectJSON, function (errInserting, newDoc) {
+        if (!errInserting) {
+          console.log(newDoc)
+          event.sender.send('sendDidSetCurrentProjectFromDB', newDoc)
+        } else {
+          console.log(errInserting)
+          event.sender.send('sendSettingCurrentProjectErrorFromDB', errInserting)
+        }
+      })
     } else {
-      event.sender.send('sendSettingCurrentProjectErrorFromDB', err)
+      event.sender.send('sendSettingCurrentProjectErrorFromDB', errRemoving)
+      console.log(errRemoving)
     }
   })
 })
