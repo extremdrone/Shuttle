@@ -27,30 +27,30 @@
            </div>
     </div>
     <div v-bind:class="{ 'modal': true, 'modal-sm': true, 'active': getShowElementModalID }" id="example-modal-2">
-              <a @click="showElementIdModal(false)" class="modal-overlay" aria-label="Close"></a>
-              <div class="modal-container" role="document">
-                <div class="modal-header">
-                  <a @click="showElementIdModal(false)" class="btn btn-clear float-right" aria-label="Close"></a>
-                  <div class="modal-title h5">Name your Element</div>
-                </div>
-                <div class="modal-body">
-                  <div class="content">
-                    <form>
-                      <div class="form-group">
-                        <label class="form-label" for="input-example-7">Element Name</label>
-                        <input :value="this.getNewElement.newElementName" @input="updatedNewElementName" class="form-input" type="text" id="input-example-7" placeholder="Button Close 1">
-                        <div class="divider"></div>
-                        <!-- <p class="elementIDLabel">Element ID: {{this.getNewElement.filteredID}}</p> -->
-                      </div>
-                    </form>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button @click="addElementClick()" class="btn btn-primary">Create</button>
-                  <a @click="showElementIdModal(false)" class="btn btn-link" aria-label="Close">Cancel</a>
-                </div>
+      <a @click="showElementIdModal(false)" class="modal-overlay" aria-label="Close"></a>
+      <div class="modal-container" role="document">
+        <div class="modal-header">
+          <a @click="showElementIdModal(false)" class="btn btn-clear float-right" aria-label="Close"></a>
+          <div class="modal-title h5">Name your Element</div>
+        </div>
+        <div class="modal-body">
+          <div class="content">
+            <form>
+              <div class="form-group">
+                <label class="form-label" for="input-example-7">Element Name</label>
+                <input :value="this.getNewElement.newElementName" @input="updatedNewElementName" class="form-input" type="text" id="input-example-7" placeholder="Button Close 1">
+                <div class="divider"></div>
+                <!-- <p class="elementIDLabel">Element ID: {{this.getNewElement.filteredID}}</p> -->
               </div>
-            </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button @click="addElementClick()" class="btn btn-primary">Create</button>
+          <a @click="showElementIdModal(false)" class="btn btn-link" aria-label="Close">Cancel</a>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>

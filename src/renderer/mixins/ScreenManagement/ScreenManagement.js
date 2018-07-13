@@ -70,6 +70,8 @@ export default {
           reject(error)
         })
       })
+    },
+    generateNewScreen: function (screenName) {
     }
   }
 }
