@@ -38,7 +38,7 @@
             <form>
               <div class="form-group">
                 <label class="form-label" for="input-example-7">Element Name</label>
-                <input :value="this.getNewElement.newElementName" @input="updatedNewElementName" class="form-input" type="text" id="input-example-7" placeholder="Button Close 1">
+                <input :value="this.getNewElement.newElementName" @input="updatedNewElementName" class="form-input" type="text" id="input-example-7" placeholder="Name">
                 <div class="divider"></div>
                 <!-- <p class="elementIDLabel">Element ID: {{this.getNewElement.filteredID}}</p> -->
               </div>

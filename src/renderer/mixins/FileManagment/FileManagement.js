@@ -53,6 +53,14 @@ export default {
           reject(err.message)
         }
       })
+    },
+    copyFileAsync: function (filePath, destinationPath) {
+      return new Promise((resolve, reject) => {
+        fs.copyFile(filePath, destinationPath, (err) => {
+          if (err) reject(err)
+          resolve()
+        })
+      })
     }
   }
 }

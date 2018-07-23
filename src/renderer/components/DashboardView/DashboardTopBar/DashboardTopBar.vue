@@ -30,8 +30,31 @@
                         </li>
                     </ul>
                 </div>
-                <a @click="openProjectSettings()" class="btn btn-link tooltip tooltip-bottom" data-tooltip="Project Settings"><font-awesome-icon icon="wrench"/><small> Settings</small></a>
-                <a href="#" class="btn btn-link tooltip tooltip-bottom" data-tooltip="Share your app"><font-awesome-icon icon="share-square"/><small> Share</small></a>
+                <a @click="openProjectSettings()" class="btn btn-link"><font-awesome-icon icon="wrench"/><small> Settings</small></a>
+                <div class="popover popover-bottom">
+                  <button class="btn btn-link"><font-awesome-icon icon="share-square"/><small> Share</small></button>
+                  <div class="popover-share popover-container">
+                    <ul class="menu">
+                      <li class="menu-item">
+                        <div class="popover-menu-title unselectable c-default tile tile-centered">
+                          <div class="tile-icon"><small><font-awesome-icon icon="share-square"/></small></div>
+                          <div class="tile-content"><small>Share</small></div>
+                        </div>
+                      </li>
+                      <li class="divider"></li>
+                      <li class="menu-item">
+                        <div class="menu-badge">
+                          <label class="label label-primary"><small><font-awesome-icon icon="cloud"/></small></label>
+                        </div><a>Upload to Shuttle Cloud</a>
+                      </li>
+                      <li class="menu-item">
+                        <div class="menu-badge">
+                          <label class="label label-primary"><small><font-awesome-icon icon="code"/></small></label>
+                        </div><a @click="exportCode()">Export Source Code</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
 
             </section>
         </header>
@@ -40,6 +63,7 @@
 </template>
 <script>
     import ProjectManagement from '../../../mixins/ProjectManagement/ProjectManagement'
+    import FileManagement from '../../../mixins/FileManagment/FileManagement'
     import { mapGetters } from 'vuex'
     import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
     import SHTuring from '@appshuttle.io/turing'
@@ -52,13 +76,39 @@
       components: {
         FontAwesomeIcon
       },
+      mounted () {
+        const thisRef = this
+        ipcRenderer.on('savedExportCodePath', function (event, path) {
+          thisRef.save(function (success) {
+            thisRef.$store.dispatch('setBottomLoadingTextMode', 'Building Project...', 'INDEFINITE')
+            const turing = new SHTuring(thisRef.$store.getters.getCurrentProjectPath, {appPlatforms: 'IOS'})
+            turing.generatePlatforms(function () {
+              console.log('Success Creating Projects')
+              thisRef.$store.dispatch('setBottomLoadingTextMode', 'Exporting Projects...', 'INDEFINITE')
+              FileManagement.methods.deleteDirIfExistsSync(path + '/ShuttleExport').then(function () {
+                var promisesCopy = []
+                promisesCopy.push(FileManagement.methods.copyFileAsync(thisRef.$store.getters.getCurrentProjectPath + '/iOS', path + 'ShuttleExport/iOS'))
+                promisesCopy.push(FileManagement.methods.copyFileAsync(thisRef.$store.getters.getCurrentProjectPath + '/Android', path + 'ShuttleExport/Android'))
+                Promise.all(promisesCopy).then(function (values) {
+                  console.log(values)
+                }).catch(function (error) {
+                  console.log(error)
+                })
+              }).catch(function (error) {
+                console.log(error)
+              })
+            })
+          })
+        })
+      },
       computed: {
         ...mapGetters([
           'getCurrentProjectPath'
         ])
       },
       mixins: [
-        ProjectManagement
+        ProjectManagement,
+        FileManagement
       ],
       methods: {
         run: function (platforms) {
@@ -133,6 +183,9 @@
         },
         openProjectSettings: function () {
           ipcRenderer.send('openProjectSettings')
+        },
+        exportCode: function () {
+          ipcRenderer.send('openExportCodeFinder')
         }
       }
     }
@@ -149,4 +202,11 @@
         width: auto;
     }
 
+    .popover.popover-bottom .popover-container {
+        left: -100px;
+    }
+
+    .popover-menu-title {
+        color: #a0a0a0;
+    }
 </style>

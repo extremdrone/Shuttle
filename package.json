@@ -47,7 +47,8 @@
       ]
     },
     "mac": {
-      "icon": "build/icons/icon.icns"
+      "icon": "build/icons/icon.icns",
+      "category": "public.app-category.developer-tools"
     },
     "win": {
       "icon": "build/icons/icon.ico"
@@ -64,7 +65,8 @@
         "role": "Editor",
         "isPackage": true
       }
-    ]
+    ],
+    "copyright": "Copyright © 2018 AppShuttle.io"
   },
   "dependencies": {
     "@appshuttle.io/bell": "0.0.8",

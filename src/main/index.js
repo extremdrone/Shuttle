@@ -183,3 +183,17 @@ ipcMain.on('openProjectSettings', function (event, project) {
 ipcMain.on('closeProjectSettings', function (event) {
   settingsWindow.close()
 })
+
+/**
+ * Export Code Methods
+ */
+ipcMain.on('openExportCodeFinder', function (event) {
+  const options = {
+    title: 'Export Shuttle Source Code',
+    properties: ['openDirectory', 'createDirectory', 'promptToCreate'],
+    buttonLabel: 'Export Here'
+  }
+  dialog.showOpenDialog(options, (filename) => {
+    event.sender.send('savedExportCodePath', filename)
+  })
+})
