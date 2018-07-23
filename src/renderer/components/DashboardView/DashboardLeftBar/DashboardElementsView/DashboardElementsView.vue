@@ -54,7 +54,6 @@
   </div>
 </template>
 <script>
-    import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
     import ScreenManagement from '../../../../mixins/ScreenManagement/ScreenManagement'
     import ElementManagement from '../../../../mixins/ElementManagement/ElementManagement'
     import { mapGetters } from 'vuex'
@@ -63,7 +62,6 @@
     export default {
       name: 'DashboardElementsView',
       components: {
-        FontAwesomeIcon,
         draggable
       },
       mixins: [

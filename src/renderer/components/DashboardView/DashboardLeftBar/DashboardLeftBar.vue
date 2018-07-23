@@ -64,7 +64,6 @@
     </div>
 </template>
 <script>
-    import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
     import { mapGetters } from 'vuex'
     import draggable from 'vuedraggable'
 
@@ -76,7 +75,6 @@
     export default {
       name: 'DashboardLeftBar',
       components: {
-        FontAwesomeIcon,
         DashboardElementsView,
         draggable
       },

@@ -65,7 +65,6 @@
     import ProjectManagement from '../../../mixins/ProjectManagement/ProjectManagement'
     import FileManagement from '../../../mixins/FileManagment/FileManagement'
     import { mapGetters } from 'vuex'
-    import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
     import SHTuring from '@appshuttle.io/turing'
     import Bell from '@appshuttle.io/bell'
 
@@ -73,9 +72,6 @@
 
     export default {
       name: 'DashboardTopBar',
-      components: {
-        FontAwesomeIcon
-      },
       mounted () {
         const thisRef = this
         ipcRenderer.on('savedExportCodePath', function (event, path) {
