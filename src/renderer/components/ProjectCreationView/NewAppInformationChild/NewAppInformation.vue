@@ -1,7 +1,7 @@
 <template>
   <div v-show="getStepperInfo.currentStep === 1" id="appInformationContainer">
             <div class="columns">
-                <div class="col-10 col-mx-auto">
+                <div class="col-10 col-mx-auto unselectable c-default">
                     <h3>App Information: </h3>
                     <p>This is the basic info we need to create your mobile applications. Keep in mind you <strong>can</strong> change this information later.</p>
                 </div>
@@ -10,7 +10,7 @@
                     <form class="form-horizontal" id="appInformationForm">
                         <div class="form-group">
                             <div class="col-2 col-sm-12">
-                            <label class="form-label" for="input-example-1"><strong>App Name *</strong></label>
+                            <label class="form-label unselectable" for="input-example-1"><strong>App Name *</strong></label>
                             </div>
                             <div class="col-9 col-sm-12 col-ml-auto">
                             <input :value="this.getNewProject.appInformation.appName" @input="updatedAppName" class="form-input" type="text" id="input-example-1" placeholder="Ex: My Rocket App">
@@ -19,7 +19,7 @@
                         <br>
                         <div class="form-group">
                             <div class="col-2 col-sm-12">
-                            <label class="form-label" for="input-example-1"><strong>App Category *</strong></label>
+                            <label class="form-label unselectable" for="input-example-1"><strong>App Category *</strong></label>
                             </div>
                             <div class="col-9 col-sm-12 col-ml-auto">
                             <select :value="this.getNewProject.appInformation.appCategory" @input="updatedAppCategory" class="form-select">
@@ -30,7 +30,7 @@
                         <br>
                         <div class="form-group">
                             <div class="col-2 col-sm-12">
-                            <label class="form-label" for="input-example-1"><strong>App Platforms *</strong></label>
+                            <label class="form-label unselectable" for="input-example-1"><strong>App Platforms *</strong></label>
                             </div>
                             <div class="col-9 col-sm-12 col-ml-auto">
                             <select :value="this.getNewProject.appInformation.appPlatforms" @input="updatedAppPlatform" class="form-select">

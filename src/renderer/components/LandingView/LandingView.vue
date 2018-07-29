@@ -2,8 +2,8 @@
 <div>
   <!-- Header with logo and app name -->
   <div id="headerContainer" class="container">
-    <img class="centered" id="logo" src="~@/assets/logo.png" alt="AppShuttle.io"/>
-    <h1 id="appName"><strong>{{header.appName}}</strong></h1>
+    <img class="centered unselectable c-default" id="logo" src="~@/assets/logo.png" alt="AppShuttle.io"/>
+    <h1 id="appName"><strong class="unselectable c-default">{{header.appName}}</strong></h1>
   </div>
 
   <!-- Empty Container, shown when the user has no recent projects -->
@@ -40,7 +40,7 @@
     </section>
     <section class="navbar-center">
       <!-- centered logo or brand -->
-      <p id="textFooter"><small>Shuttle V0.0.1 Beta <br> Made with ❤️ in Colombia 🇨🇴 <br> Copyright © 2018 AppShuttle.io. <br> By using this app or any of its services you accept our <a class="c-hand" v-on:click="goToLegalDocument('TERMS')">Terms &amp; Conditions</a>, <a class="c-hand" v-on:click="goToLegalDocument('EULA')">EULA</a> and <a class="c-hand" v-on:click="goToLegalDocument('PRIVACY')">Privacy Policy.</a></small></p>
+      <p class="unselectable c-default" id="textFooter"><small>Shuttle V0.0.1 Beta <br> Made with ❤️ in Colombia 🇨🇴 <br> Copyright © 2018 AppShuttle.io. <br> By using this app or any of its services you accept our <a class="c-hand" v-on:click="goToLegalDocument('TERMS')">Terms &amp; Conditions</a>, <a class="c-hand" v-on:click="goToLegalDocument('EULA')">EULA</a> and <a class="c-hand" v-on:click="goToLegalDocument('PRIVACY')">Privacy Policy.</a></small></p>
     </section>
     <section class="navbar-section">
     </section>

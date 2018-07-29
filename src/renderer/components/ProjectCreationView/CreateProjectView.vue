@@ -4,7 +4,7 @@
         <div id="stepperContainer">
             <ul class="step">
                 <li v-for="(step, index) in getStepperInfo.steps" v-bind:item="step" v-bind:index="index" v-bind:key="step.position" v-bind:class="{ active: getStepperInfo.currentStep === step.position, 'step-item': true }">
-                    <a href="#" class="tooltip" v-bind:data-tooltip="step.toolTip">{{ step.title }}</a>
+                    <a href="#" class="tooltip unselectable" v-bind:data-tooltip="step.toolTip">{{ step.title }}</a>
                 </li>
             </ul>
         </div>
