@@ -22,7 +22,6 @@
     </div>
 </template>
 <script>
-    import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
     import { mapGetters } from 'vuex'
 
     import RightBarViewSettings from './RightBarViewSettings/RightBarViewSettings.vue'
@@ -36,7 +35,6 @@
         }
       },
       components: {
-        FontAwesomeIcon,
         RightBarViewSettings,
         RightBarTitleSettings
       },
