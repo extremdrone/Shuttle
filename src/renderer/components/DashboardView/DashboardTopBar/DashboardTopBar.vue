@@ -77,22 +77,11 @@
         ipcRenderer.on('savedExportCodePath', function (event, path) {
           thisRef.save(function (success) {
             thisRef.$store.dispatch('setBottomLoadingTextMode', 'Building Project...', 'INDEFINITE')
-            const turing = new SHTuring(thisRef.$store.getters.getCurrentProjectPath, {appPlatforms: 'IOS'})
+            const turing = new SHTuring(thisRef.$store.getters.getCurrentProjectPath, {appPlatforms: 'IOS', exportPath: path})
             turing.generatePlatforms(function () {
               console.log('Success Creating Projects')
-              thisRef.$store.dispatch('setBottomLoadingTextMode', 'Exporting Projects...', 'INDEFINITE')
-              FileManagement.methods.deleteDirIfExistsSync(path + '/ShuttleExport').then(function () {
-                var promisesCopy = []
-                promisesCopy.push(FileManagement.methods.copyFileAsync(thisRef.$store.getters.getCurrentProjectPath + '/iOS', path + 'ShuttleExport/iOS'))
-                promisesCopy.push(FileManagement.methods.copyFileAsync(thisRef.$store.getters.getCurrentProjectPath + '/Android', path + 'ShuttleExport/Android'))
-                Promise.all(promisesCopy).then(function (values) {
-                  console.log(values)
-                }).catch(function (error) {
-                  console.log(error)
-                })
-              }).catch(function (error) {
-                console.log(error)
-              })
+            }, function (err) {
+              console.log(err)
             })
           })
         })

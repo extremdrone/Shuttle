@@ -15,6 +15,9 @@
                       <li class="menu-item" v-for="element in getCurrentProjectScreen.elements" v-bind:key="element.id">
                         <a v-on:click="setSelectedElement(element.id)" href="#accordions">- <font-awesome-icon :icon="['far', 'image']"/> {{ element.id }}</a>
                       </li>
+                      <li class="menu-item" v-show="getCurrentProjectElementsAsArray.length == 0">
+                        <small>No Elements in Screen</small>
+                      </li>
                     </draggable>
                   </ul>
                 </div>
