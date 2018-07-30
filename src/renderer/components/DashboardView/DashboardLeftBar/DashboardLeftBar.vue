@@ -16,7 +16,7 @@
                         <a v-on:click="setSelectedElement(element.id)" href="#accordions">- <font-awesome-icon :icon="['far', 'image']"/> {{ element.id }}</a>
                       </li>
                       <li class="menu-item" v-show="getCurrentProjectElementsAsArray.length == 0">
-                        <small>No Elements in Screen</small>
+                        <small>No elements in {{ screen.name }}</small>
                       </li>
                     </draggable>
                   </ul>
@@ -73,6 +73,7 @@
     import DashboardElementsView from './DashboardElementsView/DashboardElementsView.vue'
 
     import ScreenManagement from '../../../mixins/ScreenManagement/ScreenManagement'
+    import ProjectManagement from '../../../mixins/ProjectManagement/ProjectManagement'
     import ElementManagement from '../../../mixins/ElementManagement/ElementManagement'
 
     export default {
@@ -83,7 +84,8 @@
       },
       mixins: [
         ScreenManagement,
-        ElementManagement
+        ElementManagement,
+        ProjectManagement
       ],
       computed: {
         ...mapGetters([
@@ -124,8 +126,37 @@
           })
         },
         addScreenClick: function () {
-          console.log(this.$store.getters.getNewScreen)
-          console.log(this.$store.getters.getPlaceholderScreen)
+          const store = this.$store
+          const newScreenMetadata = this.$store.getters.getNewScreen
+          var screenElement = this.$store.getters.getScreenForSelectedPlaceholderType.screenElement
+          screenElement.name = newScreenMetadata.name
+          screenElement.id = newScreenMetadata.filteredID
+
+          const toSaveScreen = {}
+          toSaveScreen[screenElement.id] = screenElement
+
+          ScreenManagement.methods.saveScreens(this.$store.getters.getCurrentProjectPath, toSaveScreen, function (promises) {
+            Promise.all(promises).then(function (values) {
+              ProjectManagement.methods.loadProjectFromDisk(store.getters.getCurrentProjectPath, function (projectInformation, screenPointers, firstScreen) {
+                store.dispatch('resetCurrentProject')
+                store.dispatch('setCurrentProjectPath', store.getters.getCurrentProjectPath)
+                store.dispatch('setCurrentProjectInformation', projectInformation)
+                store.dispatch('setCurrentProjectScreenPointers', screenPointers)
+                store.dispatch('setCurrentProjectScreen', firstScreen)
+                store.dispatch('setShowScreenModalID', false)
+              }, function (errorMessage) {
+                // TODO: Present error modal and handle rollback
+                console.log(errorMessage)
+                store.dispatch('setShowScreenModalID', false)
+              })
+            }).catch(function (rejectMessage) {
+              console.log(rejectMessage)
+              store.dispatch('setShowScreenModalID', false)
+            })
+          }, function (errorMessage) {
+            console.log(errorMessage)
+            store.dispatch('setShowScreenModalID', false)
+          })
         }
       }
     }

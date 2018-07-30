@@ -69,6 +69,13 @@ const getters = {
   },
   getNewScreen: function (state) {
     return state.newScreen
+  },
+  getScreenForSelectedPlaceholderType: function (state) {
+    for (var screenTemplate of state.sampleScreens) {
+      if (screenTemplate.type === state.placeholderScreen.type) {
+        return screenTemplate
+      }
+    }
   }
 }
 
