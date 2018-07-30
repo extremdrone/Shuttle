@@ -42,12 +42,12 @@
                         </div>
                       </li>
                       <li class="divider"></li>
-                      <li class="menu-item">
+                      <li class="menu-item c-hand">
                         <div class="menu-badge">
                           <label class="label label-primary"><small><font-awesome-icon icon="cloud"/></small></label>
                         </div><a>Upload to Shuttle Cloud</a>
                       </li>
-                      <li class="menu-item">
+                      <li class="menu-item c-hand">
                         <div class="menu-badge">
                           <label class="label label-primary"><small><font-awesome-icon icon="code"/></small></label>
                         </div><a @click="exportCode()">Export Source Code</a>
