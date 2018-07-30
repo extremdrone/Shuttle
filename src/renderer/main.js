@@ -5,12 +5,15 @@ import App from './App'
 import router from './router'
 import store from './store'
 
-import fontawesome from '@fortawesome/fontawesome'
-import brands from '@fortawesome/fontawesome-free-brands'
-import solid from '@fortawesome/fontawesome-free-solid'
-import regular from '@fortawesome/fontawesome-free-regular'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
 
-fontawesome.library.add(brands, solid, regular)
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(fab, fas, far)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios

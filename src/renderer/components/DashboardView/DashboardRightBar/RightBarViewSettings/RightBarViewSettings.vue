@@ -41,7 +41,6 @@
     </table>
 </template>
 <script>
-    import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
     import { Chrome } from 'vue-color'
 
     import { mapGetters } from 'vuex'
@@ -54,7 +53,6 @@
         }
       },
       components: {
-        FontAwesomeIcon,
         'chrome-picker': Chrome
       },
       computed: {

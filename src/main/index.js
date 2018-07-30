@@ -1,6 +1,7 @@
 'use strict'
 
 import { app, BrowserWindow } from 'electron'
+import { autoUpdater } from 'electron-updater'
 
 const Datastore = require('nedb')
 var db = {}
@@ -62,10 +63,6 @@ app.on('activate', () => {
  * support auto updating. Code Signing with a valid certificate is required.
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-electron-builder.html#auto-updating
  */
-
-/*
-import { autoUpdater } from 'electron-updater'
-
 autoUpdater.on('update-downloaded', () => {
   autoUpdater.quitAndInstall()
 })
@@ -73,7 +70,6 @@ autoUpdater.on('update-downloaded', () => {
 app.on('ready', () => {
   if (process.env.NODE_ENV === 'production') autoUpdater.checkForUpdates()
 })
- */
 
 /**
 * I was unable to make require(file) work on the component electron main file, so for now, components electron main methods will go here in electron index.js
@@ -182,4 +178,18 @@ ipcMain.on('openProjectSettings', function (event, project) {
 
 ipcMain.on('closeProjectSettings', function (event) {
   settingsWindow.close()
+})
+
+/**
+ * Export Code Methods
+ */
+ipcMain.on('openExportCodeFinder', function (event) {
+  const options = {
+    title: 'Export Shuttle Source Code',
+    properties: ['openDirectory', 'createDirectory', 'promptToCreate'],
+    buttonLabel: 'Export Here'
+  }
+  dialog.showOpenDialog(options, (filename) => {
+    event.sender.send('savedExportCodePath', filename)
+  })
 })
