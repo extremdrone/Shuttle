@@ -14,7 +14,7 @@
 - [x] Drag and Drop Available elements
 - [x] Add elements in the drag and drop editor
 - [ ] Add a decent amount of elements
-- [x] Edit Elements
+- [x] Edit element attributes
 - [ ] Add actions and screen transitions
 - [x] Export iOS Code
 - [ ] Export Android Code (Soon)
