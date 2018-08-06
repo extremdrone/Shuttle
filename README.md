@@ -13,4 +13,6 @@ Juan David Cruz Serrano & AppShuttle.io, contact me at: [david@appshuttle.io](ma
 
 ## License
 
-Shuttle is available under the MIT license. See the LICENSE file for more info.
+Shuttle is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
+
+> This project and all Shuttle tools are in no way affiliated with Apple Inc, Google LLC. This project is open source under the MIT license, which means you have full access to the source code and can modify it to fit your own needs. You are responsible for how you use Shuttle.
