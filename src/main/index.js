@@ -37,7 +37,8 @@ function createWindow () {
   mainWindow.maximize()
   mainWindow.show()
 
-  mainWindow.webContents.openDevTools()
+  // Open DevTools in PROD environment
+  // mainWindow.webContents.openDevTools()
 
   mainWindow.on('closed', () => {
     mainWindow = null
