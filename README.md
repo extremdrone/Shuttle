@@ -31,9 +31,9 @@ Currently Shuttle is in public **Beta**. You must remember that this means that 
 
 Shuttle is available for macOS, Windows and linux operating systems.
 
-![Download macOS](#)
-![Download Windows](#)
-![Download Linux](#)
+[Download macOS](#)
+[Download Windows](#)
+[Download Linux](#)
 
 ## Author 👨🏻‍💻
 
