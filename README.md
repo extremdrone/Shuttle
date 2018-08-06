@@ -22,11 +22,18 @@
 - [ ] Run in Android Simulator (Soon)
 - [ ] Upload Projects to Shuttle Cloud
 - [ ] Add server side connection for the developed apps
+- [X] Support macOS, Windows, Linux operating systems
 - [ ] Complete Documentation
 
 Currently Shuttle is in public **Beta**. You must remember that this means that there is no guarantee that Shuttle will work perfectly. AppShuttle and the Shuttle programmers are not responsible for Shuttle errors that may cause damage to any work or product, nor for work performed within it. By testing this application while it remains in Beta status, you agree that there is no guarantee of the performance of Shuttle ❤️.
 
 ## Download 💻
+
+Shuttle is available for macOS, Windows and linux operating systems.
+
+![Download macOS](#)
+![Download Windows](#)
+![Download Linux](#)
 
 ## Author 👨🏻‍💻
 
