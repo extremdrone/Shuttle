@@ -69,9 +69,9 @@
     "copyright": "Copyright © 2018 AppShuttle.io"
   },
   "dependencies": {
-    "@appshuttle.io/bell": "0.0.8",
+    "@appshuttle.io/bell": "0.0.9",
     "@appshuttle.io/pollock": "0.0.18",
-    "@appshuttle.io/turing": "0.0.14",
+    "@appshuttle.io/turing": "0.0.16",
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
     "@fortawesome/free-brands-svg-icons": "^5.0.13",
     "@fortawesome/free-regular-svg-icons": "^5.0.13",
@@ -79,6 +79,7 @@
     "@fortawesome/vue-fontawesome": "0.1.1",
     "axios": "^0.16.1",
     "electron-updater": "^3.0.3",
+    "grunt": "^1.0.3",
     "nedb": "^1.8.0",
     "p5": "^0.6.1",
     "path": "^0.12.7",
