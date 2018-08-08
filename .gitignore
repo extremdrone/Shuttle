@@ -1,4 +1,3 @@
-build
 dist
 designkit
 node_modules
@@ -7,8 +6,6 @@ yarn.lock
 .DS_Store
 dist/electron/*
 dist/web/*
-build/*
-!build/icons
 node_modules/
 npm-debug.log
 npm-debug.log.*
