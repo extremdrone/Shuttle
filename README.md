@@ -1,7 +1,7 @@
 # Shuttle 🚀
 
 [![Build Status](https://travis-ci.org/AppShuttleInc/Shuttle.svg?branch=master)](https://travis-ci.org/AppShuttleInc/Shuttle)
-[![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](LICENSE)
+[![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](LICENSE) [![Greenkeeper badge](https://badges.greenkeeper.io/AppShuttleInc/Shuttle.svg)](https://greenkeeper.io/)
 
 
 ![Screenshot](Cover.png)
