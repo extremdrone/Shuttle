@@ -3,7 +3,7 @@ sudo: required
 dist: trusty
 language: c
 node_js:
-  - "lts/*"
+  - lts/*
 matrix:
   include:
   - os: osx
