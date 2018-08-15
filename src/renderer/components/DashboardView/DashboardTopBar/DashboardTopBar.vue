@@ -10,25 +10,34 @@
                 <img class="centered unselectable" id="logo" src="~@/assets/logo.png" alt="Shuttle"/>
             </section>
             <section class="navbar-section">
-                <div class="dropdown">
-                    <a class="btn btn-link dropdown-toggle" tabindex="0"><font-awesome-icon icon="play"/><small> Run</small></a>
+                <div class="popover popover-bottom">
+                  <button class="btn btn-link"><font-awesome-icon icon="play"/><small> Run</small></button>
+                  <div class="popover-run popover-container">
                     <ul class="menu">
-                        <li class="menu-item">
-                        <a @click="run('IOS')" href="#dropdowns">
-                            Run iOS
-                        </a>
-                        </li>
-                        <li class="menu-item">
-                        <a @click="run('ANDROID')" href="#dropdowns">
-                            Run Android
-                        </a>
-                        </li>
-                        <li class="menu-item">
-                        <a @click="run('BOTH')" href="#dropdowns">
-                            Run Both
-                        </a>
-                        </li>
+                      <li class="menu-item">
+                        <div class="popover-menu-title unselectable c-default tile tile-centered">
+                          <div class="tile-icon"><small><font-awesome-icon icon="play"/></small></div>
+                          <div class="tile-content"><small>Run</small></div>
+                        </div>
+                      </li>
+                      <li class="divider"></li>
+                      <li class="menu-item c-hand">
+                        <div class="menu-badge">
+                          <label class="label label-primary"><font-awesome-icon :icon="['fab', 'apple']"/></label>
+                        </div><a @click="run('IOS')">Run iOS</a>
+                      </li>
+                      <li class="menu-item c-hand">
+                        <div class="menu-badge">
+                          <label class="label label-primary"><font-awesome-icon :icon="['fab', 'android']"/></label>
+                        </div><a @click="run('ANDROID')">Run Android</a>
+                      </li>
+                      <li class="menu-item c-hand">
+                        <div class="menu-badge">
+                          <label class="label label-primary"><font-awesome-icon icon="mobile-alt"/></label>
+                        </div><a @click="run('BOTH')">Run Both</a>
+                      </li>
                     </ul>
+                  </div>
                 </div>
                 <a @click="openProjectSettings()" class="btn btn-link"><font-awesome-icon icon="wrench"/><small> Settings</small></a>
                 <div class="popover popover-bottom">
@@ -42,7 +51,7 @@
                         </div>
                       </li>
                       <li class="divider"></li>
-                      <li class="menu-item c-hand">
+                      <li class="menu-item c-not-allowed">
                         <div class="menu-badge">
                           <label class="label label-primary"><small><font-awesome-icon icon="cloud"/></small></label>
                         </div><a>Upload to Shuttle Cloud</a>
@@ -187,7 +196,7 @@
         width: auto;
     }
 
-    .popover.popover-bottom .popover-container {
+    .popover.popover-bottom .popover-share {
         left: -100px;
     }
 
