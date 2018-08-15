@@ -1,7 +1,7 @@
 <template>
   <div class="container" id="bottomBar">
       <div class="columns" id="bottomBarColumns">
-        <div class="column col-2"><a class="bottomBarLink"><small>Feedback and Support</small></a></div>
+        <div class="column col-2"><a @click="goToFeedbackAndSupport()" class="bottomBarLink c-hand"><small>Feedback and Support</small></a></div>
         <div class="column col-4"></div>
         <div class="column col-2"></div>
         <div class="column col-2"><small>{{ getBottomLoadingText }}</small></div>
@@ -17,6 +17,8 @@
 <script>
 import { mapGetters } from 'vuex'
 
+const shell = require('electron').shell
+
 export default {
   name: 'DashboardTopBar',
   computed: {
@@ -25,7 +27,16 @@ export default {
       'getBottomLoadingMode',
       'getBottomLoadingPercentage'
     ])
+  },
+  methods: {
+    goToFeedbackAndSupport: function (legalDocumentType) {
+      openFeedbackAndSupport(legalDocumentType)
+    }
   }
+}
+
+function openFeedbackAndSupport () {
+  shell.openExternal('https://appshuttle.io/help.html')
 }
 </script>
 <style scoped>
