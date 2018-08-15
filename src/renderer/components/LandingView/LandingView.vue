@@ -40,7 +40,7 @@
     </section>
     <section class="navbar-center">
       <!-- centered logo or brand -->
-      <p class="unselectable c-default" id="textFooter"><small>Shuttle V0.0.1 Beta <br> Made with ❤️ in Colombia 🇨🇴 <br> Copyright © 2018 AppShuttle.io. <br> By using this app or any of its services you accept our <a class="c-hand" v-on:click="goToLegalDocument('TERMS')">Terms &amp; Conditions</a>, <a class="c-hand" v-on:click="goToLegalDocument('EULA')">EULA</a> and <a class="c-hand" v-on:click="goToLegalDocument('PRIVACY')">Privacy Policy.</a></small></p>
+      <p class="unselectable c-default" id="textFooter"><small>Shuttle V0.0.1 Beta <br> Made with ❤️ in Colombia 🇨🇴 <br> Copyright © 2018 <a class="c-hand" v-on:click="goToLegalDocument('WEBSITE')">AppShuttle.io</a>. <br> By using this app or any of its services you accept our <a class="c-hand" v-on:click="goToLegalDocument('TERMS')">Terms &amp; Conditions</a>, <a class="c-hand" v-on:click="goToLegalDocument('EULA')">EULA</a> and <a class="c-hand" v-on:click="goToLegalDocument('PRIVACY')">Privacy Policy.</a></small></p>
     </section>
     <section class="navbar-section">
     </section>
@@ -129,6 +129,10 @@
       }
       case 'PRIVACY': {
         shell.openExternal('https://firebasestorage.googleapis.com/v0/b/appshuttle-69c81.appspot.com/o/documents%2FOnline%20Privacy%20Policy.pdf?alt=media')
+        break
+      }
+      case 'WEBSITE': {
+        shell.openExternal('https://appshuttle.io')
         break
       }
       default: {
