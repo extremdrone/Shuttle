@@ -49,6 +49,14 @@ Due to the complexity of Shuttle. There are multiple NPM Modules that make Shutt
 
 Juan David Cruz Serrano & AppShuttle.io, contact me at: [david@appshuttle.io](mailto:david@appshuttle.io)
 
+## Social
+
+We love to keep you updated on latest news and releases. Follow us on: <br/>
+
+[Instagram](https://instagram.com/AppShuttle.io) <br/>
+[Facebook](https://facebook.com/AppShuttle.io) <br/>
+[Twitter](https://twitter.com/AppShuttleio) <br/>
+
 ## License 📄
 
 Shuttle is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
