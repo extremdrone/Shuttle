@@ -171,7 +171,8 @@ const state = {
     name: '',
     filteredID: ''
   },
-  placeholderElement: undefined
+  placeholderElement: undefined,
+  placeholderDragElement: undefined
 }
 
 const mutations = {
@@ -180,6 +181,9 @@ const mutations = {
   },
   SET_SELECTED_ELEMENT_PLACEHOLDER (state, element) {
     state.placeholderElement = element
+  },
+  SET_SELECTED_DRAG_ELEMENT_PLACEHOLDER (state, element) {
+    state.placeholderDragElement = element
   },
   SET_NEW_ELEMENT_NAME (state, payload) {
     state.newElement.name = payload.name
@@ -194,8 +198,14 @@ const actions = {
   setPlaceholderElement ({ commit }, element) {
     commit('SET_SELECTED_ELEMENT_PLACEHOLDER', element)
   },
+  setPlaceholderDragElement ({ commit }, element) {
+    commit('SET_SELECTED_DRAG_ELEMENT_PLACEHOLDER', element)
+  },
   setNewElementName ({ commit }, payload) {
     commit('SET_NEW_ELEMENT_NAME', payload)
+  },
+  resetPlaceholderDragElement ({ commit }) {
+    commit('SET_SELECTED_DRAG_ELEMENT_PLACEHOLDER', undefined)
   }
 }
 
@@ -217,6 +227,9 @@ const getters = {
   },
   getPlaceholderElement: function (state) {
     return state.placeholderElement
+  },
+  getPlaceholderDragElement: function (state) {
+    return state.placeholderDragElement
   },
   getNewElement: function (state) {
     return state.newElement

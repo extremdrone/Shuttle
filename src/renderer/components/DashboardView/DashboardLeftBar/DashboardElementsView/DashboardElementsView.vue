@@ -1,30 +1,28 @@
 <template>
   <div>
     <div id="elementsContainer" class="columns">
-            <div class="column col-12">
-              <small class="unselectable c-default"><font-awesome-icon icon="toggle-on"/> Elements (Drag to add)</small>
-              <div class="divider"></div>
+      <div class="column col-12">
+        <small class="unselectable c-default"><font-awesome-icon icon="toggle-on"/> Elements (Drag to add)</small>
+        <div class="divider"></div>
+      </div>
+      <div id="elementsScroll">
+        <div v-for="element in getAvailableElements" @mousedown="elementMousedown(element)" @mouseup="showElementIdModal(true, element)" v-bind:key="element.type">
+          <div class="columns">
+            <div class="column col-10 c-move element-row">
+            <div class="panel">
+            <div class="panel-header text-center">
+              <font-awesome-icon class="icon-element" :icon="element.icon" size="m"/>
+              <div class="panel-title unselectable"><a>{{ element.name }}</a></div>
+              <div class="panel-subtitle unselectable"><small>{{ element.description }}</small></div>
             </div>
-            <div id="elementsScroll">
-            <draggable v-model="getAvailableElementsAsArray" :options="{group:'Elements'}" :move="checkMove">
-              <div v-for="element in getAvailableElements" v-bind:key="element.type">
-                <div class="columns">
-                  <div class="column col-10 c-move element-row">
-                  <div class="panel">
-                  <div class="panel-header text-center">
-                    <font-awesome-icon class="icon-element" :icon="element.icon" size="m"/>
-                    <div class="panel-title unselectable"><a>{{ element.name }}</a></div>
-                    <div class="panel-subtitle unselectable"><small>{{ element.description }}</small></div>
-                  </div>
-                  </div>
-                  </div>
-                  <div @click="showElementIdModal(true, element)" class="column col-2 c-add">
-                    <font-awesome-icon icon="plus-square" class="addButton"/>
-                  </div>
-                </div>
-              </div>
-            </draggable>
-           </div>
+            </div>
+            </div>
+            <div @click="showElementIdModal(true, element)" class="column col-2 c-add">
+              <font-awesome-icon icon="plus-square" class="addButton"/>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div v-bind:class="{ 'modal': true, 'modal-sm': true, 'active': getShowElementModalID }" id="example-modal-2">
       <a @click="showElementIdModal(false)" class="modal-overlay" aria-label="Close"></a>
@@ -79,7 +77,12 @@
       },
       methods: {
         checkMove: function (evt) {
-          console.log(evt)
+          // console.log(evt)
+        },
+        elementMousedown: function (elementPlaceholder) {
+          if (typeof elementPlaceholder !== 'undefined') {
+            this.$store.dispatch('setPlaceholderDragElement', elementPlaceholder)
+          }
         },
         showElementIdModal: function (bool, elementPlaceholder) {
           if (typeof elementPlaceholder !== 'undefined') {

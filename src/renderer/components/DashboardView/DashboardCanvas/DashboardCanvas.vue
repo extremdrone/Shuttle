@@ -25,6 +25,7 @@
           width: 375,
           height: 667
         }
+
         return new Pollock('processingArea', pollockConfig, function () {
           return store.getters.getCurrentProjectScreen
         }, function (selectedElement) {
@@ -33,6 +34,14 @@
           })
         }, function (modifiedContent) {
           store.dispatch('setCurrentProjectScreen', modifiedContent)
+        }, {
+          mouseReleased: function (mouseResponse) {
+            if (mouseResponse.mouseIsInsideCanvas === true && (store.getters.getPlaceholderDragElement !== undefined)) {
+              store.dispatch('setPlaceholderElement', store.getters.getPlaceholderDragElement)
+              store.dispatch('setShowElementModalID', true)
+              store.dispatch('resetPlaceholderDragElement')
+            }
+          }
         })
       }
     }
