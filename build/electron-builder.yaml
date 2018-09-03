@@ -2,7 +2,7 @@ directories:
   output: build
   buildResources: build
 productName: Shuttle
-appId: io.appshuttle.shuttle
+appId: io.appshuttle.shuttlemac
 files:
   - dist/electron/**/*
 dmg:
@@ -17,8 +17,18 @@ dmg:
 mac:
   icon: build/icons/icon.icns
   category: public.app-category.developer-tools
+  target:
+    - target: mas
+mas:
+  entitlements: build/entitlements.mas.plist
+  entitlementsInherit: build/entitlements.mas.inherit.plist
+  icon: build/icons/icon.icns
+  category: public.app-category.developer-tools
 win:
   icon: build/icons/icon.ico
+  target:
+    - target: nsis
+    - target: appx
 linux:
   icon: build/icons
 fileAssociations:

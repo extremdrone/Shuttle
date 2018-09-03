@@ -1,10 +1,10 @@
 version: 0.0.1
 files:
   - url: shuttle-0.0.1-mac.zip
-    sha512: BcKOzHdC6hde9GhFCOAXbGqYYfjWPVgGO6PUa6Z0kEkrxyk0DIEhpSV5fWdk7WkK5eRAnls6W6HEWEuOskssfA==
+    sha512: ZFcSijd5WrZZG0c/8L+bVrXsPSBe32a1jr5eK3ubxTuNvKj+T0+5MjC57NKkvd91CSxPn6DuHaDdNv2lRSlYuw==
   - url: Shuttle-0.0.1.dmg
-    sha512: bkZy9bSbgs0uC5vvEWJ9hFhVzw/Vexp3upiQHtW8BB/b6cJuTPjPaQznU43uVIOAjQPLN8PZR6n3m9pzZ7AHTA==
-    size: 75518592
+    sha512: wDAQZzPXLTg3ncNM0jWru4XNMyyVeW/HSatNFRSYDosf3llfkR7+hjHM/72jUiBnovlbi6cSL0o8sBc2srANHg==
+    size: 75513088
 path: shuttle-0.0.1-mac.zip
-sha512: BcKOzHdC6hde9GhFCOAXbGqYYfjWPVgGO6PUa6Z0kEkrxyk0DIEhpSV5fWdk7WkK5eRAnls6W6HEWEuOskssfA==
-releaseDate: '2018-08-06T17:01:11.431Z'
+sha512: ZFcSijd5WrZZG0c/8L+bVrXsPSBe32a1jr5eK3ubxTuNvKj+T0+5MjC57NKkvd91CSxPn6DuHaDdNv2lRSlYuw==
+releaseDate: '2018-09-03T20:04:48.277Z'

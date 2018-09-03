@@ -24,7 +24,7 @@
   },
   "build": {
     "productName": "Shuttle",
-    "appId": "io.appshuttle.shuttle",
+    "appId": "io.appshuttle.shuttlemac",
     "directories": {
       "output": "build"
     },
@@ -48,8 +48,19 @@
     },
     "mac": {
       "icon": "build/icons/icon.icns",
-      "category": "public.app-category.developer-tools"
+      "category": "public.app-category.developer-tools",
+      "target": [
+        {
+          "target": "mas"
+        }
+      ]
     },
+    "mas": {
+			"entitlements": "build/entitlements.mas.plist",
+			"entitlementsInherit": "build/entitlements.mas.inherit.plist",
+      "icon": "build/icons/icon.icns",
+      "category": "public.app-category.developer-tools"
+		},
     "win": {
       "icon": "build/icons/icon.ico",
       "target": [
