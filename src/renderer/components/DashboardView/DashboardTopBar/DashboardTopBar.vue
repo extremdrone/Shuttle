@@ -24,17 +24,17 @@
                       <li class="menu-item c-hand">
                         <div class="menu-badge">
                           <label class="label label-primary"><font-awesome-icon :icon="['fab', 'apple']"/></label>
-                        </div><a @click="run('IOS')">Run iOS</a>
+                        </div><a @click="showRunModal(true, 'IOS')">Run iOS</a>
                       </li>
                       <li class="menu-item c-hand">
                         <div class="menu-badge">
                           <label class="label label-primary"><font-awesome-icon :icon="['fab', 'android']"/></label>
-                        </div><a @click="run('ANDROID')">Run Android</a>
+                        </div><a @click="showRunModal(true, 'ANDROID')">Run Android</a>
                       </li>
                       <li class="menu-item c-hand">
                         <div class="menu-badge">
                           <label class="label label-primary"><font-awesome-icon icon="mobile-alt"/></label>
-                        </div><a @click="run('BOTH')">Run Both</a>
+                        </div><a @click="showRunModal(true, 'BOTH')">Run Both</a>
                       </li>
                     </ul>
                   </div>
@@ -68,6 +68,38 @@
             </section>
         </header>
         <div class="divider"></div>
+        <div v-bind:class="{ 'modal': true, 'active': getShowRunModal }" id="example-modal-2">
+          <a @click="showRunModal(false)" class="modal-overlay" aria-label="Close"></a>
+          <div class="modal-container" role="document">
+            <div class="modal-header">
+              <a @click="showRunModal(false)" class="btn btn-clear float-right" aria-label="Close"></a>
+              <div class="modal-title h5 unselectable c-default"><strong>Select Run Target</strong></div>
+            </div>
+            <div class="modal-body">
+              <div class="content" v-if="getRunTargets.iOS">
+                <ul class="tab tab-block">
+                  <li v-bind:class="{ 'tab-item': true, 'active': ((getSelectediOSRuntime) ? getSelectediOSRuntime.identifier == runtime.identifier : false ) }" v-for="runtime in getRunTargets.iOS.runtimes" v-bind:key="runtime.identifier">
+                    <a @click="setRuntime(runtime, 'IOS')" class="c-hand unselectable">{{runtime.name}}</a>
+                  </li>
+                </ul>
+                <div class="columns" v-if="getSelectediOSRuntime">
+                  <div class="column col-12">
+                    <label class="form-label unselectable" for="input-example-7"><small>Simulators:</small></label>
+                  </div>
+                  <div class="column col-12" v-for="simulator in getRunTargets.iOS.devices[getSelectediOSRuntime.name]" v-bind:key="simulator.udid">
+                    <div class="chip c-hand" @click="setDevice(simulator, 'IOS')">
+                      <figure class="avatar avatar-sm" data-initial="" style="background-color: #cacaca;"></figure>
+                      {{ simulator.name}} &nbsp; <small>{{ simulator.availability }}</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a @click="showRunModal(false)" class="btn btn-link" aria-label="Close">Cancel</a>
+            </div>
+          </div>
+        </div>
     </div>
 </template>
 <script>
@@ -97,7 +129,11 @@
       },
       computed: {
         ...mapGetters([
-          'getCurrentProjectPath'
+          'getCurrentProjectPath',
+          'getShowRunModal',
+          'getRunModalPlatform',
+          'getRunTargets',
+          'getSelectediOSRuntime'
         ])
       },
       mixins: [
@@ -121,7 +157,7 @@
                   bellDict.ios = {
                     buildPath: value,
                     appBundleId: 'ORG-IDENTIFIER.APP-NAME',
-                    deviceStringID: 'D7A3FEDE-B858-4A2B-9AE2-495C193A1D7E'
+                    deviceStringID: thisRef.$store.getters.getSelectediOSDevice.udid
                   }
 
                   thisRef.$store.dispatch('setBottomLoadingTextMode', 'Running Project...', 'INDEFINITE')
@@ -180,6 +216,43 @@
         },
         exportCode: function () {
           ipcRenderer.send('openExportCodeFinder')
+        },
+        showRunModal: function (show, platform) {
+          if (typeof platform !== 'undefined') {
+            this.$store.dispatch('setRunModalPlatform', platform)
+            if (show === true) {
+              const contextStore = this.$store
+              const bell = new Bell()
+              bell.getAvailableRunTargets(platform).then(function (value) {
+                contextStore.dispatch('setRunTargets', value)
+              }).catch(function (error) {
+                console.log(error)
+              })
+            }
+          } else {
+            this.$store.dispatch('setRunModalPlatform', undefined)
+          }
+          this.$store.dispatch('setShowRunModal', show)
+        },
+        setRuntime: function (runtime, platform) {
+          switch (platform) {
+            case 'IOS':
+              this.$store.dispatch('setSelectediOSRuntime', runtime)
+              break
+            default:
+              break
+          }
+        },
+        setDevice: function (device, platform) {
+          switch (platform) {
+            case 'IOS':
+              this.$store.dispatch('setSelectediOSDevice', device)
+              break
+            default:
+              break
+          }
+          this.showRunModal(false)
+          this.run(this.$store.getters.getRunModalPlatform)
         }
       }
     }

@@ -77,8 +77,8 @@
     "copyright": "Copyright © 2018 AppShuttle.io"
   },
   "dependencies": {
-    "@appshuttle.io/bell": "0.0.9",
-    "@appshuttle.io/pollock": "0.0.19",
+    "@appshuttle.io/bell": "0.0.12",
+    "@appshuttle.io/pollock": "0.0.28",
     "@appshuttle.io/turing": "0.0.16",
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
     "@fortawesome/free-brands-svg-icons": "^5.0.13",
