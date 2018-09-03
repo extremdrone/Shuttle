@@ -250,6 +250,9 @@ const getters = {
   getCreationFormValues: function (state) {
     return state.creationForm
   },
+  getNewCreatorEmail: function (state) {
+    return state.newProject.creatorInformation.email
+  },
   getNewProject: function (state) {
     return state.newProject
   },

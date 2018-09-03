@@ -1,7 +1,7 @@
 <template>
 <div v-show="getStepperInfo.currentStep === 2" id="creatorInformationContainer">
             <div class="columns">
-                <div class="col-10 col-mx-auto unselectable">
+                <div class="col-10 col-mx-auto unselectable c-default">
                     <h3>Creator Information: </h3>
                     <p>This is the basic info we need to create your mobile applications. Keep in mind you <strong>can</strong> change this information later.</p>
                 </div>

@@ -4,7 +4,7 @@
         <div id="stepperContainer">
             <ul class="step">
                 <li v-for="(step, index) in getStepperInfo.steps" v-bind:item="step" v-bind:index="index" v-bind:key="step.position" v-bind:class="{ active: getStepperInfo.currentStep === step.position, 'step-item': true }">
-                    <a href="#" class="tooltip unselectable" v-bind:data-tooltip="step.toolTip">{{ step.title }}</a>
+                    <a class="tooltip unselectable c-default" v-bind:data-tooltip="step.toolTip">{{ step.title }}</a>
                 </li>
             </ul>
         </div>
@@ -31,6 +31,7 @@
     import { mapGetters } from 'vuex'
     import FileManagement from '../../mixins/FileManagment/FileManagement'
     import ScreenManagement from '../../mixins/ScreenManagement/ScreenManagement'
+    import MailManagement from '../../mixins/MailManagement/MailManagement'
 
     const {ipcRenderer} = require('electron')
 
@@ -43,6 +44,9 @@
               return this.$store.getters.isNewAppInformationComplete
             }
             case 2: {
+              if (!MailManagement.methods.validateEmailAddress(this.$store.getters.getNewCreatorEmail)) {
+                return false
+              }
               return this.$store.getters.isNewCreatorInformationComplete
             }
             case 3: {
