@@ -29,7 +29,7 @@ function createWindow () {
     minHeight: 800,
     minWidth: 1000,
     show: false,
-    titleBarStyle: 'hidden-inset',
+    titleBarStyle: 'hiddenInset',
     title: 'Shuttle'
   })
 
