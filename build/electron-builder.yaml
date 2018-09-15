@@ -3,6 +3,7 @@ directories:
   buildResources: build
 productName: Shuttle
 appId: io.appshuttle.shuttlemac
+buildVersion: '4'
 files:
   - dist/electron/**/*
 dmg:

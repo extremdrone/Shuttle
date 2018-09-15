@@ -3,7 +3,7 @@
 <plist version="1.0">
   <dict>
     <key>BuildMachineOSBuild</key>
-    <string>16G1314</string>
+    <string>16G1510</string>
     <key>CFBundleDisplayName</key>
     <string>Shuttle</string>
     <key>CFBundleExecutable</key>
@@ -21,7 +21,7 @@
     <key>CFBundleShortVersionString</key>
     <string>0.0.1</string>
     <key>CFBundleVersion</key>
-    <string>0.0.1</string>
+    <string>5</string>
     <key>DTSDKBuild</key>
     <string>14D125</string>
     <key>DTSDKName</key>
@@ -42,6 +42,8 @@
     <string>AtomApplication</string>
     <key>NSSupportsAutomaticGraphicsSwitching</key>
     <true/>
+    <key>NSHumanReadableCopyright</key>
+    <string>Copyright © 2018 AppShuttle.io</string>
     <key>CFBundleDocumentTypes</key>
     <array>
       <dict>
@@ -59,10 +61,8 @@
         <true/>
       </dict>
     </array>
-    <key>NSHumanReadableCopyright</key>
-    <string>Copyright © 2018 AppShuttle.io</string>
     <key>AsarIntegrity</key>
-    <string>{"checksums":{"app.asar":"/CEDA/VPC3lfjbKb5qhJlCFm0ZBgUiZpWsHDuQjuTykwljtPJaFSnhMaNyrFw/bAU/9zfp8PCCQqhQ6mw8gkaQ==","electron.asar":"shaGTTf4vQkJywaf3LYKGEHz171417OCfeVc+aD9dvPETPF4vUNxFnzgGWmtxw3qpYrT6QbdtRlvTfz1lxs1KQ=="}}</string>
+    <string>{"checksums":{"app.asar":"fUPOXF+EpffAKKOp2hrCFFAcsWDCRgGnrMOHmMnL13Z0r0WP6a+NrkgZSOWESy5BgaJeidPU2xfWoT27d5biqg==","electron.asar":"3WZrvugIPq4kilsITdxJKoVk3kzDsRc7M+XldI0cnIS5mjQR52yqkpyqeoU6G0smFPRbNkuapfxRTkOJU4NINg=="}}</string>
     <key>ElectronTeamID</key>
     <string>LS6M2TWH7D</string>
   </dict>

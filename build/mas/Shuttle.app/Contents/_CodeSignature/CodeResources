@@ -14,7 +14,7 @@
 		</data>
 		<key>Resources/app.asar</key>
 		<data>
-		sUN3eHSNpVwMzTt0MoRQw2QW1ao=
+		QrdftYgG4Rn0TKMDKTkwFFGinZk=
 		</data>
 		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/.eslintignore</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs</key>
 		<data>
-		2QyP1OGmH200pco60gkzF/kVOn8=
+		Cx3ouqP3Sj6/M8E50XAoDl9RBcA=
 		</data>
 		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/lib/phantom/examples/arguments.js</key>
 		<data>
@@ -240,169 +240,13 @@
 		<data>
 		Z8M206cNtXNIPGyavWpVgw6U80Q=
 		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/LICENSE</key>
-		<data>
-		HJznY9pRBdP/fZuz4jxNM9BjGPg=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/copy-sync/copy-file-sync.js</key>
-		<data>
-		PJ4drn07Ua9v919lHowPgs0qOkk=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/copy-sync/copy-sync.js</key>
-		<data>
-		4Upos0zPLLQu26IS22S3+JDXYCQ=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/copy-sync/index.js</key>
-		<data>
-		/zWEHtYXxq37j0aIoflvZcU3bYE=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/copy/copy.js</key>
-		<data>
-		PtbY6vztMCLURLCGXlzTUG9hZM4=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/copy/index.js</key>
-		<data>
-		4VZ8PxV0d+85lMZbSdgwHDvH0pk=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/copy/ncp.js</key>
-		<data>
-		KwPsOqVOG3HWOIGRVd+KbKxeJow=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/empty/index.js</key>
-		<data>
-		NKm0AInd+KzE/Th5X24dd/ndMyE=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/ensure/file.js</key>
-		<data>
-		FZa+6ND8zEswzHrjqtY71UpWpas=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/ensure/index.js</key>
-		<data>
-		gbGkQ11QbBN9+b+JUS5R09YRHpY=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/ensure/link.js</key>
-		<data>
-		iJraCqSf7GWc+vBFkC6/WZHI/AI=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/ensure/symlink-paths.js</key>
-		<data>
-		R3RzVkVV8LEWtqtvAaI3kActJic=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/ensure/symlink-type.js</key>
-		<data>
-		01meYohVi6jnNQYebieMVmyEXII=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/ensure/symlink.js</key>
-		<data>
-		ANaXYxX+/D57sPE597zqR3tEhck=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/index.js</key>
-		<data>
-		efN6BEFgZzqfnebGawpp58A650I=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/json/index.js</key>
-		<data>
-		UvQiHde6jIEmCONAy2sHWh0FD6s=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/json/jsonfile.js</key>
-		<data>
-		2JHdfgkhp8SOM4WOMJTrFgUs8Mk=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/json/output-json-sync.js</key>
-		<data>
-		HQcEFhNd94QeGrpP4kSoaJXhouI=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/json/output-json.js</key>
-		<data>
-		lQPBKUNuVR6o3iA+WPwOi36ui/Y=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/mkdirs/index.js</key>
-		<data>
-		0MUZj586035Ydxk3BDKKsE81ce0=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/mkdirs/mkdirs-sync.js</key>
-		<data>
-		OhXhH1NJeOGZuh3zSb+SQaHUkqA=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/mkdirs/mkdirs.js</key>
-		<data>
-		cTbIncB43o2HF2pKuOMg54oajN8=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/mkdirs/win32.js</key>
-		<data>
-		g8fHXmU3pvyFnGlu2XEmV1jkSqQ=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/move/index.js</key>
-		<data>
-		3nzLh9SZSXA8bzusTYAnjy/Gcaw=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/output/index.js</key>
-		<data>
-		czr4DFwwINhMyglqV7Awzlbkr5c=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/remove/index.js</key>
-		<data>
-		NRtBTDvWjL7uLkT5DFCd9RGu4cg=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/remove/rimraf.js</key>
-		<data>
-		FONdzAxsAIafcRCwJimtzRzxxSs=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/util/assign.js</key>
-		<data>
-		aiFZ/XHAJuN2hrQdpTzDdi3PZ44=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/util/utimes.js</key>
-		<data>
-		JiroWSppyb3U4lXwNf847V3MgKA=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/walk-sync/index.js</key>
-		<data>
-		HjDH+aGf9lFTbJdXHCmie6tJbdI=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/walk/index.js</key>
-		<data>
-		0FhVOP7//Gc9I3Zp3tOkBqClBx4=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/package.json</key>
-		<data>
-		m9lcfhNCf1Aunrqv2eNoxFPKGVI=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/progress/History.md</key>
-		<data>
-		zAQyENcY8GWw1WYkpodhXLEJfVo=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/progress/LICENSE</key>
-		<data>
-		/+xPOfE/CZwX+M9dpywHZDj9kxM=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/progress/Makefile</key>
-		<data>
-		f8NKqkZuktRTGY0IGQXvHkG4E/I=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/progress/Readme.md</key>
-		<data>
-		AQzOBVpQIswgfcXaKT+YsavKKtI=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/progress/index.js</key>
-		<data>
-		fOntagryJmWPfpl9GJQOcS6OuIo=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/progress/lib/node-progress.js</key>
-		<data>
-		S4g7y0Bmhg4i0CggTGGFC+aycJA=
-		</data>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/progress/package.json</key>
-		<data>
-		fdSKLN7Sz2wbewonp3a5jFvYU9M=
-		</data>
 		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/package.json</key>
 		<data>
 		KtnbeS8hqcNSF7dxiGXjc3uDeno=
 		</data>
 		<key>Resources/electron.asar</key>
 		<data>
-		XSDZlD9FOThBbRbsS+SytQbsxeE=
+		4PlB811n/L+DPAKAvlhDV8X8Fng=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -411,7 +255,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			24fX7+/SlMDpD05BTwiyvzS41dg=
+			rPviCzOo7pf6TMBvq9bJ3iBWdTw=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.github.electron.framework" and anchor apple generic and certificate leaf[subject.CN] = "3rd Party Mac Developer Application: Juan David Cruz Serrano (LS6M2TWH7D)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -420,7 +264,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			prQTKeiXq1B+SAkYkjanCz2MDlY=
+			P2w8E+toufJLxHR9+cCJj41TwpM=
 			</data>
 			<key>requirement</key>
 			<string>identifier "io.appshuttle.shuttlemac.helper.EH" and anchor apple generic and certificate leaf[subject.CN] = "3rd Party Mac Developer Application: Juan David Cruz Serrano (LS6M2TWH7D)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -429,7 +273,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Ta6Zlbsos+9JfHCNJ+fb2KgwvQk=
+			3U0RyMyf/q5WHxrnvBnSiy4hyyM=
 			</data>
 			<key>requirement</key>
 			<string>identifier "io.appshuttle.shuttlemac.helper.NP" and anchor apple generic and certificate leaf[subject.CN] = "3rd Party Mac Developer Application: Juan David Cruz Serrano (LS6M2TWH7D)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -438,10 +282,19 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			UWR5u6TbPwk50fqU+U6eXtNX4Lc=
+			WmLbmLNdrRf2JItXTlgTzByFzSk=
 			</data>
 			<key>requirement</key>
 			<string>identifier "io.appshuttle.shuttlemac.helper" and anchor apple generic and certificate leaf[subject.CN] = "3rd Party Mac Developer Application: Juan David Cruz Serrano (LS6M2TWH7D)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+		</dict>
+		<key>Library/LoginItems/Shuttle Login Helper.app</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			PPiNl7Hw+oRSzahj/QTb6Si6gCg=
+			</data>
+			<key>requirement</key>
+			<string>identifier "io.appshuttle.shuttlemac.loginhelper" and anchor apple generic and certificate leaf[subject.CN] = "3rd Party Mac Developer Application: Juan David Cruz Serrano (LS6M2TWH7D)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 		</dict>
 		<key>Resources/Project.icns</key>
 		<dict>
@@ -469,11 +322,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sUN3eHSNpVwMzTt0MoRQw2QW1ao=
+			QrdftYgG4Rn0TKMDKTkwFFGinZk=
 			</data>
 			<key>hash2</key>
 			<data>
-			ldmw0jbXwVOSCRAMT6bSy1lNqAtPSpdypDFjiL64Wlg=
+			fww46fJs1J/i99tFlZo5yqcOol4qRej0KquZAp7AnIY=
 			</data>
 		</dict>
 		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/.eslintignore</key>
@@ -557,11 +410,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2QyP1OGmH200pco60gkzF/kVOn8=
+			Cx3ouqP3Sj6/M8E50XAoDl9RBcA=
 			</data>
 			<key>hash2</key>
 			<data>
-			Tl4ebSbOHXUS8j7JPi52kw0QvU1PDh8Ih7efexyKjdA=
+			VjIJYzsbzitl5yfRCB6GGW3SvZOjkRTuW3lIUTnfot0=
 			</data>
 		</dict>
 		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/lib/phantom/examples/arguments.js</key>
@@ -1092,435 +945,6 @@
 			zrTCRm4ScdLrgcDECfhinQa/iUb3QUrpXAjHCBHGV0g=
 			</data>
 		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/LICENSE</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			HJznY9pRBdP/fZuz4jxNM9BjGPg=
-			</data>
-			<key>hash2</key>
-			<data>
-			PbmrRGsM5cbvlG4nh7awCnnZXtg0kJMAIQGInSxiVPA=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/copy-sync/copy-file-sync.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			PJ4drn07Ua9v919lHowPgs0qOkk=
-			</data>
-			<key>hash2</key>
-			<data>
-			LjON63UhZ3Vl0vznAi3RVf19/EuZpqWgqMGiIyui0DI=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/copy-sync/copy-sync.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			4Upos0zPLLQu26IS22S3+JDXYCQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			Z6anyFwUvXWVcNxfh2n6H8baBpwcGrydr/tupTWdtGs=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/copy-sync/index.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			/zWEHtYXxq37j0aIoflvZcU3bYE=
-			</data>
-			<key>hash2</key>
-			<data>
-			Ngt8la01Hw52UHNaS03NoNXb7UNIN6jgim+42U0ua1E=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/copy/copy.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			PtbY6vztMCLURLCGXlzTUG9hZM4=
-			</data>
-			<key>hash2</key>
-			<data>
-			I34Itb0F50EbgXA5D6AE9tJtHY9P+W0FA7klVnn5ins=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/copy/index.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			4VZ8PxV0d+85lMZbSdgwHDvH0pk=
-			</data>
-			<key>hash2</key>
-			<data>
-			LUUpLcPSgMjuHjLDMuaf3YHs6YfuW6qFIt2L2SCLTIw=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/copy/ncp.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			KwPsOqVOG3HWOIGRVd+KbKxeJow=
-			</data>
-			<key>hash2</key>
-			<data>
-			Av3mEu/yvJxTlxLkz/QTaIlofriZ7wP4uxJaMxRZR40=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/empty/index.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			NKm0AInd+KzE/Th5X24dd/ndMyE=
-			</data>
-			<key>hash2</key>
-			<data>
-			fnpt9xb6uYJXalnOWKYqY2k8HqYHkR+KXeQ3upg2WAU=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/ensure/file.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			FZa+6ND8zEswzHrjqtY71UpWpas=
-			</data>
-			<key>hash2</key>
-			<data>
-			AJaZXiTOExnQCop0nfSDHFr3KFwwbAfTNwKH0odUNM4=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/ensure/index.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			gbGkQ11QbBN9+b+JUS5R09YRHpY=
-			</data>
-			<key>hash2</key>
-			<data>
-			yjCMvk7B4RCj/szIwRwiI0fv5L0ExctXaq5INmxeMZ0=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/ensure/link.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			iJraCqSf7GWc+vBFkC6/WZHI/AI=
-			</data>
-			<key>hash2</key>
-			<data>
-			kAVkFe2CHNXdW1/mr5ks/SjVMcZLVbCf354BNvlp4W8=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/ensure/symlink-paths.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			R3RzVkVV8LEWtqtvAaI3kActJic=
-			</data>
-			<key>hash2</key>
-			<data>
-			JNtitzyxxBft+Nr+Tsb/pRzUye9yO2SyQDDj1fXmXbY=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/ensure/symlink-type.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			01meYohVi6jnNQYebieMVmyEXII=
-			</data>
-			<key>hash2</key>
-			<data>
-			AL4mpnBe24WkrNRI5YR3uJBYmec/MPwNZz98eiTr16o=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/ensure/symlink.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ANaXYxX+/D57sPE597zqR3tEhck=
-			</data>
-			<key>hash2</key>
-			<data>
-			JGnW1KfwE4jCA4S2kra06zTGp059dZYDRBRGYKXIk4A=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/index.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			efN6BEFgZzqfnebGawpp58A650I=
-			</data>
-			<key>hash2</key>
-			<data>
-			4QXgbJ5jLEOat4w9aQG6FEhb4RGC8vLCXT87+DI7XEU=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/json/index.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			UvQiHde6jIEmCONAy2sHWh0FD6s=
-			</data>
-			<key>hash2</key>
-			<data>
-			IKoUE+lcQV2RFlDuXxvDhAHZ5rDAwYOLw+aaAiJPmEA=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/json/jsonfile.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			2JHdfgkhp8SOM4WOMJTrFgUs8Mk=
-			</data>
-			<key>hash2</key>
-			<data>
-			bwckai47JhcaL4axp1YYx4lcCtGb+CzUOiddqDD82vY=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/json/output-json-sync.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			HQcEFhNd94QeGrpP4kSoaJXhouI=
-			</data>
-			<key>hash2</key>
-			<data>
-			tNpXnSdzzFGx2BYz7Tp7Fj8AC3je9DKC/Xx1eRBcI04=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/json/output-json.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			lQPBKUNuVR6o3iA+WPwOi36ui/Y=
-			</data>
-			<key>hash2</key>
-			<data>
-			ZKba8oxeourRnD2IFT83yRN66QhMv+tx4AmQJnEgsL8=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/mkdirs/index.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			0MUZj586035Ydxk3BDKKsE81ce0=
-			</data>
-			<key>hash2</key>
-			<data>
-			cUtyIez5N8jPPf/vrrxphtANIwm8z6BI4yFzoAFlkp0=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/mkdirs/mkdirs-sync.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			OhXhH1NJeOGZuh3zSb+SQaHUkqA=
-			</data>
-			<key>hash2</key>
-			<data>
-			5D+REKJwsrIrNgqID0KhKS5LO7Q2AP5JYqsNrzd17m0=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/mkdirs/mkdirs.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			cTbIncB43o2HF2pKuOMg54oajN8=
-			</data>
-			<key>hash2</key>
-			<data>
-			GyB4RvVstBzSyYBim9rdN+Qj44XjhfscbpyLySrFrmU=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/mkdirs/win32.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			g8fHXmU3pvyFnGlu2XEmV1jkSqQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			48Be2KjQWAdWHcLQnFCIk5l2EGw3uoHPbri5M1xZE9g=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/move/index.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			3nzLh9SZSXA8bzusTYAnjy/Gcaw=
-			</data>
-			<key>hash2</key>
-			<data>
-			bpZ6puBB4ZEWgTz6ejbVt8CHyeHv7mpv9xqCH35VRpU=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/output/index.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			czr4DFwwINhMyglqV7Awzlbkr5c=
-			</data>
-			<key>hash2</key>
-			<data>
-			K//IkIZxMMTgZSTzAKZf1SNFAP2ZGnFlb+LUEe6t4Jo=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/remove/index.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			NRtBTDvWjL7uLkT5DFCd9RGu4cg=
-			</data>
-			<key>hash2</key>
-			<data>
-			qgqTKShv2nujB/yp2cvaHMpEQkjZa0uCrh34XAWho+U=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/remove/rimraf.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			FONdzAxsAIafcRCwJimtzRzxxSs=
-			</data>
-			<key>hash2</key>
-			<data>
-			vQTjLG82xUMt5sfh/FcTHcanNmL3M3Zd9aLoqvkiB7s=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/util/assign.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			aiFZ/XHAJuN2hrQdpTzDdi3PZ44=
-			</data>
-			<key>hash2</key>
-			<data>
-			KEIGoDI/fMmlndDpAlZaisGcAEhfURNey2laIdMLOJs=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/util/utimes.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			JiroWSppyb3U4lXwNf847V3MgKA=
-			</data>
-			<key>hash2</key>
-			<data>
-			8kxMPe2IABi4iMRiBWTbYWt0y5ab8dMF0K6DVTzsBRs=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/walk-sync/index.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			HjDH+aGf9lFTbJdXHCmie6tJbdI=
-			</data>
-			<key>hash2</key>
-			<data>
-			rzAiLrk5AMGVXpPYr1ajWdFpBEdAPELdHetZLQpJ+tY=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/lib/walk/index.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			0FhVOP7//Gc9I3Zp3tOkBqClBx4=
-			</data>
-			<key>hash2</key>
-			<data>
-			twVOY+lHCFmwKdF4RheF7IprAft5okJSXra3e2aXhnM=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/fs-extra/package.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			m9lcfhNCf1Aunrqv2eNoxFPKGVI=
-			</data>
-			<key>hash2</key>
-			<data>
-			0HIdmFqPBihmY5gJitV/t5cWPhb8/QEip2cA7gblpjg=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/progress/History.md</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			zAQyENcY8GWw1WYkpodhXLEJfVo=
-			</data>
-			<key>hash2</key>
-			<data>
-			kNwm6OB4tjvIBvne7v28X5r8Dn/7/L4bdPpVBj6E0R8=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/progress/LICENSE</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			/+xPOfE/CZwX+M9dpywHZDj9kxM=
-			</data>
-			<key>hash2</key>
-			<data>
-			2ITWt1bWsrQ8nQ36AMMwcDsmirENhBaHfs9XWFVu8Fg=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/progress/Makefile</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			f8NKqkZuktRTGY0IGQXvHkG4E/I=
-			</data>
-			<key>hash2</key>
-			<data>
-			J1OzJ0IRXw1G7yiJTadZNQtm7SxHY9cYSMY9FBSiJCY=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/progress/Readme.md</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			AQzOBVpQIswgfcXaKT+YsavKKtI=
-			</data>
-			<key>hash2</key>
-			<data>
-			2At8W9eK2HP1JRLBIYGntc0oL+Fwl2mls8QFYor3zJk=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/progress/index.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			fOntagryJmWPfpl9GJQOcS6OuIo=
-			</data>
-			<key>hash2</key>
-			<data>
-			utjq/HhKGFVVZsHFKm4DunLdWMzW1xugYkSZS+h6p9k=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/progress/lib/node-progress.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			S4g7y0Bmhg4i0CggTGGFC+aycJA=
-			</data>
-			<key>hash2</key>
-			<data>
-			zsInWoVl3Rot92wv0/20thmipgCY6hDhoY6AGu5ytq4=
-			</data>
-		</dict>
-		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/node_modules/progress/package.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			fdSKLN7Sz2wbewonp3a5jFvYU9M=
-			</data>
-			<key>hash2</key>
-			<data>
-			z+XDA6Y3ub2i+18VcbSMj+obrj+ANnfte7BUCMEHyHw=
-			</data>
-		</dict>
 		<key>Resources/app.asar.unpacked/node_modules/phantomjs-prebuilt/package.json</key>
 		<dict>
 			<key>hash</key>
@@ -1536,11 +960,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XSDZlD9FOThBbRbsS+SytQbsxeE=
+			4PlB811n/L+DPAKAvlhDV8X8Fng=
 			</data>
 			<key>hash2</key>
 			<data>
-			16lWQcfXXAialrL6rsTfTumbaON1RLW/8dJr/SXWLm4=
+			CjkgeFdOeciieMCWPMt43xemrCF3njyooVkWjkfV0+A=
 			</data>
 		</dict>
 		<key>embedded.provisionprofile</key>

@@ -25,6 +25,7 @@
   "build": {
     "productName": "Shuttle",
     "appId": "io.appshuttle.shuttlemac",
+    "buildVersion": "5",
     "directories": {
       "output": "build"
     },
@@ -127,9 +128,9 @@
     "css-loader": "^0.28.11",
     "del": "^3.0.0",
     "devtron": "^1.4.0",
-    "electron": "^1.8.7",
-    "electron-builder": "^19.19.1",
-    "electron-debug": "^1.4.0",
+    "electron": "^2.0.0",
+    "electron-builder": "20.28.4",
+    "electron-debug": "^2.0.0",
     "electron-devtools-installer": "^2.2.4",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^10.2.1",
