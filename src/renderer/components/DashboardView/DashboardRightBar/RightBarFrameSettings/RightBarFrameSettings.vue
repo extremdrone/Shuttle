@@ -16,11 +16,11 @@
             <tbody v-show="getSettingsShowState.showPosition">
                 <tr>
                 <td><small>x:</small></td>
-                <td><small><input type="number" v-model="currentElement.frame.x.value" placeholder="--"></small></td>
+                <td><small><input type="number" v-model.number="currentElement.frame.x.value" placeholder="--"></small></td>
                 </tr>
                 <tr>
                 <td><small>y:</small></td>
-                <td><small><input type="number" v-model="currentElement.frame.y.value" placeholder="--"></small></td>
+                <td><small><input type="number" v-model.number="currentElement.frame.y.value" placeholder="--"></small></td>
                 </tr>
             </tbody>
         </table>
@@ -41,11 +41,11 @@
             <tbody v-show="getSettingsShowState.showSize">
                 <tr>
                 <td><small><font-awesome-icon icon='arrows-alt-h'/> Width: </small></td>
-                <td><small><input type="number" v-model="currentElement.frame.width.value" placeholder="--"></small></td>
+                <td><small><input type="number" v-model.number="currentElement.frame.width.value" placeholder="--"></small></td>
                 </tr>
                 <tr>
                 <td><small><font-awesome-icon icon='arrows-alt-v'/> Height:</small></td>
-                <td><small><input type="number" v-model="currentElement.frame.height.value" placeholder="--"></small></td>
+                <td><small><input type="number" v-model.number="currentElement.frame.height.value" placeholder="--"></small></td>
                 </tr>
             </tbody>
         </table>
