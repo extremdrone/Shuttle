@@ -1,12 +1,18 @@
 <template>
     <table id="table-viewSettings" class="table">
-        <thead>
+        <thead @click="toggleShowSection('showView')" class="c-hand unselectable">
             <tr>
-            <th><small><a class="unselectable c-default a-unselectable">View</a></small></th>
+            <th>
+              <small>
+                  <font-awesome-icon v-show="getSettingsShowState.showView" icon='chevron-circle-up' class="settings-show-arrow"/>
+                  <font-awesome-icon v-show="!getSettingsShowState.showView" icon='chevron-circle-down' class="settings-show-arrow"/>
+                  <a>View</a>
+              </small>
+            </th>
             <th></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody v-show="getSettingsShowState.showView">
             <tr>
                 <td><small>Background Color</small></td>
                 <td><div v-on:click="setCurrentPicker('view.backgroundColor')" class="circle colorBug c-hand" v-bind:style="{'background-color': currentElement.view.backgroundColor.hex}"></div></td>
@@ -58,7 +64,8 @@
       computed: {
         ...mapGetters([
           'getCurrentSelectedElementID',
-          'getCurrentProjectScreen'
+          'getCurrentProjectScreen',
+          'getSettingsShowState'
         ]),
         currentScreen: {
           get () {
@@ -94,6 +101,10 @@
         setHidden: function () {
         },
         setUserInteraction: function () {
+        },
+        toggleShowSection: function (showID) {
+          const dict = { itemID: showID, show: !this.$store.getters.getSettingsShowState[showID] }
+          this.$store.dispatch('setShowStateSettingsItem', dict)
         }
       }
     }
@@ -116,6 +127,20 @@
 
     .btn-ClosePicker {
         width: 100%;
+    }
+    
+    .settings-show-arrow {
+        color: #029FDD;
+        margin-right: 0px;
+    }
+
+    .table {
+        width: 90%;
+        margin-left: 5%;
+        background: #F0F1F4;
+        border-radius: 10px;
+        overflow: hidden;
+        table-layout:fixed;
     }
 
 </style>

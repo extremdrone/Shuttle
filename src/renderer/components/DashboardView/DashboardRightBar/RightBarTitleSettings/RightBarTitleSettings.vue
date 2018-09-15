@@ -1,12 +1,18 @@
 <template>
     <table id="table-titleSettings" class="table">
-        <thead>
+        <thead @click="toggleShowSection('showTitle')" class="c-hand unselectable">
             <tr>
-            <th><small><a>Title</a></small></th>
+            <th>
+              <small>
+                  <font-awesome-icon v-show="getSettingsShowState.showTitle" icon='chevron-circle-up' class="settings-show-arrow"/>
+                  <font-awesome-icon v-show="!getSettingsShowState.showTitle" icon='chevron-circle-down' class="settings-show-arrow"/>
+                  <a>Title</a>
+              </small>
+            </th>
             <th></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody v-show="getSettingsShowState.showTitle">
             <tr>
             <td><small>Text</small></td>
             <td><small><input v-model="currentElement.title.text" placeholder="Text"></small></td>
@@ -65,7 +71,8 @@
       computed: {
         ...mapGetters([
           'getCurrentSelectedElementID',
-          'getCurrentProjectScreen'
+          'getCurrentProjectScreen',
+          'getSettingsShowState'
         ]),
         currentScreen: {
           get () {
@@ -103,12 +110,15 @@
         },
         setTextStyle: function (style) {
           this.currentElement.title.textStyle = style
+        },
+        toggleShowSection: function (showID) {
+          const dict = { itemID: showID, show: !this.$store.getters.getSettingsShowState[showID] }
+          this.$store.dispatch('setShowStateSettingsItem', dict)
         }
       }
     }
 </script>
 <style scoped>
-
     .colorBug {
         width: 20px;
         height: 20px;
@@ -125,6 +135,21 @@
 
     .btn-ClosePicker {
         width: 100%;
+    }
+
+    
+    .settings-show-arrow {
+        color: #029FDD;
+        margin-right: 0px;
+    }
+
+    .table {
+        width: 90%;
+        margin-left: 5%;
+        background: #F0F1F4;
+        border-radius: 10px;
+        overflow: hidden;
+        table-layout:fixed;
     }
 
 </style>

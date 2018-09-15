@@ -14,9 +14,13 @@
                 </div>
             </div>
             <div v-if="currentElement && currentElement.elementID !== ''" id="inspectorContent" class="column col-12">
+              <div id="settingsScroll">
+                <RightBarFrameSettings v-show="currentElement.frame"></RightBarFrameSettings>
+                <br/>
                 <RightBarViewSettings v-show="currentElement.view"></RightBarViewSettings>
                 <br/>
                 <RightBarTitleSettings v-show="currentElement.title"></RightBarTitleSettings>
+              </div>
             </div>
         </div>
     </div>
@@ -26,6 +30,7 @@
 
     import RightBarViewSettings from './RightBarViewSettings/RightBarViewSettings.vue'
     import RightBarTitleSettings from './RightBarTitleSettings/RightBarTitleSettings.vue'
+    import RightBarFrameSettings from './RightBarFrameSettings/RightBarFrameSettings.vue'
 
     export default {
       name: 'DashboardRightBar',
@@ -36,7 +41,8 @@
       },
       components: {
         RightBarViewSettings,
-        RightBarTitleSettings
+        RightBarTitleSettings,
+        RightBarFrameSettings
       },
       computed: {
         ...mapGetters([
@@ -88,6 +94,14 @@
 
     #inspectorEmptyDiv {
         background-color: #ffffff;
+    }
+
+    #settingsScroll {
+      margin-top: 0px;
+      width: 100%;
+      height: 79vh;
+      overflow-y:scroll; 
+      overflow-x:hidden;
     }
 
     .a-unselectable {

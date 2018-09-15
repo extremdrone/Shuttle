@@ -19,6 +19,10 @@ if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
+var webFrame = require('electron').webFrame
+webFrame.setVisualZoomLevelLimits(1, 1)
+webFrame.setLayoutZoomLevelLimits(0, 0)
+
 /* eslint-disable no-new */
 new Vue({
   components: { App },

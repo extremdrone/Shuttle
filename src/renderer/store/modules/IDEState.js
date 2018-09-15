@@ -1,4 +1,10 @@
 const state = {
+  settingsBar: {
+    showPosition: true,
+    showSize: true,
+    showView: false,
+    showTitle: false
+  },
   bottomBar: {
     loadingText: '',
     loadingMode: 'NONE',
@@ -8,6 +14,9 @@ const state = {
 }
 
 const mutations = {
+  SET_SHOW_STATE_SETTINGS_ITEN (state, payload) {
+    state.settingsBar[payload.itemID] = payload.show
+  },
   SET_LOADING_TEXT_BOTTOM_BAR (state, loadingText) {
     state.bottomBar.loadingText = loadingText
   },
@@ -31,6 +40,9 @@ const mutations = {
 }
 
 const actions = {
+  setShowStateSettingsItem ({ commit }, payload) {
+    commit('SET_SHOW_STATE_SETTINGS_ITEN', payload)
+  },
   setBottomLoadingTextMode ({ commit }, loadingText, loadingMode) {
     commit('RESET_LOADING_BOTTOM_BAR')
     commit('SET_LOADING_MODE_BOTTOM_BAR', loadingMode)
@@ -48,6 +60,9 @@ const actions = {
 }
 
 const getters = {
+  getSettingsShowState: function (state) {
+    return state.settingsBar
+  },
   getBottomLoadingText: function (state) {
     return state.bottomBar.loadingText
   },
