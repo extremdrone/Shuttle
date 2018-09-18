@@ -3,7 +3,7 @@ directories:
   buildResources: build
 productName: Shuttle
 appId: io.appshuttle.shuttlemac
-buildVersion: '5'
+buildVersion: '10'
 files:
   - dist/electron/**/*
 dmg:
@@ -40,4 +40,5 @@ fileAssociations:
     role: Editor
     isPackage: true
 copyright: Copyright © 2018 AppShuttle.io
+afterPack: ./afterPack.js
 electronVersion: 2.0.9

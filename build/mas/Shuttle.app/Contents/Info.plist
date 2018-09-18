@@ -21,7 +21,7 @@
     <key>CFBundleShortVersionString</key>
     <string>0.0.1</string>
     <key>CFBundleVersion</key>
-    <string>5</string>
+    <string>10</string>
     <key>DTSDKBuild</key>
     <string>14D125</string>
     <key>DTSDKName</key>
@@ -62,7 +62,7 @@
       </dict>
     </array>
     <key>AsarIntegrity</key>
-    <string>{"checksums":{"app.asar":"fUPOXF+EpffAKKOp2hrCFFAcsWDCRgGnrMOHmMnL13Z0r0WP6a+NrkgZSOWESy5BgaJeidPU2xfWoT27d5biqg==","electron.asar":"3WZrvugIPq4kilsITdxJKoVk3kzDsRc7M+XldI0cnIS5mjQR52yqkpyqeoU6G0smFPRbNkuapfxRTkOJU4NINg=="}}</string>
+    <string>{"checksums":{"app.asar":"I2xy3NJutjAjdEMgDtyqC3Gml7oCJwIeroAhz0ZVtyZh7j9c1Uvasw+kn2QRuqMGkEBeRzdwKI6ueOk+PMCong==","electron.asar":"3WZrvugIPq4kilsITdxJKoVk3kzDsRc7M+XldI0cnIS5mjQR52yqkpyqeoU6G0smFPRbNkuapfxRTkOJU4NINg=="}}</string>
     <key>ElectronTeamID</key>
     <string>LS6M2TWH7D</string>
   </dict>
