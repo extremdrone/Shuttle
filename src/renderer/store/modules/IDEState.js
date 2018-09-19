@@ -3,7 +3,8 @@ const state = {
     showPosition: true,
     showSize: true,
     showView: false,
-    showTitle: false
+    showTitle: false,
+    showActions: false
   },
   bottomBar: {
     loadingText: '',

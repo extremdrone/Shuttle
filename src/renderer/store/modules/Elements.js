@@ -105,6 +105,11 @@ const state = {
         textSize: 17,
         textAlignment: 'CENTER',
         textStyle: 'DEFAULT'
+      },
+      actions: {
+        onTouchUpInside: [],
+        onTouchDown: [],
+        onTouchUpOutside: []
       }
     },
     textfield: {
