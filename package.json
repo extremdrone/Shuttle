@@ -87,10 +87,10 @@
       }
     ],
     "copyright": "Copyright © 2018 AppShuttle.io",
-    "afterPack":"./afterPack.js"
+    "afterPack": "./afterPack.js"
   },
   "dependencies": {
-    "@appshuttle.io/bell": "0.0.12",
+    "@appshuttle.io/bell": "0.0.13",
     "@appshuttle.io/pollock": "0.0.28",
     "@appshuttle.io/turing": "0.0.16",
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
