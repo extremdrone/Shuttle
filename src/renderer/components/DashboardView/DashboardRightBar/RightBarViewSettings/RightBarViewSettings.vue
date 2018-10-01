@@ -15,11 +15,7 @@
         <tbody v-show="getSettingsShowState.showView">
             <tr>
                 <td><small>Background Color</small></td>
-                <td><div v-on:click="setCurrentPicker('view.backgroundColor')" class="circle colorBug c-hand" v-bind:style="{'background-color': currentElement.view.backgroundColor.hex}"></div></td>
-                <div v-show="currentPicker == 'view.backgroundColor'" id="view.backgroundColor" class="colorPicker">
-                    <chrome-picker v-model="currentElement.view.backgroundColor" />
-                    <a v-on:click="setCurrentPicker('view.backgroundColor')" class="btn btn-primary btn-ClosePicker">Close</a>
-                </div>
+                <td><div v-on:click="setCurrentPicker('view.backgroundColor', $event)" class="circle colorBug c-hand" v-bind:style="{'background-color': currentElement.view.backgroundColor.hex}"></div></td>
             </tr>
             <tr>
                 <td><small>Hidden:</small></td>
@@ -44,6 +40,10 @@
                 </td>
             </tr>
         </tbody>
+        <div v-show="currentPicker == 'view.backgroundColor'" v-bind:style="currentPickerStyle" id="view.backgroundColor" class="colorPicker">
+            <chrome-picker v-model="currentElement.view.backgroundColor" />
+            <a v-on:click="setCurrentPicker('view.backgroundColor')" class="btn btn-primary btn-ClosePicker">Close</a>
+        </div>
     </table>
 </template>
 <script>
@@ -55,7 +55,12 @@
       name: 'RightBarViewSettings',
       data: function () {
         return {
-          currentPicker: 'NONE'
+          currentPicker: 'NONE',
+          currentPickerStyle: {
+            position: 'absolute',
+            top: '0px',
+            right: '0px'
+          }
         }
       },
       components: {
@@ -91,9 +96,22 @@
         }
       },
       methods: {
-        setCurrentPicker: function (pickerId) {
+        setCurrentPicker: function (pickerId, event) {
           if (this.currentPicker === 'NONE') {
             this.currentPicker = pickerId
+            if (event.pageY >= window.innerHeight / 2) {
+              this.currentPickerStyle = {
+                position: 'absolute',
+                top: (event.pageY - 370) + 'px',
+                right: '120px'
+              }
+            } else {
+              this.currentPickerStyle = {
+                position: 'absolute',
+                top: (event.pageY - 70) + 'px',
+                right: '120px'
+              }
+            }
           } else {
             this.currentPicker = 'NONE'
           }

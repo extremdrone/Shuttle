@@ -19,11 +19,7 @@
             </tr>
             <tr>
                 <td><small>Text Color</small></td>
-                <td><div v-on:click="setCurrentPicker('title.textColor')" class="circle colorBug c-hand" v-bind:style="{'background-color': currentElement.title.textColor.hex}"></div></td>
-                <div v-show="currentPicker == 'title.textColor'" id="title.textColor" class="colorPicker">
-                    <chrome-picker v-model="currentElement.title.textColor" />
-                    <a v-on:click="setCurrentPicker('title.textColor')" class="btn btn-primary btn-ClosePicker">Close</a>
-                </div>
+                <td><div v-on:click="setCurrentPicker('title.textColor', $event)" class="circle colorBug c-hand" v-bind:style="{'background-color': currentElement.title.textColor.hex}"></div></td>
             </tr>
             <tr>
             <td><small>Text Size</small></td>
@@ -51,6 +47,10 @@
             </td>
             </tr>
         </tbody>
+        <div v-show="currentPicker == 'title.textColor'" v-bind:style="currentPickerStyle" id="title.textColor" class="colorPicker">
+            <chrome-picker v-model="currentElement.title.textColor" />
+            <a v-on:click="setCurrentPicker('title.textColor')" class="btn btn-primary btn-ClosePicker">Close</a>
+        </div>
     </table>
 </template>
 <script>
@@ -62,7 +62,12 @@
       name: 'RightBarTitleSettings',
       data: function () {
         return {
-          currentPicker: 'NONE'
+          currentPicker: 'NONE',
+          currentPickerStyle: {
+            position: 'absolute',
+            top: '0px',
+            right: '0px'
+          }
         }
       },
       components: {
@@ -98,9 +103,22 @@
         }
       },
       methods: {
-        setCurrentPicker: function (pickerId) {
+        setCurrentPicker: function (pickerId, event) {
           if (this.currentPicker === 'NONE') {
             this.currentPicker = pickerId
+            if (event.pageY >= window.innerHeight / 2) {
+              this.currentPickerStyle = {
+                position: 'absolute',
+                top: (event.pageY - 370) + 'px',
+                right: '120px'
+              }
+            } else {
+              this.currentPickerStyle = {
+                position: 'absolute',
+                top: (event.pageY - 70) + 'px',
+                right: '120px'
+              }
+            }
           } else {
             this.currentPicker = 'NONE'
           }
@@ -125,12 +143,6 @@
         border-color: #dfdfdf;
         border-width: 2px;
         border-style: solid;
-    }
-
-    .colorPicker {
-        position: absolute;
-        top: 100px;
-        right:260px;
     }
 
     .btn-ClosePicker {
