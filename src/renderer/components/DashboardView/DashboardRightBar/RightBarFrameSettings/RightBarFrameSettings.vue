@@ -16,11 +16,11 @@
             <tbody v-show="getSettingsShowState.showPosition">
                 <tr>
                 <td><small>x:</small></td>
-                <td><small><input type="number" v-model.number="currentElement.frame.x.value" placeholder="--"></small></td>
+                <td><small><input class="rightBarTextField" type="number" v-model.number="currentElement.frame.x.value" placeholder="--"></small></td>
                 </tr>
                 <tr>
                 <td><small>y:</small></td>
-                <td><small><input type="number" v-model.number="currentElement.frame.y.value" placeholder="--"></small></td>
+                <td><small><input class="rightBarTextField" type="number" v-model.number="currentElement.frame.y.value" placeholder="--"></small></td>
                 </tr>
             </tbody>
         </table>
@@ -41,11 +41,11 @@
             <tbody v-show="getSettingsShowState.showSize">
                 <tr>
                 <td><small><font-awesome-icon icon='arrows-alt-h'/> Width: </small></td>
-                <td><small><input type="number" v-model.number="currentElement.frame.width.value" placeholder="--"></small></td>
+                <td><small><input class="rightBarTextField" type="number" v-model.number="currentElement.frame.width.value" placeholder="--"></small></td>
                 </tr>
                 <tr>
                 <td><small><font-awesome-icon icon='arrows-alt-v'/> Height:</small></td>
-                <td><small><input type="number" v-model.number="currentElement.frame.height.value" placeholder="--"></small></td>
+                <td><small><input class="rightBarTextField" type="number" v-model.number="currentElement.frame.height.value" placeholder="--"></small></td>
                 </tr>
             </tbody>
         </table>
@@ -95,19 +95,23 @@
 </script>
 <style scoped>
 
-.settings-show-arrow {
-    color: #029FDD;
-    margin-right: 0px;
-}
+    .settings-show-arrow {
+        color: #029FDD;
+        margin-right: 0px;
+    }
 
-.table {
-    width: 90%;
-    margin-left: 5%;
-    background: #F0F1F4;
-    border-radius: 10px;
-    overflow: hidden;
-    table-layout:fixed;
-}
+    .table {
+        width: 90%;
+        margin-left: 5%;
+        background: #F0F1F4;
+        border-radius: 10px;
+        overflow: hidden;
+        table-layout:fixed;
+    }
+
+    .rightBarTextField {
+        max-width: 100%;
+    }
 
 
 

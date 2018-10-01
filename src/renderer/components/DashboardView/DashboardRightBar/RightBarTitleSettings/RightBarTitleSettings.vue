@@ -15,7 +15,7 @@
         <tbody v-show="getSettingsShowState.showTitle">
             <tr>
             <td><small>Text</small></td>
-            <td><small><input v-model="currentElement.title.text" placeholder="Text"></small></td>
+            <td><small><input class="rightBarTextField" v-model="currentElement.title.text" placeholder="Text"></small></td>
             </tr>
             <tr>
                 <td><small>Text Color</small></td>
@@ -27,7 +27,7 @@
             </tr>
             <tr>
             <td><small>Text Size</small></td>
-            <td><small><input type="number" v-model="currentElement.title.textSize" placeholder="--"></small></td>
+            <td><small><input class="rightBarTextField" type="number" v-model="currentElement.title.textSize" placeholder="--"></small></td>
             </tr>
             <tr>
             <td><small>Text Alignment</small></td>
@@ -150,6 +150,10 @@
         border-radius: 10px;
         overflow: hidden;
         table-layout:fixed;
+    }
+
+    .rightBarTextField {
+        max-width: 100%;
     }
 
 </style>
