@@ -109,7 +109,7 @@
     import SHTuring from '@appshuttle.io/turing'
     import Bell from '@appshuttle.io/bell'
 
-    const {ipcRenderer} = require('electron')
+    const { ipcRenderer } = require('electron')
 
     export default {
       name: 'DashboardTopBar',
@@ -118,7 +118,7 @@
         ipcRenderer.on('savedExportCodePath', function (event, path) {
           thisRef.save(function (success) {
             thisRef.$store.dispatch('setBottomLoadingTextMode', 'Building Project...', 'INDEFINITE')
-            const turing = new SHTuring(thisRef.$store.getters.getCurrentProjectPath, {appPlatforms: 'IOS', exportPath: path})
+            const turing = new SHTuring(thisRef.$store.getters.getCurrentProjectPath, { appPlatforms: 'IOS', exportPath: path })
             turing.generatePlatforms(function () {
               console.log('Success Creating Projects')
             }, function (err) {
@@ -145,7 +145,7 @@
           const thisRef = this
           this.save(function (success) {
             thisRef.$store.dispatch('setBottomLoadingTextMode', 'Building Project...', 'INDEFINITE')
-            const turing = new SHTuring(thisRef.$store.getters.getCurrentProjectPath, {appPlatforms: platforms})
+            const turing = new SHTuring(thisRef.$store.getters.getCurrentProjectPath, { appPlatforms: platforms })
             turing.generatePlatforms(function () {
               console.log('Success Creating Projects')
               const buildResult = turing.buildPlatforms()

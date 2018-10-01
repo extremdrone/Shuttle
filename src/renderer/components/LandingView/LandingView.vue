@@ -55,9 +55,9 @@
 
   import ProjectManagement from '../../mixins/ProjectManagement/ProjectManagement'
 
-  const {ipcRenderer} = require('electron')
+  const { ipcRenderer } = require('electron')
   const fs = require('fs')
-  const {app} = require('electron').remote
+  const { app } = require('electron').remote
   const shell = require('electron').shell
 
   export default {
@@ -107,7 +107,7 @@
 
   ipcRenderer.on('selected-directory', function (event, path) {
     ProjectManagement.methods.loadProjectFromDisk(path, function (projectInformation, screenPointers, firstScreen) {
-      ipcRenderer.send('setCurrentProjectPathOnDB', {path: path, name: projectInformation.appInformation.appName})
+      ipcRenderer.send('setCurrentProjectPathOnDB', { path: path, name: projectInformation.appInformation.appName })
       ipcRenderer.on('sendDidSetCurrentProjectFromDB', (event, currentProject) => {
         router.replace('/dashboard')
       })

@@ -122,7 +122,45 @@ const state = {
       type: 'IMAGE',
       icon: ['far', 'image'],
       name: 'Image',
-      description: 'Present an image'
+      description: 'Present an image',
+      id: 'idImage1',
+      index: 1,
+      frame: {
+        x: {
+          value: 0.5,
+          scale: 'PERCENTAGE'
+        },
+        y: {
+          value: 0.5,
+          scale: 'PERCENTAGE'
+        },
+        width: {
+          value: 100,
+          scale: 'EXACT'
+        },
+        height: {
+          value: 100,
+          scale: 'EXACT'
+        }
+      },
+      view: {
+        backgroundColor: {
+          hsl: { h: 0, s: 0, l: 1, a: 1 },
+          hex: '#FFFFFF',
+          rgba: { r: 255, g: 255, b: 255, a: 1 },
+          hsv: { h: 0, s: 0, v: 1, a: 1 },
+          oldHue: 0,
+          source: 'hex',
+          a: 1
+        },
+        hidden: false,
+        userInteraction: true
+      },
+      image: {
+        onlineResource: false, // true if the resource is a URL to a image
+        url: 'ShuttlePlaceholder', // Local URL if not an online resource
+        scaleType: 'ASPECT_FIT'
+      }
     },
     view: {
       type: 'VIEW',

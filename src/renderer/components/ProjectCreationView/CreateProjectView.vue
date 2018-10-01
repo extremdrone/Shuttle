@@ -33,7 +33,7 @@
     import ScreenManagement from '../../mixins/ScreenManagement/ScreenManagement'
     import MailManagement from '../../mixins/MailManagement/MailManagement'
 
-    const {ipcRenderer} = require('electron')
+    const { ipcRenderer } = require('electron')
 
     export default {
       name: 'CreateProjectView',
@@ -63,7 +63,7 @@
               const router = this.$router
               writeNewProjectInfo(projectPath, newProjectJSON, function () {
                 generateHelloWorld(projectPath, sampleProjectScreens, function () {
-                  ipcRenderer.send('setCurrentProjectPathOnDB', {path: projectPath, name: newProjectJSON.appInformation.appName})
+                  ipcRenderer.send('setCurrentProjectPathOnDB', { path: projectPath, name: newProjectJSON.appInformation.appName })
                   ipcRenderer.on('sendDidSetCurrentProjectFromDB', (event, currentProject) => {
                     router.replace('/dashboard')
                   })

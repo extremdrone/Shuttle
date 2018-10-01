@@ -32,7 +32,7 @@
     import ProjectCreatorSettings from './ProjectCreatorSettings/ProjectCreatorSettings.vue'
     import OtherProjectSettings from './OtherProjectSettings/OtherProjectSettings.vue'
 
-    const {ipcRenderer} = require('electron')
+    const { ipcRenderer } = require('electron')
 
     export default {
       name: 'SettingsView',

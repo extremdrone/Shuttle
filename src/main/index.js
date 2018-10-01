@@ -81,7 +81,7 @@ app.on('ready', () => {
 /**
  * LandingView Electron Main.js
  */
-const {ipcMain, dialog} = require('electron')
+const { ipcMain, dialog } = require('electron')
 
 /**
  * Create new file Dialog

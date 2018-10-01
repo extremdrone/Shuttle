@@ -18,7 +18,7 @@
 
     import ProjectManagement from '../../mixins/ProjectManagement/ProjectManagement'
 
-    const {ipcRenderer} = require('electron')
+    const { ipcRenderer } = require('electron')
 
     export default {
       name: 'DashboardView',
