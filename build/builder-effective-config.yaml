@@ -41,4 +41,4 @@ fileAssociations:
     isPackage: true
 copyright: Copyright © 2018 AppShuttle.io
 afterPack: ./afterPack.js
-electronVersion: 2.0.9
+electronVersion: 2.0.10

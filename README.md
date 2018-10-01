@@ -42,11 +42,16 @@ Shuttle is available for macOS, Windows and linux operating systems.
 
 Due to the complexity of Shuttle. There are multiple NPM Modules that make Shuttle a complete solution. All of them are Open Source and licenced under MIT license. Some of the tools are:
 
+### Open Source 😊
 [Shuttle-Pollock](https://github.com/AppShuttleInc/Shuttle-Pollock) - Handle Canvas, Drag & Drop, UI Rendering <br/>
 [Shuttle-Turing](https://github.com/AppShuttleInc/Shuttle-Turing) - Code Generation and Project Building <br/>
 [Shuttle-Bell](https://github.com/AppShuttleInc/Shuttle-Bell) - Simulators and Device deployment <br/>
-[Shuttle-Cerf](https://github.com/AppShuttleInc/Shuttle-Cerf) - Shuttle Server <br/>
 [Shuttle-Jobs](https://github.com/AppShuttleInc/Shuttle-Jobs) - Shuttle iOS Showcase and Testing App <br/>
+
+### Proprietary Software 😔
+[Shuttle-Cerf](#) - Shuttle Server. Everything ranging from subscriptions, databases, storage, API, etc <br/>
+[Shuttle-Cruz](#) - Web app used by the user to administrate projects, subscriptions, account and more <br/>
+
 
 ## Author 👨🏻‍💻
 
