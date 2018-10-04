@@ -14,11 +14,11 @@
 		</data>
 		<key>Resources/app.asar</key>
 		<data>
-		uxHVXJ2/y8qcx9PhUBNGz2tsxlg=
+		Nn9NzFnRxx09b9aFaNSi6tI4wb8=
 		</data>
 		<key>Resources/electron.asar</key>
 		<data>
-		4PlB811n/L+DPAKAvlhDV8X8Fng=
+		F+EmHmRCIjl93WlQGjjLNEz/kuQ=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -27,7 +27,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			BRlqAIk2BJh48WJ/ODClctg4TSw=
+			L4OY3aPCFbNgeiptpLptirKQeQU=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.github.electron.framework" and anchor apple generic and certificate leaf[subject.CN] = "3rd Party Mac Developer Application: Juan David Cruz Serrano (LS6M2TWH7D)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -36,7 +36,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			axQO3RYy7xI1GOiDvNXQJ8V0cTQ=
+			ru5RTqHjx9JLTIRa+h1HYPB2LBU=
 			</data>
 			<key>requirement</key>
 			<string>identifier "io.appshuttle.shuttlemac.helper.EH" and anchor apple generic and certificate leaf[subject.CN] = "3rd Party Mac Developer Application: Juan David Cruz Serrano (LS6M2TWH7D)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -45,7 +45,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			AEIMs65Ztbhy/IOIeipIkt+PpqI=
+			G58gOLnAj5mYwKEZhJtmYnVQehA=
 			</data>
 			<key>requirement</key>
 			<string>identifier "io.appshuttle.shuttlemac.helper.NP" and anchor apple generic and certificate leaf[subject.CN] = "3rd Party Mac Developer Application: Juan David Cruz Serrano (LS6M2TWH7D)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -54,7 +54,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			L4zfSsf2DE76clIm1E6Y76CLP8w=
+			2xhe/zxlkR1EUBHgAD9+LnoWrKg=
 			</data>
 			<key>requirement</key>
 			<string>identifier "io.appshuttle.shuttlemac.helper" and anchor apple generic and certificate leaf[subject.CN] = "3rd Party Mac Developer Application: Juan David Cruz Serrano (LS6M2TWH7D)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -63,7 +63,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			qfmT9pOfUzU+NcffDPWh+cC/g5Y=
+			2PIr+q88qZkXCEwCYiFrjFnl4mE=
 			</data>
 			<key>requirement</key>
 			<string>identifier "io.appshuttle.shuttlemac.loginhelper" and anchor apple generic and certificate leaf[subject.CN] = "3rd Party Mac Developer Application: Juan David Cruz Serrano (LS6M2TWH7D)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -94,22 +94,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uxHVXJ2/y8qcx9PhUBNGz2tsxlg=
+			Nn9NzFnRxx09b9aFaNSi6tI4wb8=
 			</data>
 			<key>hash2</key>
 			<data>
-			Kue4cdyliga40SvH/IBHwF+/N4XYytJ8Xm7V7BlFOQM=
+			n8WTZame1Qfj65VafrUcfaF9fbz9J1yKDu6P6ZZbmXE=
 			</data>
 		</dict>
 		<key>Resources/electron.asar</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4PlB811n/L+DPAKAvlhDV8X8Fng=
+			F+EmHmRCIjl93WlQGjjLNEz/kuQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			CjkgeFdOeciieMCWPMt43xemrCF3njyooVkWjkfV0+A=
+			cJU1hETXuWkYXFYBmoR7gZtKgARjIjjeVs2Z2KbIkGw=
 			</data>
 		</dict>
 		<key>embedded.provisionprofile</key>

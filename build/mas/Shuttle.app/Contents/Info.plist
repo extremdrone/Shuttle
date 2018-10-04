@@ -23,9 +23,9 @@
     <key>CFBundleVersion</key>
     <string>10</string>
     <key>DTSDKBuild</key>
-    <string>14D125</string>
+    <string>16E185</string>
     <key>DTSDKName</key>
-    <string>macosx10.1010.10</string>
+    <string>macosx10.1210.12</string>
     <key>DTXcode</key>
     <string>0833</string>
     <key>DTXcodeBuild</key>
@@ -62,7 +62,7 @@
       </dict>
     </array>
     <key>AsarIntegrity</key>
-    <string>{"checksums":{"app.asar":"I2xy3NJutjAjdEMgDtyqC3Gml7oCJwIeroAhz0ZVtyZh7j9c1Uvasw+kn2QRuqMGkEBeRzdwKI6ueOk+PMCong==","electron.asar":"3WZrvugIPq4kilsITdxJKoVk3kzDsRc7M+XldI0cnIS5mjQR52yqkpyqeoU6G0smFPRbNkuapfxRTkOJU4NINg=="}}</string>
+    <string>{"checksums":{"app.asar":"5SDFv27q5TBKoWqfEyvqG7AylQkT9RQTJnaUiAOx51RCN5xIORNQoy3ZdhP4zvzUb489rAcT44MpoOkml4acDw==","electron.asar":"Ip/GqLJNwH9HdV4FO24ZDjAtVqEQy9hwEtIJ6eYRRqBG8I9UBqBXVCtCrkiLk/smh6650/gIEW0ly2jvqchncA=="}}</string>
     <key>ElectronTeamID</key>
     <string>LS6M2TWH7D</string>
   </dict>
