@@ -29,17 +29,25 @@
         return new Pollock('processingArea', pollockConfig, function () {
           return store.getters.getCurrentProjectScreen
         }, function (selectedElement) {
-          store.dispatch('setSelectedElementID', {
-            elementID: selectedElement.id
-          })
+          if (store.getters.getIgnoreCanvasClicks === false) {
+            store.dispatch('setSelectedElementID', {
+              elementID: selectedElement.id
+            })
+          } else {
+            console.log('Clicks Ignored')
+          }
         }, function (modifiedContent) {
           store.dispatch('setCurrentProjectScreen', modifiedContent)
         }, {
           mouseReleased: function (mouseResponse) {
             if (mouseResponse.mouseIsInsideCanvas === true && (store.getters.getPlaceholderDragElement !== undefined)) {
-              store.dispatch('setPlaceholderElement', store.getters.getPlaceholderDragElement)
-              store.dispatch('setShowElementModalID', true)
-              store.dispatch('resetPlaceholderDragElement')
+              if (store.getters.getIgnoreCanvasClicks === false) {
+                store.dispatch('setPlaceholderElement', store.getters.getPlaceholderDragElement)
+                store.dispatch('setShowElementModalID', true)
+                store.dispatch('resetPlaceholderDragElement')
+              } else {
+                console.log('Clicks Ignored')
+              }
             }
           }
         })

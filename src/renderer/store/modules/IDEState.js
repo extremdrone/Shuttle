@@ -4,14 +4,15 @@ const state = {
     showSize: true,
     showView: false,
     showTitle: false,
-    showActions: false
+    showActions: true
   },
   bottomBar: {
     loadingText: '',
     loadingMode: 'NONE',
     loadingPercentage: 0,
     loadingError: undefined
-  }
+  },
+  ignoreCanvasClicks: false
 }
 
 const mutations = {
@@ -37,6 +38,9 @@ const mutations = {
   },
   ERROR_LOADING_BOTTOM_BAR (state, errorMessage) {
     state.bottomBar.loadingError = errorMessage
+  },
+  SET_IGNORE_CANVAS_CLICKS (state, bool) {
+    state.ignoreCanvasClicks = bool
   }
 }
 
@@ -57,6 +61,9 @@ const actions = {
   },
   stopBottomLoadingModeWithError ({ commit }, errorMessage) {
     commit('ERROR_LOADING_BOTTOM_BAR', errorMessage)
+  },
+  setIgnoreCanvasClicks ({ commit }, bool) {
+    commit('SET_IGNORE_CANVAS_CLICKS', bool)
   }
 }
 
@@ -72,6 +79,9 @@ const getters = {
   },
   getBottomLoadingPercentage: function (state) {
     return state.bottomBar.loadingPercentage
+  },
+  getIgnoreCanvasClicks: function (state) {
+    return state.ignoreCanvasClicks
   }
 }
 

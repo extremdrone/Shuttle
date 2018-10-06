@@ -38,8 +38,8 @@
               <div class="content">
                 <label class="form-label unselectable" for="input-example-7">Screen Type:</label>
                 <div class="columns">
-                  <div class="column col-3" v-for="screenPlaceholder in getAvailableScreens" v-bind:key="screenPlaceholder.type">
-                    <div @click="setPlaceHolderScreen(screenPlaceholder)" v-bind:class="{ 's-rounded': true, 'c-hand': true, 'screen-square': getPlaceholderScreen.type !== screenPlaceholder.type, 'screen-square-active': getPlaceholderScreen.type === screenPlaceholder.type }">
+                  <div v-bind:class="{'column': true, 'col-3': true, 's-rounded': true, 'c-hand': true, 'screen-square': getPlaceholderScreen.type !== screenPlaceholder.type, 'screen-square-active': getPlaceholderScreen.type === screenPlaceholder.type }" v-for="screenPlaceholder in getAvailableScreens" v-bind:key="screenPlaceholder.type">
+                    <div @click="setPlaceHolderScreen(screenPlaceholder)">
                       <font-awesome-icon class="icon-screen-type unselectable" :icon="screenPlaceholder.icon"/>
                       <small class="title-screen-type unselectable">{{screenPlaceholder.title}}</small>
                     </div>
@@ -113,6 +113,7 @@
           })
         },
         showScreenIdModal: function (bool) {
+          this.$store.dispatch('setIgnoreCanvasClicks', bool)
           this.$store.dispatch('setShowScreenModalID', bool)
         },
         setPlaceHolderScreen: function (screen) {
@@ -144,18 +145,22 @@
                 store.dispatch('setCurrentProjectScreenPointers', screenPointers)
                 store.dispatch('setCurrentProjectScreen', firstScreen)
                 store.dispatch('setShowScreenModalID', false)
+                store.dispatch('setIgnoreCanvasClicks', false)
               }, function (errorMessage) {
                 // TODO: Present error modal and handle rollback
                 console.log(errorMessage)
                 store.dispatch('setShowScreenModalID', false)
+                store.dispatch('setIgnoreCanvasClicks', false)
               })
             }).catch(function (rejectMessage) {
               console.log(rejectMessage)
               store.dispatch('setShowScreenModalID', false)
+              store.dispatch('setIgnoreCanvasClicks', false)
             })
           }, function (errorMessage) {
             console.log(errorMessage)
             store.dispatch('setShowScreenModalID', false)
+            store.dispatch('setIgnoreCanvasClicks', false)
           })
         }
       }
