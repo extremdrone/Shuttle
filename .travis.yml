@@ -1,9 +1,9 @@
-osx_image: xcode8.3
+osx_image: xcode10.0
 sudo: required
 dist: trusty
 language: c
 node_js:
-  - lts/*
+  - node
 matrix:
   include:
   - os: osx
