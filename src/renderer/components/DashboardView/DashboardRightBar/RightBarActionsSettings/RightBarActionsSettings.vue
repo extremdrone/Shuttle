@@ -14,6 +14,11 @@
             </tr>
         </thead>
         <tbody v-show="getSettingsShowState.showActions">
+            <tr v-for="action in currentElement.actions.onTouchUpInside" v-bind:key="action.id">
+              <td colspan="2">
+                <span class="chip chip-action">{{ action.name }}<a class="btn btn-clear" @click="deleteAction(action)" aria-label="Close" role="button"></a></span>
+              </td>
+            </tr>
             <tr>
             <td><small>On Touch:</small></td>
             <td><button @click="toogleShowActionsModal(true)" class="btn btn-primary btn-sm">Add Action</button></td>
@@ -54,8 +59,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button v-if="this.getNewAction && this.getNewAction.id && getPlaceholderAction.type == 'SEGUE' && this.getNewAction.segue.destinationScreenId" @click="addActionClick()" class="btn btn-primary">Add Screen Transition</button>
-          <button v-else class="btn btn-primary disabled">Complete Required Fields</button>
+          <button @click="addActionClick()" class="btn btn-primary">Add Screen Transition</button>
           <a @click="toogleShowActionsModal(false)" class="btn btn-link" aria-label="Close">Cancel</a>
         </div>
       </div>
@@ -102,6 +106,17 @@
           set (value) {
             this.$store.dispatch('setCurrentProjectScreen', value)
           }
+        },
+        currentElement: {
+          get () {
+            if (!this.$store.getters.getCurrentSelectedElementID) {
+              return
+            }
+            return this.$store.getters.getCurrentProjectScreen.elements[this.$store.getters.getCurrentSelectedElementID.elementID]
+          },
+          set (value) {
+            this.$store.dispatch('setCurrentElement', value)
+          }
         }
       },
       methods: {
@@ -124,19 +139,25 @@
         },
         updatedNewActionDestScreen: function (event) {
           this.$store.dispatch('setNewActionSegue', {
-            sourceScreenId: this.currentScreen.id,
             destinationScreenId: event.target.value,
             payload: undefined
           })
         },
         addActionClick: function () {
           const store = this.$store
-          const newActionMetadata = this.$store.getters.getNewScreen
+          const newActionMetadata = this.$store.getters.getNewAction
           var newAction = this.$store.getters.getActionForSelectedPlaceholderType
           newAction.name = newActionMetadata.name
           newAction.id = newActionMetadata.filteredID
 
           if (newAction.type === 'SEGUE') {
+            newAction.segue = newActionMetadata.segue
+            if (!newAction.segue || !newAction.segue.destinationScreenId) {
+              newAction.segue = {
+                destinationScreenId: this.$store.getters.getCurrentProjectScreenPointers[0].id,
+                sourceScreenId: this.currentScreen.id
+              }
+            }
             newAction.segue.segueId = this.currentScreen.id + '_' + newAction.segue.destinationScreenId + '_' + newAction.id
           }
 
@@ -153,12 +174,29 @@
               store.dispatch('setCurrentProjectScreen', newScreen)
               store.dispatch('setShowActionModalID', false)
               store.dispatch('setIgnoreCanvasClicks', false)
+              store.dispatch('resetNewAction')
             }).catch(function (error) {
               console.log(error)
               store.dispatch('setShowActionModalID', false)
               store.dispatch('setIgnoreCanvasClicks', false)
+              store.dispatch('resetNewAction')
             })
           }
+        },
+        deleteAction: function (action) {
+          const store = this.$store
+          const thisRef = this
+          var selectedElement = this.currentElement
+          selectedElement = ElementManagement.methods.deleteActionFromElement(selectedElement, action)
+          this.currentElement = selectedElement
+          const projectPath = this.$store.getters.getCurrentProjectPath
+          ScreenManagement.methods.screenWithNewElement(selectedElement, projectPath, this.currentScreen).then(function (newScreen) {
+            store.dispatch('setCurrentProjectScreen', newScreen)
+            store.dispatch('setCurrentElement', selectedElement)
+            thisRef.$forceUpdate()
+          }).catch(function (error) {
+            console.log(error)
+          })
         }
       }
     }
@@ -210,6 +248,11 @@
       bottom: 1px;
       left: 1px;
       right: 1px;
+    }
+
+    .chip {
+      background: #029FDD;
+      color: white;
     }
 
 </style>

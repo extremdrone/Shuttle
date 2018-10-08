@@ -98,7 +98,7 @@
             return this.$store.getters.getCurrentProjectScreen.elements[this.$store.getters.getCurrentSelectedElementID.elementID]
           },
           set (value) {
-            this.$store.dispatch('setSelectedElementID', value.elementID)
+            this.$store.dispatch('setCurrentElement', value)
           }
         }
       },
@@ -125,9 +125,11 @@
         },
         setTextAlignment: function (alignment) {
           this.currentElement.title.textAlignment = alignment
+          this.$forceUpdate()
         },
         setTextStyle: function (style) {
           this.currentElement.title.textStyle = style
+          this.$forceUpdate()
         },
         toggleShowSection: function (showID) {
           const dict = { itemID: showID, show: !this.$store.getters.getSettingsShowState[showID] }

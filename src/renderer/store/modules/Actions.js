@@ -8,8 +8,8 @@ const state = {
       title: 'Show Screen',
       segue: {
         segueId: '(sourceScreenID_destinationScreenID_actionId',
-        sourceScreenId: '(The ID of the presenting screen)',
-        destinationScreenId: '(The ID of the destination screen)',
+        sourceScreenId: undefined,
+        destinationScreenId: undefined,
         payload: undefined
       },
       icon: ['fas', 'arrow-alt-circle-right']
@@ -63,6 +63,19 @@ const mutations = {
   SET_NEW_ACTION_NAME (state, payload) {
     state.newAction.name = payload.name
     state.newAction.filteredID = payload.filteredID
+  },
+  SET_NEW_ACTION_SEGUE (state, payload) {
+    state.newAction.segue = payload
+  },
+  RESET_NEW_ACTION (state) {
+    state.newAction = {
+      showActionsModal: false,
+      name: '',
+      filteredID: ''
+    }
+    state.placeholderAction = {
+      type: 'SEGUE'
+    }
   }
 }
 
@@ -75,6 +88,12 @@ const actions = {
   },
   setNewActionName ({ commit }, payload) {
     commit('SET_NEW_ACTION_NAME', payload)
+  },
+  setNewActionSegue ({ commit }, payload) {
+    commit('SET_NEW_ACTION_SEGUE', payload)
+  },
+  resetNewAction ({ commit }) {
+    commit('RESET_NEW_ACTION')
   }
 }
 
