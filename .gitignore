@@ -10,4 +10,3 @@ thumbs.db
 !.gitkeep
 *.p12
 *.provisionprofile
-build/entitlements.mas.plist
