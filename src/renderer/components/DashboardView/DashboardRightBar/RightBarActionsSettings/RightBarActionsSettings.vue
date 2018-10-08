@@ -146,6 +146,11 @@
             destinationScreenId: event.target.value,
             payload: undefined
           })
+          if (event.target.value === this.currentScreen.id) {
+            this.actionsModalError = 'Screen can\'t show itself'
+          } else {
+            this.actionsModalError = ''
+          }
         },
         addActionClick: function () {
           const store = this.$store
@@ -161,6 +166,12 @@
                   sourceScreenId: this.currentScreen.id
                 }
               }
+              console.log(newAction.segue.destinationScreenId)
+              if (newAction.segue.destinationScreenId === this.currentScreen.id) {
+                this.actionsModalError = 'Screen can\'t show itself'
+                return
+              }
+
               newAction.segue.segueId = this.currentScreen.id + '_' + newAction.segue.destinationScreenId + '_' + newAction.id
             } else {
               this.actionsModalError = 'Element already shows a screen'
