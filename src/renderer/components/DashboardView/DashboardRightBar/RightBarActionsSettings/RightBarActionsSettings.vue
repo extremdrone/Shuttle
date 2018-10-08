@@ -59,6 +59,7 @@
           </div>
         </div>
         <div class="modal-footer">
+          <p style="color:red;">{{ actionsModalError }}</p>
           <button @click="addActionClick()" class="btn btn-primary">Add Screen Transition</button>
           <a @click="toogleShowActionsModal(false)" class="btn btn-link" aria-label="Close">Cancel</a>
         </div>
@@ -76,7 +77,8 @@
       data: function () {
         return {
           showActionsModal: false,
-          currentAction: {}
+          currentAction: {},
+          actionsModalError: ''
         }
       },
       mixins: [
@@ -125,6 +127,8 @@
           this.$store.dispatch('setShowStateSettingsItem', dict)
         },
         toogleShowActionsModal: function (show) {
+          this.actionsModalError = ''
+          this.$store.dispatch('resetNewAction')
           this.$store.dispatch('setIgnoreCanvasClicks', show)
           this.$store.dispatch('setShowActionModalID', show)
         },
@@ -147,19 +151,25 @@
           const store = this.$store
           const newActionMetadata = this.$store.getters.getNewAction
           var newAction = this.$store.getters.getActionForSelectedPlaceholderType
-          newAction.name = newActionMetadata.name
-          newAction.id = newActionMetadata.filteredID
 
           if (newAction.type === 'SEGUE') {
-            newAction.segue = newActionMetadata.segue
-            if (!newAction.segue || !newAction.segue.destinationScreenId) {
-              newAction.segue = {
-                destinationScreenId: this.$store.getters.getCurrentProjectScreenPointers[0].id,
-                sourceScreenId: this.currentScreen.id
+            if (!ElementManagement.methods.elementHasSegue(this.currentElement)) {
+              newAction.segue = newActionMetadata.segue
+              if (!newAction.segue || !newAction.segue.destinationScreenId) {
+                newAction.segue = {
+                  destinationScreenId: this.$store.getters.getCurrentProjectScreenPointers[0].id,
+                  sourceScreenId: this.currentScreen.id
+                }
               }
+              newAction.segue.segueId = this.currentScreen.id + '_' + newAction.segue.destinationScreenId + '_' + newAction.id
+            } else {
+              this.actionsModalError = 'Element already shows a screen'
+              return
             }
-            newAction.segue.segueId = this.currentScreen.id + '_' + newAction.segue.destinationScreenId + '_' + newAction.id
           }
+
+          newAction.name = newActionMetadata.name
+          newAction.id = newActionMetadata.filteredID
 
           if (this.currentScreen) {
             var selectedElement = this.currentScreen.elements[this.getCurrentSelectedElementID.elementID]
@@ -174,12 +184,10 @@
               store.dispatch('setCurrentProjectScreen', newScreen)
               store.dispatch('setShowActionModalID', false)
               store.dispatch('setIgnoreCanvasClicks', false)
-              store.dispatch('resetNewAction')
             }).catch(function (error) {
               console.log(error)
               store.dispatch('setShowActionModalID', false)
               store.dispatch('setIgnoreCanvasClicks', false)
-              store.dispatch('resetNewAction')
             })
           }
         },

@@ -36,6 +36,27 @@ export default {
         }
       }
       return newElement
+    },
+    elementHasSegue: function (element) {
+      for (var i = 0; i < element.actions.onTouchUpInside.length; i++) {
+        const currentAction = element.actions.onTouchUpInside[i]
+        if (currentAction.type === 'SEGUE') {
+          return true
+        }
+      }
+      for (var j = 0; j < element.actions.onTouchUpOutside.length; j++) {
+        const currentAction = element.actions.onTouchUpOutside[j]
+        if (currentAction.type === 'SEGUE') {
+          return true
+        }
+      }
+      for (var x = 0; x < element.actions.onTouchDown.length; x++) {
+        const currentAction = element.actions.onTouchDown[x]
+        if (currentAction.type === 'SEGUE') {
+          return true
+        }
+      }
+      return false
     }
   }
 }
