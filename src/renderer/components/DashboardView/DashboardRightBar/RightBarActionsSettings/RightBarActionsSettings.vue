@@ -16,7 +16,7 @@
         <tbody v-show="getSettingsShowState.showActions">
             <tr v-for="action in currentElement.actions.onTouchUpInside" v-bind:key="action.id">
               <td colspan="2">
-                <span class="chip chip-action">{{ action.name }}<a class="btn btn-clear" @click="deleteAction(action)" aria-label="Close" role="button"></a></span>
+                <span class="chip chip-action"><font-awesome-icon class="chip-icon-action-type unselectable" :icon="action.icon"/> &nbsp; {{ action.name }}<a class="btn btn-clear" @click="deleteAction(action)" aria-label="Close" role="button"></a></span>
               </td>
             </tr>
             <tr>
