@@ -158,7 +158,7 @@ const state = {
       },
       image: {
         onlineResource: false, // true if the resource is a URL to a image
-        url: 'assets/images/ShuttlePlaceholder.png', // Local URL if not an online resource
+        url: '/assets/images/ShuttlePlaceholder.png', // Local URL if not an online resource
         scaleType: 'ASPECT_FILL'
       }
     },
