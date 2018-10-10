@@ -37,6 +37,17 @@
 
     export default {
       name: 'CreateProjectView',
+      data () {
+        return {
+          images: {
+            ShuttlePlaceholder: {
+              data: this.$store.getters.getSHImageViewPlaceholder,
+              type: 'IMAGE',
+              name: 'ShuttlePlaceholder.png'
+            }
+          }
+        }
+      },
       methods: {
         isInformationDone: function (step) {
           switch (step) {
@@ -61,17 +72,23 @@
               const newProjectJSON = this.$store.getters.getNewProject
               const sampleProjectScreens = this.$store.getters.getSampleProjectScreens
               const router = this.$router
+              const thisRef = this
               writeNewProjectInfo(projectPath, newProjectJSON, function () {
-                generateHelloWorld(projectPath, sampleProjectScreens, function () {
-                  ipcRenderer.send('setCurrentProjectPathOnDB', { path: projectPath, name: newProjectJSON.appInformation.appName })
-                  ipcRenderer.on('sendDidSetCurrentProjectFromDB', (event, currentProject) => {
-                    router.replace('/dashboard')
-                  })
-                  ipcRenderer.on('sendSettingCurrentProjectErrorFromDB', (event, error) => {
-                    console.log(error)
+                var assets = [thisRef.images.ShuttlePlaceholder]
+                addNewProjectDefaultAssets(projectPath, assets, function (values) {
+                  generateHelloWorld(projectPath, sampleProjectScreens, function () {
+                    ipcRenderer.send('setCurrentProjectPathOnDB', { path: projectPath, name: newProjectJSON.appInformation.appName })
+                    ipcRenderer.on('sendDidSetCurrentProjectFromDB', (event, currentProject) => {
+                      router.replace('/dashboard')
+                    })
+                    ipcRenderer.on('sendSettingCurrentProjectErrorFromDB', (event, error) => {
+                      console.log(error)
+                    })
+                  }, function (errorMessage) {
+                    // TODO: Present error modal and handle rollback
+                    console.log(errorMessage)
                   })
                 }, function (errorMessage) {
-                  // TODO: Present error modal and handle rollback
                   console.log(errorMessage)
                 })
               }, function (errorMessage) {
@@ -123,6 +140,20 @@
         success()
       }).catch(function (errorMessage) {
         error(errorMessage)
+      })
+    }
+
+    function addNewProjectDefaultAssets (path, assets, success, error) {
+      var assetsPromises = []
+      for (const asset of assets) {
+        if (asset.type === 'IMAGE') {
+          assetsPromises.push(FileManagement.methods.writeImageWithDataSync(asset.data, path + '/assets/images/' + asset.name))
+        }
+      }
+      Promise.all(assetsPromises).then(function (values) {
+        success(values)
+      }).catch(function (err) {
+        error(err)
       })
     }
 

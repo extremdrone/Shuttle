@@ -97,10 +97,16 @@
       if (err) {
         ipcRenderer.send('open-error-dialog-creating-project-file', err.message)
       } else {
-        store.dispatch('setProjectPath', {
-          path
+        createShuttleFileAssetsFolder(path, function (err) {
+          if (err) {
+            ipcRenderer.send('open-error-dialog-creating-project-file', err.message)
+          } else {
+            store.dispatch('setProjectPath', {
+              path
+            })
+            router.replace('/createProject/newAppInformation')
+          }
         })
-        router.replace('/createProject/newAppInformation')
       }
     })
   })
@@ -148,9 +154,36 @@
     }
     fs.mkdir(path, mask, function (err) {
       if (err) {
-        if (err.code === 'EEXIST') cb(null) // ignore the error if the folder already exists
-        else cb(err) // something else went wrong
-      } else cb(null) // successfully created folder
+        if (err.code === 'EEXIST') {
+          // ignore the error if the folder already exists
+          cb(null)
+        } else {
+          cb(err) // something else went wrong
+        }
+      } else {
+        // successfully created folder
+        cb(null)
+      }
+    })
+  }
+
+  function createShuttleFileAssetsFolder (path, mask, cb) {
+    if (typeof mask === 'function') { // allow the `mask` parameter to be optional
+      cb = mask
+      mask = '0777'
+    }
+    fs.mkdir(path + '/assets', mask, function (err) {
+      if (err && err.code !== 'EEXIST') {
+        cb(err) // something else went wrong
+      } else {
+        fs.mkdir(path + '/assets/images', mask, function (err) {
+          if (err && err.code !== 'EEXIST') {
+            cb(err) // something else went wrong
+          } else {
+            cb(null)
+          }
+        })
+      }
     })
   }
 </script>

@@ -119,7 +119,7 @@ const state = {
       description: 'Prompt the user for keyboard input'
     },
     image: {
-      type: 'IMAGE',
+      type: 'IMAGEVIEW',
       icon: ['far', 'image'],
       name: 'Image',
       description: 'Present an image',
@@ -158,8 +158,8 @@ const state = {
       },
       image: {
         onlineResource: false, // true if the resource is a URL to a image
-        url: 'ShuttlePlaceholder', // Local URL if not an online resource
-        scaleType: 'ASPECT_FIT'
+        url: 'assets/images/ShuttlePlaceholder.png', // Local URL if not an online resource
+        scaleType: 'ASPECT_FILL'
       }
     },
     view: {

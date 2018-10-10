@@ -53,6 +53,43 @@ export default {
           reject(err.message)
         }
       })
+    },
+    writeImageWithPathSync: function (mediaPath, exportPath) {
+      return new Promise((resolve, reject) => {
+        try {
+          fs.readFile(mediaPath, function (err, data) {
+            if (err) {
+              reject(err)
+              return
+            }
+            fs.writeFile(exportPath, data, 'binary', function (err) {
+              if (err) {
+                reject(err)
+              } else {
+                resolve(exportPath)
+              }
+            })
+          })
+        } catch (error) {
+          reject(error)
+        }
+      })
+    },
+    writeImageWithDataSync: function (data, exportPath) {
+      return new Promise((resolve, reject) => {
+        try {
+          var base64Data = data.replace('data:image/png;base64,', '')
+          fs.writeFile(exportPath, base64Data, 'base64', function (err) {
+            if (err) {
+              reject(err)
+            } else {
+              resolve(exportPath)
+            }
+          })
+        } catch (error) {
+          reject(error)
+        }
+      })
     }
   }
 }
