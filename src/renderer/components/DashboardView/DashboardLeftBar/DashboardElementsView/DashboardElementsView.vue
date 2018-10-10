@@ -110,8 +110,15 @@
           element.name = newElement.name
           element.index = (currentScreen.elements ? 1 : currentScreen.elements.count + 1)
 
+          if (element.type === 'IMAGEVIEW') {
+            if (element.image.onlineResource === false) {
+              const newURL = element.image.url.replace('%PROJECT_PATH%', 'file:///' + projectPath)
+              element.image.url = newURL
+              element.image.data = this.$store.getters.getSHImageViewPlaceholder
+            }
+          }
+
           ScreenManagement.methods.screenWithNewElement(element, projectPath, currentScreen).then(function (newScreen) {
-            console.log(newScreen)
             store.dispatch('setCurrentProjectScreen', newScreen)
             store.dispatch('setShowElementModalID', false)
           }).catch(function (error) {
