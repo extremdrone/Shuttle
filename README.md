@@ -18,7 +18,7 @@ Easily create native mobile applications for iOS & Android. No coding required. 
 - [x] Add elements in the drag and drop editor
 - [ ] Add a decent amount of elements
 - [x] Edit element attributes
-- [ ] Add actions and screen transitions
+- [x] Add actions and screen transitions
 - [x] Export iOS Code
 - [ ] Export Android Code (Soon)
 - [x] Run in iOS Simulator
@@ -32,7 +32,7 @@ Currently Shuttle is in public **Beta**. You must remember that this means that 
 
 ## Download 💻
 
-Shuttle is available for macOS, Windows and linux operating systems.
+Shuttle is available as a **Beta Release** for macOS, Windows and linux operating systems.
 
 [Download macOS](#) <br/>
 [Download Windows](#) <br/>
@@ -40,7 +40,7 @@ Shuttle is available for macOS, Windows and linux operating systems.
 
 ## Shuttle Tools 🔨
 
-Due to the complexity of Shuttle. There are multiple NPM Modules that make Shuttle a complete solution. All of them are Open Source and licenced under MIT license. Some of the tools are:
+Due to the complexity of Shuttle. There are multiple NPM Modules that make Shuttle a complete solution. Some of them are Open Source and licenced under MIT license. Some of the tools are:
 
 ### Open Source 😊
 [Shuttle-Pollock](https://github.com/AppShuttleInc/Shuttle-Pollock) - Handle Canvas, Drag & Drop, UI Rendering <br/>
