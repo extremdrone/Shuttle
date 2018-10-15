@@ -1,0 +1,8 @@
+version: 0.0.1
+files:
+  - url: shuttle-setup-0.0.1.exe
+    sha512: rurMr/lC8V+Vlxx4owOwhGpd+OOURYcq69pFotmD/Dp39/zsnP1nWaLH22VcahFwWLEoUNpZhWr8t9oTGP4fFw==
+    size: 43012005
+path: shuttle-setup-0.0.1.exe
+sha512: rurMr/lC8V+Vlxx4owOwhGpd+OOURYcq69pFotmD/Dp39/zsnP1nWaLH22VcahFwWLEoUNpZhWr8t9oTGP4fFw==
+releaseDate: '2018-10-15T00:39:09.601Z'

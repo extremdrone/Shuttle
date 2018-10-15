@@ -73,6 +73,13 @@
         }
       ]
     },
+    "appx": {
+      "publisher":"CN=53D284AD-46AA-4174-BDEE-131B64AED50D",
+      "publisherDisplayName":"AppShuttle.io",
+      "identityName":"11152AppShuttle.Shuttle-AppCreator",
+      "applicationId":"shuttle",
+      "displayName":"Shuttle - App Creator"
+    },
     "linux": {
       "icon": "build/icons"
     },
