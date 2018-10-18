@@ -67,6 +67,6 @@ We love to keep you updated on latest news and releases. Follow us on: <br/>
 
 ## License 📄
 
-Shuttle is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
+Shuttle is available under the GNU GPLv3 license. See the [LICENSE](LICENSE) file for more info.
 
 > This project and all Shuttle tools are in no way affiliated with Apple Inc, Google LLC. This project is open source under the MIT license, which means you have full access to the source code and can modify it to fit your own needs. You are responsible for how you use Shuttle.
