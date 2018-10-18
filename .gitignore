@@ -10,3 +10,4 @@ thumbs.db
 !.gitkeep
 *.p12
 *.provisionprofile
+build/envValue.txt
