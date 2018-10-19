@@ -62,7 +62,7 @@
       </dict>
     </array>
     <key>AsarIntegrity</key>
-    <string>{"checksums":{"app.asar":"5SDFv27q5TBKoWqfEyvqG7AylQkT9RQTJnaUiAOx51RCN5xIORNQoy3ZdhP4zvzUb489rAcT44MpoOkml4acDw==","electron.asar":"Ip/GqLJNwH9HdV4FO24ZDjAtVqEQy9hwEtIJ6eYRRqBG8I9UBqBXVCtCrkiLk/smh6650/gIEW0ly2jvqchncA=="}}</string>
+    <string>{"checksums":{"app.asar":"YSKBqeDBiUfmBB349cQOKcVwItRy5+iFbjqp7RFD9ULp2c3wq0LkTcrGW9UxviMPVVpmmGiTbUW02+8PlnYHpg==","electron.asar":"Ip/GqLJNwH9HdV4FO24ZDjAtVqEQy9hwEtIJ6eYRRqBG8I9UBqBXVCtCrkiLk/smh6650/gIEW0ly2jvqchncA=="}}</string>
     <key>ElectronTeamID</key>
     <string>LS6M2TWH7D</string>
   </dict>
