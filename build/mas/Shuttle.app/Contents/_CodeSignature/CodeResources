@@ -14,7 +14,7 @@
 		</data>
 		<key>Resources/app.asar</key>
 		<data>
-		Nn9NzFnRxx09b9aFaNSi6tI4wb8=
+		4mrM996zMwy9gYQiwEDry4H2Ptc=
 		</data>
 		<key>Resources/electron.asar</key>
 		<data>
@@ -27,7 +27,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			L4OY3aPCFbNgeiptpLptirKQeQU=
+			0tv/yxZLPsec25Nby8Gh0WuCy04=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.github.electron.framework" and anchor apple generic and certificate leaf[subject.CN] = "3rd Party Mac Developer Application: Juan David Cruz Serrano (LS6M2TWH7D)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -94,11 +94,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Nn9NzFnRxx09b9aFaNSi6tI4wb8=
+			4mrM996zMwy9gYQiwEDry4H2Ptc=
 			</data>
 			<key>hash2</key>
 			<data>
-			n8WTZame1Qfj65VafrUcfaF9fbz9J1yKDu6P6ZZbmXE=
+			MHzkam/StPyixvtvTO4CTHDH9iAhBsyas5sB1e+OIKw=
 			</data>
 		</dict>
 		<key>Resources/electron.asar</key>
