@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/AppShuttleInc/Shuttle.svg?branch=master)](https://travis-ci.org/AppShuttleInc/Shuttle)
 [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](LICENSE)
+[![Build status](https://ci.appveyor.com/api/projects/status/tr84piebvadk8pay?svg=true)](https://ci.appveyor.com/project/juandavidcruzs/shuttle)
 
 
 ![Screenshot](Cover.png)
