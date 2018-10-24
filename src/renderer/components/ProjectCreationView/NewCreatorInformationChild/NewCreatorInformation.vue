@@ -13,7 +13,7 @@
                             <label class="form-label unselectable" for="input-example-1"><strong>Creator Name *</strong></label>
                             </div>
                             <div class="col-9 col-sm-12 col-ml-auto">
-                            <input :value="this.getNewProject.creatorInformation.name" @input="updatedCreatorName" class="form-input" type="text" id="input-example-1" placeholder="Ex: David Cruz">
+                            <input :value="this.getNewProject.creatorInformation.name" @input="updatedCreatorName" class="form-input" type="text" id="input-example-1" placeholder="e.g: David Cruz">
                             </div>
                         </div>
                         <br>
@@ -22,7 +22,7 @@
                             <label class="form-label unselectable" for="input-example-1"><strong>Creator Email *</strong></label>
                             </div>
                             <div class="col-9 col-sm-12 col-ml-auto">
-                            <input :value="this.getNewProject.creatorInformation.email" @input="updatedCreatorEmail" class="form-input" type="text" id="input-example-1" placeholder="Ex: david@appshuttle.io">
+                            <input :value="this.getNewProject.creatorInformation.email" @input="updatedCreatorEmail" class="form-input" type="text" id="input-example-1" placeholder="e.g: david@appshuttle.io">
                             </div>
                         </div>
                         <br>
@@ -31,7 +31,7 @@
                             <label class="form-label unselectable" for="input-example-1"><strong>Creator Website</strong></label>
                             </div>
                             <div class="col-9 col-sm-12 col-ml-auto">
-                            <input :value="this.getNewProject.creatorInformation.website" @input="updatedCreatorWebsite" class="form-input" type="text" id="input-example-1" placeholder="Ex: https://appshuttle.io">
+                            <input :value="this.getNewProject.creatorInformation.website" @input="updatedCreatorWebsite" class="form-input" type="text" id="input-example-1" placeholder="e.g: https://appshuttle.io">
                             </div>
                         </div>
                     </form>

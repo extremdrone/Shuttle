@@ -3,7 +3,7 @@
             <div class="columns">
                 <div class="col-10 col-mx-auto unselectable c-default">
                     <h3>App Information: </h3>
-                    <p>This is the basic info we need to create your mobile applications. Keep in mind you <strong>can</strong> change this information later.</p>
+                    <p>This is the basic information we need to create your mobile applications. Keep in mind that you <strong>can</strong> change this information later.</p>
                 </div>
                 <div class="col-10 col-mx-auto">
                     <div class="divider"></div>
@@ -13,7 +13,7 @@
                             <label class="form-label unselectable" for="input-example-1"><strong>App Name *</strong></label>
                             </div>
                             <div class="col-9 col-sm-12 col-ml-auto">
-                            <input :value="this.getNewProject.appInformation.appName" @input="updatedAppName" class="form-input" type="text" id="input-example-1" placeholder="Ex: My Rocket App">
+                            <input :value="this.getNewProject.appInformation.appName" @input="updatedAppName" class="form-input" type="text" id="input-example-1" placeholder="e.g: My Rocket App">
                             </div>
                         </div>
                         <br>
