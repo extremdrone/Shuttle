@@ -31,6 +31,9 @@
           </div>
         </div>
       </div>
+      <p id="textBeta"><small>This app is <strong>still in development (beta)</strong> and as such <strong>can change</strong> in non-backwards compatible ways <strong>without notice</strong>. 
+        <br/> You <strong>will find issues</strong> and inconsistencies, <strong>please share</strong> any that you might find.
+        <br/> You <strong>won't be charged</strong> when using Shuttle while it is <strong>in this beta state.</strong></small></p>
   </div>
 
 
@@ -218,4 +221,10 @@
   #textFooter {
     text-align: center;
   }
+
+  #textBeta {
+    color:gray;
+    text-align: center;
+  }
+
 </style>
