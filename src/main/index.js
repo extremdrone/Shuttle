@@ -2,6 +2,7 @@
 
 import { app, BrowserWindow, Menu } from 'electron'
 import { autoUpdater } from 'electron-updater'
+const { ipcMain, dialog } = require('electron')
 
 const Datastore = require('nedb')
 var db = {}
@@ -183,9 +184,15 @@ app.on('ready', () => {
 */
 
 /**
+ * Screen Management
+ */
+ipcMain.on('maximizeWindow', (event) => {
+  mainWindow.maximize()
+})
+
+/**
  * LandingView Electron Main.js
  */
-const { ipcMain, dialog } = require('electron')
 
 /**
  * Create new file Dialog

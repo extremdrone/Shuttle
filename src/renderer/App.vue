@@ -1,14 +1,21 @@
 <template>
   <div id="app">
-    <div style="-webkit-app-region: drag; width: 100%; height: 35px;">
+    <div v-on:dblclick="maximize()" style="-webkit-app-region: drag; width: 100%; height: 35px;">
     </div>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+  const { ipcRenderer } = require('electron')
+
   export default {
-    name: 'Shutte'
+    name: 'Shutte',
+    methods: {
+      maximize: function () {
+        ipcRenderer.send('maximizeWindow')
+      }
+    }
   }
 </script>
 

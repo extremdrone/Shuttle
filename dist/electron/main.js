@@ -2554,6 +2554,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+var _require = __webpack_require__(2),
+    ipcMain = _require.ipcMain,
+    dialog = _require.dialog;
+
 var Datastore = __webpack_require__(49);
 var db = {};
 db.projects = new Datastore({ filename: __WEBPACK_IMPORTED_MODULE_0_electron__["app"].getPath('userData') + '/projects.db', autoload: true, timestampData: true });
@@ -2650,9 +2654,9 @@ __WEBPACK_IMPORTED_MODULE_0_electron__["app"].on('ready', function () {
   if (process.env.NODE_ENV === 'production') __WEBPACK_IMPORTED_MODULE_1_electron_updater__["autoUpdater"].checkForUpdates();
 });
 
-var _require = __webpack_require__(2),
-    ipcMain = _require.ipcMain,
-    dialog = _require.dialog;
+ipcMain.on('maximizeWindow', function (event) {
+  mainWindow.maximize();
+});
 
 ipcMain.on('save-dialog-new-project', function (event) {
   var options = {
