@@ -27,8 +27,8 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    minHeight: 800,
-    minWidth: 1000,
+    minHeight: 440,
+    minWidth: 660,
     show: false,
     titleBarStyle: 'hiddenInset',
     title: 'Shuttle'

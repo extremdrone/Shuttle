@@ -2572,8 +2572,8 @@ var winURL = process.env.NODE_ENV === 'development' ? 'http://localhost:9080' : 
 
 function createWindow() {
   mainWindow = new __WEBPACK_IMPORTED_MODULE_0_electron__["BrowserWindow"]({
-    minHeight: 800,
-    minWidth: 1000,
+    minHeight: 440,
+    minWidth: 660,
     show: false,
     titleBarStyle: 'hiddenInset',
     title: 'Shuttle'
