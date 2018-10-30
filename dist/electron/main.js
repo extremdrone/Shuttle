@@ -2588,7 +2588,13 @@ function createWindow() {
   __WEBPACK_IMPORTED_MODULE_0_electron__["Menu"].setApplicationMenu(menu);
 
   mainWindow.on('closed', function () {
-    mainWindow = null;
+    if (process.platform === 'darwin') {
+      if (!mainWindow.isDocumentEdited()) {
+        mainWindow = null;
+      } else {}
+    } else {
+      mainWindow = null;
+    }
   });
 }
 
@@ -2655,7 +2661,11 @@ __WEBPACK_IMPORTED_MODULE_0_electron__["app"].on('ready', function () {
 });
 
 ipcMain.on('maximizeWindow', function (event) {
-  mainWindow.maximize();
+  if (mainWindow.isMaximized()) {
+    mainWindow.unmaximize();
+  } else {
+    mainWindow.maximize();
+  }
 });
 
 ipcMain.on('save-dialog-new-project', function (event) {
@@ -2752,6 +2762,18 @@ ipcMain.on('openExportCodeFinder', function (event) {
   dialog.showOpenDialog(options, function (filename) {
     event.sender.send('savedExportCodePath', filename);
   });
+});
+
+ipcMain.on('set-document-edited', function (event) {
+  if (process.platform === 'darwin') {
+    mainWindow.setDocumentEdited(true);
+  }
+});
+
+ipcMain.on('set-document-saved', function (event) {
+  if (process.platform === 'darwin') {
+    mainWindow.setDocumentEdited(false);
+  }
 });
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, "src/main"))
 

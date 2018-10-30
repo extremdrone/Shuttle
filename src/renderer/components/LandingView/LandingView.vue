@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="landing-container">
   <!-- Header with logo and app name -->
   <div id="headerContainer" class="container">
     <img class="centered unselectable c-default" id="logo" src="~@/assets/logo.png" alt="AppShuttle.io"/>
@@ -226,5 +226,10 @@
     color:gray;
     text-align: center;
   }
+
+  .landing-container {
+    overflow: auto;
+  }
+  
 
 </style>

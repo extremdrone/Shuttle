@@ -49,7 +49,14 @@ function createWindow () {
   Menu.setApplicationMenu(menu)
 
   mainWindow.on('closed', () => {
-    mainWindow = null
+    if (process.platform === 'darwin') {
+      if (!mainWindow.isDocumentEdited()) {
+        mainWindow = null
+      } else {
+      }
+    } else {
+      mainWindow = null
+    }
   })
 }
 
@@ -187,7 +194,11 @@ app.on('ready', () => {
  * Screen Management
  */
 ipcMain.on('maximizeWindow', (event) => {
-  mainWindow.maximize()
+  if (mainWindow.isMaximized()) {
+    mainWindow.unmaximize()
+  } else {
+    mainWindow.maximize()
+  }
 })
 
 /**
@@ -306,4 +317,19 @@ ipcMain.on('openExportCodeFinder', function (event) {
   dialog.showOpenDialog(options, (filename) => {
     event.sender.send('savedExportCodePath', filename)
   })
+})
+
+/**
+ * Document Status Methods
+ */
+ipcMain.on('set-document-edited', (event) => {
+  if (process.platform === 'darwin') {
+    mainWindow.setDocumentEdited(true)
+  }
+})
+
+ipcMain.on('set-document-saved', (event) => {
+  if (process.platform === 'darwin') {
+    mainWindow.setDocumentEdited(false)
+  }
 })
