@@ -38,6 +38,17 @@ appx:
   displayName: Shuttle - App Creator
 linux:
   icon: build/icons
+  category: Development
+  target: AppImage
+  executableName: Shuttle
+  synopsis: Easily create native mobile applications.
+  description: 'Easily create native mobile applications for iOS & Android. No coding required. 100% Native. Automatic UI and Code Generation. Beautiful and easy to use Drag and Drop builder. No app templates, your app is unique.'
+  desktop:
+    Name: Shuttle
+    Exec: Shuttle
+    Icon: build/icons
+    Type: Application
+    Categories: Development;
 fileAssociations:
   - ext: shuttle
     name: Shuttle Project
@@ -47,4 +58,4 @@ fileAssociations:
     isPackage: true
 copyright: Copyright © 2018 AppShuttle.io
 afterPack: ./afterPack.js
-electronVersion: 3.0.4
+electronVersion: 3.0.6

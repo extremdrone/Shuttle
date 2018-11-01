@@ -14,11 +14,11 @@
 		</data>
 		<key>Resources/app.asar</key>
 		<data>
-		4mrM996zMwy9gYQiwEDry4H2Ptc=
+		caJipc6Vp+xTgPWNjc1ZqyfvMPA=
 		</data>
 		<key>Resources/electron.asar</key>
 		<data>
-		F+EmHmRCIjl93WlQGjjLNEz/kuQ=
+		yIwnZZeY0AhYS5y2XnN/YS0JLLM=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -27,7 +27,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			0tv/yxZLPsec25Nby8Gh0WuCy04=
+			RUEIWe3PJDMftuOIoW6jNOI3Qrk=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.github.electron.framework" and anchor apple generic and certificate leaf[subject.CN] = "3rd Party Mac Developer Application: Juan David Cruz Serrano (LS6M2TWH7D)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -94,22 +94,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4mrM996zMwy9gYQiwEDry4H2Ptc=
+			caJipc6Vp+xTgPWNjc1ZqyfvMPA=
 			</data>
 			<key>hash2</key>
 			<data>
-			MHzkam/StPyixvtvTO4CTHDH9iAhBsyas5sB1e+OIKw=
+			DNtyUVpkK6nCPZBHSn4LtkWykxXm8QqlciKHFzV9b7c=
 			</data>
 		</dict>
 		<key>Resources/electron.asar</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			F+EmHmRCIjl93WlQGjjLNEz/kuQ=
+			yIwnZZeY0AhYS5y2XnN/YS0JLLM=
 			</data>
 			<key>hash2</key>
 			<data>
-			cJU1hETXuWkYXFYBmoR7gZtKgARjIjjeVs2Z2KbIkGw=
+			/SBxlUIC1NnjM2r0mq0DW6gIFjDS7gldLiF+aVOrXmc=
 			</data>
 		</dict>
 		<key>embedded.provisionprofile</key>

@@ -488,7 +488,7 @@
 		</dict>
 		<key>Resources/v8_context_snapshot.bin</key>
 		<data>
-		xXXH0hDsUsI+BWbPwiPd777qvDE=
+		vTgMMUJBESrlgf3j+6N7B2nkRiI=
 		</data>
 		<key>Resources/vi.lproj/locale.pak</key>
 		<dict>
@@ -528,22 +528,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ScI6WF7C4t12T7cOpLWFMWh2vuA=
+			GSSGh5D0t7PNZnxeBVzXfv9/uTQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			6xBHy3YlGZ2m2+U1sBiFjs9lOuJWRuoez225AETZevw=
+			2zvn6i2PDr64NWOcLrQFQsHlkKBlGhAh8nNe6MCgdDk=
 			</data>
 		</dict>
 		<key>Libraries/libnode.dylib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			c9DMrjsUKZwK9WjSclBI+sEdrJc=
+			oHIkvYz+6+JS2zpm5nb8Y+FtVN8=
 			</data>
 			<key>hash2</key>
 			<data>
-			qU4BY7iWQAzOz3mY/yb+AJnAq8R8hIY5SfnnAvycclE=
+			X+M6RYZgkarOjs1A8Tty2I1XRzRPm/9bKapiM6Lj0NQ=
 			</data>
 		</dict>
 		<key>Resources/Info.plist</key>
@@ -1288,11 +1288,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xXXH0hDsUsI+BWbPwiPd777qvDE=
+			vTgMMUJBESrlgf3j+6N7B2nkRiI=
 			</data>
 			<key>hash2</key>
 			<data>
-			CLFTNFnqx4xHOnNBmIANDbgAADy8koy9R+73WofQOow=
+			2Kt8+/OAq9h91pS9mKUfmDRdZadPL2BdXL6S3GBLVCY=
 			</data>
 		</dict>
 		<key>Resources/vi.lproj/locale.pak</key>
