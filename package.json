@@ -110,7 +110,7 @@
   },
   "dependencies": {
     "@appshuttle.io/bell": "0.0.13",
-    "@appshuttle.io/pollock": "0.0.39",
+    "@appshuttle.io/pollock": "0.0.40",
     "@appshuttle.io/turing": "0.0.22",
     "@fortawesome/fontawesome-svg-core": "^1.2.6",
     "@fortawesome/free-brands-svg-icons": "^5.4.1",
