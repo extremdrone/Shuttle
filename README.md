@@ -47,11 +47,11 @@ Due to the complexity of Shuttle. There are multiple NPM Modules that make Shutt
 [Shuttle-Pollock](https://github.com/AppShuttleInc/Shuttle-Pollock) - Handle Canvas, Drag & Drop, UI Rendering <br/>
 [Shuttle-Turing](https://github.com/AppShuttleInc/Shuttle-Turing) - Code Generation and Project Building <br/>
 [Shuttle-Bell](https://github.com/AppShuttleInc/Shuttle-Bell) - Simulators and Device deployment <br/>
-[Shuttle-Jobs](https://github.com/AppShuttleInc/Shuttle-Jobs) - Shuttle iOS Showcase and Testing App <br/>
 
 ### Proprietary Software 😔
 [Shuttle-Cerf](#) - Shuttle Server. Everything ranging from subscriptions, databases, storage, API, etc <br/>
 [Shuttle-Cruz](#) - Web app used by the user to administrate projects, subscriptions, account and more <br/>
+[Shuttle-Jobs](#) - Shuttle for iOS, focused on education <br/>
 
 ## Documentation
 You can find a complete documentation designed for developers and educators at [https://docs.appshuttle.io](https://docs.appshuttle.io)
