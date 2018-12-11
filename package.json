@@ -118,7 +118,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.4.1",
     "@fortawesome/vue-fontawesome": "0.1.1",
     "axios": "^0.18.0",
-    "electron-updater": "^3.1.2",
+    "electron-updater": "^4.0.6",
     "email-validator": "^2.0.4",
     "grunt": "^1.0.3",
     "nedb": "^1.8.0",
