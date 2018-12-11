@@ -149,7 +149,7 @@
     "del": "^3.0.0",
     "devtron": "^1.4.0",
     "electron": "^3.0.6",
-    "electron-builder": "20.28.4",
+    "electron-builder": "20.38.3",
     "electron-debug": "^2.0.0",
     "electron-devtools-installer": "^2.2.4",
     "eslint": "^4.19.1",
